@@ -1,0 +1,109 @@
+{
+  "model": "YOLO checkpoint best_chch_driving.pt",
+  "model_sha256": "523b481069c4dbd70922801c5e54750619befe566f352cd1654a3944bade7d46",
+  "inference_date": "2026-10-22",
+  "ultralytics": "8.4.19",
+  "torch": "2.8.0",
+  "options": {
+    "imgsz": 960,
+    "conf": 0.4,
+    "iou": 0.7,
+    "max_det": 300,
+    "device": "mps",
+    "half": false,
+    "augment": false,
+    "verbose": false,
+    "save": false
+  },
+  "classes": {
+    "0": "pothole",
+    "1": "long_crack",
+    "2": "lateral_crack",
+    "3": "alligator_crack",
+    "4": "other_corruption"
+  },
+  "note": "Saved model predictions, not hand-labelled ground truth or an accuracy evaluation. Images are resized only for display. Box coordinates below refer to the original oriented image. A result with no predictions is retained.",
+  "images": [
+    {
+      "filename": "IMG_6897.JPG",
+      "source_sha256": "20ca4bb2549ad4510a82b84ab0dc66c91c0050ec90d619337e9becc4e09aaaea",
+      "height": 4032,
+      "width": 3024,
+      "predictions": [
+        {
+          "class_id": 1,
+          "class_name": "long_crack",
+          "confidence": 0.4089302122592926,
+          "xyxy": [
+            8.907312393188477,
+            785.01611328125,
+            392.34381103515625,
+            1073.8170166015625
+          ],
+          "xyxyn": [
+            0.0029455397743731737,
+            0.19469645619392395,
+            0.1297433227300644,
+            0.26632365584373474
+          ]
+        }
+      ],
+      "id": "example-01",
+      "title": "Roadway view",
+      "before": "example-01-before.jpg",
+      "after": "example-01-after.jpg",
+      "display_width": 1350,
+      "display_height": 1800,
+      "before_sha256": "ae38ddb8fc58be32030e6d8e452761fac6030c8388403b38c50b65d5c7de12fd",
+      "after_sha256": "7f870127051a05a3fa65d90e2b6aa4b012e9ce3440ed9f66204e33504d95370b"
+    },
+    {
+      "filename": "IMG_6871.JPG",
+      "source_sha256": "e232d52aff6a7778b10469f5226ce3746ec72bf5621e44fe6316ab24dc0dd783",
+      "height": 3024,
+      "width": 4032,
+      "predictions": [
+        {
+          "class_id": 2,
+          "class_name": "lateral_crack",
+          "confidence": 0.8816537261009216,
+          "xyxy": [
+            1631.60205078125,
+            2236.135498046875,
+            1923.734375,
+            2566.949951171875
+          ],
+          "xyxyn": [
+            0.40466320514678955,
+            0.7394627928733826,
+            0.4771166741847992,
+            0.8488591313362122
+          ]
+        }
+      ],
+      "id": "example-02",
+      "title": "Close-range pavement view",
+      "before": "example-02-before.jpg",
+      "after": "example-02-after.jpg",
+      "display_width": 1800,
+      "display_height": 1350,
+      "before_sha256": "6c990f6645531a356c0a4e68219de33fe7125fb55d4317491d219b1d0ed3abf3",
+      "after_sha256": "395e108bcda145ef7a940af66bf43d5f2585fb197fcc36d43a4a04e18b69b858"
+    },
+    {
+      "filename": "IMG_6810.JPG",
+      "source_sha256": "467319eaf0b70e704aeaea27e8802e8c7b36e5074a223282444ccff2bf3f953a",
+      "height": 4032,
+      "width": 3024,
+      "predictions": [],
+      "id": "example-03",
+      "title": "Visible crack with no detection",
+      "before": "example-03-before.jpg",
+      "after": "example-03-after.jpg",
+      "display_width": 1350,
+      "display_height": 1800,
+      "before_sha256": "6517dd61689d33865da1658bb258b288175d83cdccdf1ca914bc70aee0ffd9ec",
+      "after_sha256": "6517dd61689d33865da1658bb258b288175d83cdccdf1ca914bc70aee0ffd9ec"
+    }
+  ]
+}

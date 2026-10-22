@@ -1,0 +1,1 @@
+Put your final H.264/AAC MP4 here as project-demo.mp4, then set videoSrc to assets/video/project-demo.mp4 in ../../js/config.js. See UPDATE_GUIDE.md in the website package for the exact steps.

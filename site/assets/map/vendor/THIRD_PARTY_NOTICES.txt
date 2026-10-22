@@ -1,0 +1,15 @@
+# Third-party map assets
+
+The website retains the map’s original pinned libraries and their attributions. Runtime assets and fonts are bundled in this directory; source URLs and local checksums are listed in sources.json.
+
+- Leaflet 1.9.3: BSD 2-Clause; leaflet-LICENSE.txt.
+- Leaflet.markercluster 1.1.0: MIT; markercluster-LICENSE.txt.
+- jQuery 3.7.1: MIT; jquery-LICENSE.txt.
+- D3 3.5.5: BSD 3-Clause; d3-LICENSE.txt.
+- Bootstrap 5.2.2: MIT; bootstrap-LICENSE.txt.
+- Leaflet.awesome-markers 2.0.2: MIT; awesome-markers-LICENSE.txt. Original project: https://github.com/lennardv2/Leaflet.awesome-markers .
+- Bootstrap 3 glyphicons stylesheet/font: original Bootstrap 3 distribution. See bootstrap3-LICENSE.txt and https://getbootstrap.com/docs/3.3/components/ . Glyphicons Halflings are made available for Bootstrap by https://glyphicons.com/ .
+- Font Awesome Free 6.2.0: fonts are under SIL OFL 1.1; CSS/code is MIT. Original notices in the bundled CSS; full license in fontawesome-LICENSE.txt.
+- Folium awesome rotate stylesheet: original source URL retained in sources.json.
+
+Basemap imagery is loaded live from OpenStreetMap. Its attribution remains visible in the map: https://www.openstreetmap.org/copyright . No tile archive is included.

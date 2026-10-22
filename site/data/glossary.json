@@ -1,0 +1,315 @@
+{
+  "updated": "2026-10-23",
+  "source": "Latest supplied research report, saved 22 October 2026",
+  "note": "Plain-language definitions based on the report, with links to the relevant report passages.",
+  "entries": [
+    {
+      "term": "Alligator cracking",
+      "definition": "An interconnected pattern of cracks resembling alligator skin. The report describes it as fatigue distress associated with repeated traffic loading.",
+      "source": "literature-review.html#b0300",
+      "source_label": "Report §2.2.1",
+      "aliases": "fatigue cracking alligator_crack"
+    },
+    {
+      "term": "Artificial intelligence (AI)",
+      "definition": "Computer systems that perform tasks such as recognising images and analysing information. Here, AI describes the overall pavement defect detection system.",
+      "source": "literature-review.html#b0645",
+      "source_label": "Report §2.4.3",
+      "aliases": "artificial intelligence AI"
+    },
+    {
+      "term": "Basecourse",
+      "definition": "The principal structural layer below the wearing surface. It distributes traffic loads to the subbase and subgrade.",
+      "source": "literature-review.html#b0237",
+      "source_label": "Report §2.1",
+      "aliases": "base course AP40"
+    },
+    {
+      "term": "Bleeding",
+      "definition": "Asphalt binder rising to the pavement surface, producing a shiny surface that can reduce skid resistance.",
+      "source": "literature-review.html#b0378",
+      "source_label": "Report §2.2.2",
+      "aliases": "flushing"
+    },
+    {
+      "term": "Block cracking",
+      "definition": "A rectangular pattern of cracks associated with binder shrinkage, ageing and temperature changes.",
+      "source": "literature-review.html#b0325",
+      "source_label": "Report §2.2.1",
+      "aliases": "block crack"
+    },
+    {
+      "term": "Bounding box",
+      "definition": "A rectangle marking the location of a labelled or predicted defect in an image. The class label describes the type of defect inside it.",
+      "source": "literature-review.html#b0595",
+      "source_label": "Report §2.4.1",
+      "aliases": "box annotation rectangle label"
+    },
+    {
+      "term": "Confidence score",
+      "definition": "The score attached to an individual model prediction. The gallery retains the saved scores and uses a 0.40 detection threshold. A confidence score is not measured model accuracy.",
+      "source": "methodology.html#b0866",
+      "source_label": "Report §3.6 and gallery prediction record",
+      "aliases": "confidence threshold prediction probability"
+    },
+    {
+      "term": "Convolutional neural network (CNN)",
+      "definition": "A deep learning model suited to spatial patterns in images, such as edges, textures and pavement defects.",
+      "source": "literature-review.html#b0663",
+      "source_label": "Report §2.4.4",
+      "aliases": "CNN convolution neural network"
+    },
+    {
+      "term": "Corrugation",
+      "definition": "Repeated small ridges and troughs in the road surface, commonly associated with unstable surface layers and vehicle movement.",
+      "source": "literature-review.html#b0380",
+      "source_label": "Report §2.2.2",
+      "aliases": "washboard ridges"
+    },
+    {
+      "term": "Crack sealing",
+      "definition": "A maintenance treatment that seals cracks to limit water entering the pavement structure and reduce further deterioration.",
+      "source": "literature-review.html#b0452",
+      "source_label": "Report §2.3.1",
+      "aliases": "crack filling sealant water ingress"
+    },
+    {
+      "term": "Dataset",
+      "definition": "A collection of images and their labels used to train or evaluate the model. This project uses RDD2022 and locally collected New Zealand imagery.",
+      "source": "methodology.html#b0757",
+      "source_label": "Report §3.1",
+      "aliases": "data images training data"
+    },
+    {
+      "term": "Deep learning",
+      "definition": "Machine learning that uses multiple layers to learn visual features from image pixels, rather than relying on manually specified visual rules.",
+      "source": "literature-review.html#b0659",
+      "source_label": "Report §2.4.4",
+      "aliases": "neural network features"
+    },
+    {
+      "term": "Edge cracking",
+      "definition": "Cracking and deterioration along the edge of a pavement. The report links it to inadequate lateral support, drainage problems or heavy traffic.",
+      "source": "literature-review.html#b0345",
+      "source_label": "Report §2.2.1",
+      "aliases": "edge crack"
+    },
+    {
+      "term": "Epoch",
+      "definition": "One complete pass through the training dataset while the model learns. Training runs in the report are compared across epochs.",
+      "source": "methodology.html#b0781",
+      "source_label": "Report §3.3",
+      "aliases": "training epoch iteration"
+    },
+    {
+      "term": "Generalisation",
+      "definition": "How well a trained model performs on new, unseen road imagery. Strong results on a small local validation set do not establish reliable performance across other roads and conditions.",
+      "source": "results.html#b1124",
+      "source_label": "Report §4.3",
+      "aliases": "generalization unseen data real world"
+    },
+    {
+      "term": "Global positioning system (GPS)",
+      "definition": "Location information used to associate road images and detected defects with geographic positions on the interactive map.",
+      "source": "methodology.html#b0864",
+      "source_label": "Report §3.6",
+      "aliases": "GPS coordinates latitude longitude geolocation"
+    },
+    {
+      "term": "Graphics processing unit (GPU)",
+      "definition": "Hardware used to accelerate model training. The project moved larger training runs from local hardware to GPUs available through Google Colab.",
+      "source": "methodology.html#b1214",
+      "source_label": "Report §5.1",
+      "aliases": "GPU A100 H100 T4 cloud computing"
+    },
+    {
+      "term": "Labelled data",
+      "definition": "Images paired with the expected defect class and its bounding box. These examples provide the supervision used to train the detector.",
+      "source": "literature-review.html#b0595",
+      "source_label": "Report §2.4.1",
+      "aliases": "annotation annotations labelled labeled labels ground truth"
+    },
+    {
+      "term": "Large language model (LLM)",
+      "definition": "A proposed future stage that could examine images after detection to help assess visible defect characteristics. The report proposes this work; the website does not provide automated severity assessment.",
+      "source": "future-work.html#b1242",
+      "source_label": "Report §5.2",
+      "aliases": "LLM severity future work image analysis"
+    },
+    {
+      "term": "Longitudinal cracking",
+      "definition": "Cracks running approximately parallel to the road centreline. The model label used in the gallery is long_crack.",
+      "source": "literature-review.html#b0248",
+      "source_label": "Report §2.2.1",
+      "aliases": "long_crack longitudinal crack"
+    },
+    {
+      "term": "Machine learning (ML)",
+      "definition": "A subset of AI in which a model learns patterns from data. In this project it refers to the supervised detector trained on labelled road images.",
+      "source": "literature-review.html#b0649",
+      "source_label": "Report §2.4.3",
+      "aliases": "ML machine learning"
+    },
+    {
+      "term": "Mean average precision at 0.5 (mAP50)",
+      "definition": "The report’s main detection metric, combining classification and bounding-box localisation at an overlap threshold of 0.5. It is reported from 0 to 1 and must be interpreted with the validation dataset.",
+      "source": "literature-review.html#b0694",
+      "source_label": "Report §2.5",
+      "aliases": "mAP50 mAP AP precision evaluation metric"
+    },
+    {
+      "term": "Overfitting",
+      "definition": "Learning patterns specific to a small training or validation dataset without performing reliably on new imagery. The report cautions that its high local validation scores may reflect overfitting.",
+      "source": "results.html#b1124",
+      "source_label": "Report §4.3",
+      "aliases": "overfit small sample validation"
+    },
+    {
+      "term": "Pavement Distress Index (PDI)",
+      "definition": "In this project, the number of detected defects assigned to a 50 m road section. Each defect contributes one, regardless of class; a higher value indicates a greater concentration of detections.",
+      "source": "methodology.html#b0898",
+      "source_label": "Report §3.7",
+      "aliases": "PDI AI-PDI density 50m 50 m defect count"
+    },
+    {
+      "term": "Pothole",
+      "definition": "A bowl-shaped cavity in the pavement surface. Moisture and repeated traffic loading can progressively weaken and remove pavement material.",
+      "source": "literature-review.html#b0415",
+      "source_label": "Report §2.2.3",
+      "aliases": "potholes cavity"
+    },
+    {
+      "term": "Pothole patching",
+      "definition": "A reactive repair that replaces or fills damaged surface material. A patch may have limited durability if the underlying moisture problem remains.",
+      "source": "literature-review.html#b0477",
+      "source_label": "Report §2.3.2",
+      "aliases": "patch patching mill and fill repair"
+    },
+    {
+      "term": "Precision",
+      "definition": "The proportion of reported defect detections that are correct. It describes the reliability of detections, while recall describes how many real defects were found.",
+      "source": "literature-review.html#b0690",
+      "source_label": "Report §2.5",
+      "aliases": "precision correct detections evaluation"
+    },
+    {
+      "term": "Ravelling",
+      "definition": "Progressive loss of aggregate particles from the pavement surface as the material separates from the binder.",
+      "source": "literature-review.html#b0417",
+      "source_label": "Report §2.2.3",
+      "aliases": "raveling chip loss aggregate"
+    },
+    {
+      "term": "Recall",
+      "definition": "The proportion of real, labelled defects that the model detects. Missing visible defects reduces recall.",
+      "source": "literature-review.html#b0692",
+      "source_label": "Report §2.5",
+      "aliases": "recall missed defects sensitivity"
+    },
+    {
+      "term": "Reinforcement learning",
+      "definition": "Learning by interacting with an environment and receiving reward-based feedback. It is discussed in the report but is not used for this supervised image detection task.",
+      "source": "literature-review.html#b0635",
+      "source_label": "Report §2.4.2",
+      "aliases": "reward feedback reinforcement"
+    },
+    {
+      "term": "Road Damage Dataset 2022 (RDD2022)",
+      "definition": "The international labelled road imagery used to establish the project’s baseline detector before introducing New Zealand imagery.",
+      "source": "methodology.html#b0757",
+      "source_label": "Report §3.1",
+      "aliases": "RDD RDD2022 Road Damage Dataset Dataset Ninja baseline"
+    },
+    {
+      "term": "Rutting",
+      "definition": "Permanent deformation along wheel paths under repeated traffic loading. Ruts can retain water and reduce ride quality.",
+      "source": "literature-review.html#b0376",
+      "source_label": "Report §2.2.2",
+      "aliases": "rut wheel tracks"
+    },
+    {
+      "term": "Shoving",
+      "definition": "Localised wrinkling or movement of pavement, often near braking locations such as intersections.",
+      "source": "literature-review.html#b0382",
+      "source_label": "Report §2.2.2",
+      "aliases": "wrinkling horizontal stress"
+    },
+    {
+      "term": "Stripping",
+      "definition": "Loss of the bond between asphalt binder and aggregate associated with moisture entering the pavement.",
+      "source": "literature-review.html#b0419",
+      "source_label": "Report §2.2.3",
+      "aliases": "binder aggregate moisture"
+    },
+    {
+      "term": "Subbase",
+      "definition": "The layer between the subgrade and basecourse. It helps distribute loads, supports drainage and protects the subgrade.",
+      "source": "literature-review.html#b0235",
+      "source_label": "Report §2.1",
+      "aliases": "sub base aggregate drainage"
+    },
+    {
+      "term": "Subgrade",
+      "definition": "The prepared natural soil foundation beneath the pavement layers.",
+      "source": "literature-review.html#b0233",
+      "source_label": "Report §2.1",
+      "aliases": "soil foundation natural ground"
+    },
+    {
+      "term": "Supervised learning",
+      "definition": "Training with examples that include both the input image and the expected output. For this project, the output includes the defect class and bounding box.",
+      "source": "literature-review.html#b0593",
+      "source_label": "Report §2.4.1",
+      "aliases": "supervision labelled examples training"
+    },
+    {
+      "term": "Surface disintegration",
+      "definition": "Breakdown and loss of material from the wearing surface, including potholes, ravelling and stripping.",
+      "source": "literature-review.html#b0411",
+      "source_label": "Report §2.2.3",
+      "aliases": "disintegration loss of material"
+    },
+    {
+      "term": "Surface treatment",
+      "definition": "Maintenance of a deteriorating wearing surface to restore texture or waterproofing. The report discusses chip treatments, resealing and more extensive replacement.",
+      "source": "literature-review.html#b0513",
+      "source_label": "Report §2.3.3",
+      "aliases": "treatment maintenance resealing hot chip"
+    },
+    {
+      "term": "Training and validation split",
+      "definition": "The division between data used to fit the model and data used to evaluate it. The preparation method described in the report uses an 80% training and 20% validation split.",
+      "source": "methodology.html#b0763",
+      "source_label": "Report §3.2",
+      "aliases": "train val validation training test split 80 20"
+    },
+    {
+      "term": "Transverse cracking",
+      "definition": "Cracks running approximately perpendicular to the road centreline. The detector’s lateral_crack label is shown as transverse cracking in the gallery.",
+      "source": "literature-review.html#b0280",
+      "source_label": "Report §2.2.1",
+      "aliases": "lateral_crack lateral transverse crack"
+    },
+    {
+      "term": "Unsupervised learning",
+      "definition": "Finding patterns or groups in data without predefined labels. It is discussed as an alternative, but this project uses supervised learning.",
+      "source": "literature-review.html#b0633",
+      "source_label": "Report §2.4.2",
+      "aliases": "clustering patterns unsupervised"
+    },
+    {
+      "term": "Wearing surface",
+      "definition": "The uppermost pavement layer exposed to traffic and weather. It provides surface texture, skid resistance and protection for the layers below.",
+      "source": "literature-review.html#b0239",
+      "source_label": "Report §2.1",
+      "aliases": "wearing course chipseal chip seal asphalt surface"
+    },
+    {
+      "term": "You Only Look Once (YOLO)",
+      "definition": "The object detection model family used to locate and classify pavement defects in images. The report compares several model sizes and training configurations.",
+      "source": "methodology.html#b0781",
+      "source_label": "Report §3.3",
+      "aliases": "YOLO YOLOv8 YOLOv8s YOLOv8L YOLOv8x detector object detection"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "source": "Latest supplied MG7101 research report",
+  "source_saved": "22 October 2026",
+  "source_sha256": "0235bb32ca5a71e6a44a4c6d6dbaf586c36847e0148116d420d880d089ae1365",
+  "verification": "Verbatim source blocks after four documented privacy replacements; equations and original chart data verified separately.",
+  "pages": [
+    {
+      "page": "problem",
+      "matched_blocks": 47,
+      "status": "PASS"
+    },
+    {
+      "page": "methodology",
+      "matched_blocks": 113,
+      "status": "PASS"
+    },
+    {
+      "page": "literature-review",
+      "matched_blocks": 87,
+      "status": "PASS"
+    },
+    {
+      "page": "results",
+      "matched_blocks": 37,
+      "status": "PASS"
+    },
+    {
+      "page": "conclusion",
+      "matched_blocks": 4,
+      "status": "PASS"
+    },
+    {
+      "page": "future-work",
+      "matched_blocks": 6,
+      "status": "PASS"
+    },
+    {
+      "page": "references",
+      "matched_blocks": 7,
+      "status": "PASS"
+    }
+  ],
+  "figures": {
+    "image11.png": {
+      "source_sha256": "66c1a69156f669148c611aa3ce2e5172f1631056e3df11f661884d36f7afb47b",
+      "source_block": 877,
+      "public_sha256": "1019a090502ddffaa6ab4be49bf3e08ba7c83d823229696176bdf6d94e0a35bd"
+    },
+    "image12.png": {
+      "source_sha256": "e8649f1f8573e74ee7532cc0164fa586b4c61415c37a1bea0114069b60cab386",
+      "source_block": 904,
+      "public_sha256": "eed3754b1fe889818c7edb1677ad3aaee438a5eb8ff923d7e7db2a9b223f51ca"
+    },
+    "image13.png": {
+      "source_sha256": "a47f9b8076ad27300cc8f9663d487f7815f7b05d8077dd96d4be273c84930ad1",
+      "source_block": 1553,
+      "public_sha256": "c3352cac5268d6a584af9558ae05d22e17fd6310279d4daa495ff2f9bd592bbf"
+    },
+    "image2.jpeg": {
+      "source_sha256": "4302e57f3d85602525b346433d148b02af098ee00991c96aacfbe303aedd1af9",
+      "source_block": 249,
+      "public_sha256": "4302e57f3d85602525b346433d148b02af098ee00991c96aacfbe303aedd1af9"
+    },
+    "image3.jpeg": {
+      "source_sha256": "42b6f9612ac2aaf4b89de0d995419a8e2f10b6312071a01fd19d64cb94c19ef1",
+      "source_block": 282,
+      "public_sha256": "955a2e9c9566147feacac369d8c50adc2e46ce79da3a8cf24c2712ceb6798e37"
+    },
+    "image4.jpeg": {
+      "source_sha256": "dea9cfd9a6c8bc089f14a1a3a686e2d80be639acf9765848dfeed09750a10783",
+      "source_block": 302,
+      "public_sha256": "b653f8266e441efec05ab066d149e8333beee387c3831462f05ee44f2d2133ba"
+    },
+    "image5.jpeg": {
+      "source_sha256": "32a7873505cc70966ebd900e7b6c8b2bb84189ee36b5cbbbb7a1499c785623cb",
+      "source_block": 327,
+      "public_sha256": "32a7873505cc70966ebd900e7b6c8b2bb84189ee36b5cbbbb7a1499c785623cb"
+    },
+    "image6.png": {
+      "source_sha256": "4fa0095dccc93be30293cddc9e41442fafdead8a936629a6f30df7594e693b98",
+      "source_block": 346,
+      "public_sha256": "1f65e68cb6fc393f7ddb9b70cd0434c16d315d6372af72ce5b0c6afad9cd652a"
+    },
+    "image7.jpeg": {
+      "source_sha256": "19a063570b325d4964a3d0226eba073b86230e541a9c510bfb5910b809452f5b",
+      "source_block": 458,
+      "public_sha256": "685419ba2c5ffbf606ff8a7f6883c938c40fc13ef32237513041d63ae57c1753"
+    },
+    "image8.jpeg": {
+      "source_sha256": "a47b0a7b4b274b7e74793cad1e7a19c26de1911dfdabc098cd00d06fc0155750",
+      "source_block": 479,
+      "public_sha256": "a47b0a7b4b274b7e74793cad1e7a19c26de1911dfdabc098cd00d06fc0155750"
+    },
+    "image9.png": {
+      "source_sha256": "85b5b642f894ba08b206ce0f3a5ab1f43e48066305079997aff2b7e57c57531d",
+      "source_block": 557,
+      "public_sha256": "a1015b6db696e6bbf8c2687435fc0f0ccfbd823392a6e14746c54b4577f08378"
+    },
+    "image10.png": {
+      "source_sha256": "a91c930cfc563eb8e07b9e1aa312da8b730328021e6688c92b80b3ed12c1513a",
+      "source_block": 598,
+      "public_sha256": "ba914a3cbe7d19df886a3b70e993868abb1fe3c956a933aa7f9b6330fc14f9f5"
+    },
+    "chart1.png": {
+      "source_block": 927,
+      "source_chart_sha256": "844ffdbaf233757692fb7fb1052020e852d68d1bfd82ed8422d75bf89c858836",
+      "public_sha256": "c0a86945dd66dc5cb02df6d7bb9482115c59f102f073fa71cb860c466e76a8d4"
+    },
+    "chart2.png": {
+      "source_block": 985,
+      "source_chart_sha256": "11f34c3629cf891aa114e031c1860463a52b8e227bf3377f26c1853c67569c40",
+      "public_sha256": "05e4c4e1f214dad4b17fc96f1b62921c5ac5202f8e49773fbf6db57f47152eda"
+    },
+    "chart3.png": {
+      "source_block": 1042,
+      "source_chart_sha256": "49c81d7527e6d9da387ca9e8d480870712ac97216882f36c25f48d180001e690",
+      "public_sha256": "99ad52cd58977d0169e5797a8993f7c28531a211aa9580d79cc6dd01253d0f21"
+    },
+    "chart4.png": {
+      "source_block": 1047,
+      "source_chart_sha256": "03102883d56290224acc320bf358c68db1ff6ece18ea2bdf997f8dd3c49e5b90",
+      "public_sha256": "b56b4cb9851ff96114b188f5c2ebf30fd0c5485383f65a0d5a844dd6a206a405"
+    },
+    "chart5.png": {
+      "source_block": 1126,
+      "source_chart_sha256": "175129f44cff5fe6e5dba01a3691f48f3aa65a614af985c32deb32ea6c25b3aa",
+      "public_sha256": "8449745b66f55755fb088719733b674cd2ef34563dae78d4759186271904cd47"
+    },
+    "image14.jpeg": {
+      "source_sha256": "1cb2628fb497cb2d03d77c42d167dda5e844c15c271a7d15333c6377feaa4991",
+      "source_block": 1597,
+      "public_sha256": "066a675e4c0618b440139c12d1197f02b0f0a4d968dd8bb5ce26a5a8850c2b13"
+    },
+    "image15.jpeg": {
+      "source_sha256": "bfe601498650039c618764205324d058c5ae3d8627dc7820d05b4c391768627b",
+      "source_block": 1597,
+      "public_sha256": "9578640f92b69e5b2056d5fb1a7caf100c2290463c503ffeff1b78429dddee48"
+    },
+    "image16.jpeg": {
+      "source_sha256": "7f41b5f58017e386913300ace4e0823d8b4e9adaad250253f7acc4fc26bfc047",
+      "source_block": 1597,
+      "public_sha256": "39518a04b346ae393ae891eb227aed8f0909617fe3a1672d13a5f6350627b0be"
+    },
+    "image17.jpeg": {
+      "source_sha256": "bfe0c82b9bf5acf261c7016fc1c9b8f255431b6ed7ad58bf6ddcd145106a39bf",
+      "source_block": 1597,
+      "public_sha256": "2a9e3d547d842b2cbb0b39c12e16713823c2291c757cbe57bad5c061e9caf5c2"
+    }
+  },
+  "limitations": [
+    "The supplied document is still labelled as a draft.",
+    "Some in-text citations have no bibliography entry in the source.",
+    "Small New Zealand validation sets do not establish real-world generalisation.",
+    "Some source counts and parameter comparisons remain internally inconsistent; website wording is preserved rather than inventing corrections."
+  ]
+}

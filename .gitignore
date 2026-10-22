@@ -1,0 +1,15 @@
+*.docx
+*.pptx
+*.pdf
+*.zip
+*.log
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.env*
+private/
+inspection/
+qa/
+source/
+review/
