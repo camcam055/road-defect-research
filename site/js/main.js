@@ -46,8 +46,23 @@
         card.querySelectorAll("[data-image]").forEach(item => { item.hidden = item.dataset.image !== view; });
         const selected = card.querySelector('[data-image="' + view + '"]');
         card.querySelector(".gallery-full").href = selected.getAttribute("src");
-        card.querySelector(".gallery-state").textContent = view === "before" ? "Before · Original photograph" : "After · Saved YOLO output";
+        card.querySelector(".gallery-state").textContent = view === "before" ? "Before · Original photograph" : "After · Saved labelled photograph";
       });
+    });
+  });
+  const categoryGroups = Array.from(document.querySelectorAll("[data-gallery-category]"));
+  const filterButtons = Array.from(document.querySelectorAll("[data-gallery-filter]"));
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const category = button.dataset.galleryFilter;
+      filterButtons.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+      let count = 0;
+      categoryGroups.forEach(group => {
+        const match = category === "all" || group.dataset.galleryCategory === category;
+        group.hidden = !match;
+        if (match) count += group.querySelectorAll("[data-gallery]").length;
+      });
+      document.querySelector("#gallery-count").textContent = count + (count === 1 ? " photo" : " photos");
     });
   });
   const search = document.querySelector("#glossary-search");

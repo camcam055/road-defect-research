@@ -1,109 +1,1184 @@
 {
-  "model": "YOLO checkpoint best_chch_driving.pt",
-  "model_sha256": "523b481069c4dbd70922801c5e54750619befe566f352cd1654a3944bade7d46",
-  "inference_date": "2026-10-22",
-  "ultralytics": "8.4.19",
-  "torch": "2.8.0",
-  "options": {
-    "imgsz": 960,
-    "conf": 0.4,
-    "iou": 0.7,
-    "max_det": 300,
-    "device": "mps",
-    "half": false,
-    "augment": false,
-    "verbose": false,
-    "save": false
+  "schema_version": 2,
+  "review_date": "2026-10-23",
+  "default_view": "after",
+  "note": "Curated saved annotations with visible road-defect boxes. Examples come from different historical runs; model details and class IDs are recorded per source. These illustrations are not ground truth or an accuracy evaluation.",
+  "categories": [
+    {
+      "id": "longitudinal-cracks",
+      "title": "Longitudinal cracks"
+    },
+    {
+      "id": "transverse-cracks",
+      "title": "Transverse cracks"
+    },
+    {
+      "id": "alligator-cracking",
+      "title": "Alligator cracking"
+    }
+  ],
+  "sources": {
+    "historical-phone": {
+      "label": "Historical application output",
+      "model_name": null,
+      "model_sha256": null,
+      "class_names": {
+        "0": "alligator_crack",
+        "1": "long_crack",
+        "2": "other_corruption",
+        "3": "pothole",
+        "4": "lateral_crack"
+      },
+      "confidence_threshold": null,
+      "note": "Saved labelled photographs and matching prediction sidecars. Numeric classes follow this historical run, checked against the visible labels; the exact checkpoint and run threshold are unavailable."
+    },
+    "saved-map-export": {
+      "label": "Saved project map photograph",
+      "model_name": null,
+      "model_sha256": null,
+      "confidence_threshold": null,
+      "note": "Existing saved annotations retained. Raw inference coordinates and exact checkpoint are unavailable; only the visible defect class is transcribed."
+    },
+    "current-app": {
+      "label": "Current application photo run",
+      "model_name": "best_chch_driving.pt",
+      "model_sha256": "523b481069c4dbd70922801c5e54750619befe566f352cd1654a3944bade7d46",
+      "class_names": {
+        "0": "pothole",
+        "1": "long_crack",
+        "2": "lateral_crack",
+        "3": "alligator_crack",
+        "4": "other_corruption"
+      },
+      "confidence_threshold": 0.4,
+      "note": "Saved application run with prediction sidecars and run metadata."
+    },
+    "training-export": {
+      "label": "Saved training prediction export",
+      "model_name": null,
+      "model_sha256": null,
+      "confidence_threshold": null,
+      "note": "Labelled export without an original photo or raw prediction sidecar. Visible labels are retained; no confidence or vector coordinates are invented."
+    }
   },
-  "classes": {
-    "0": "pothole",
-    "1": "long_crack",
-    "2": "lateral_crack",
-    "3": "alligator_crack",
-    "4": "other_corruption"
-  },
-  "note": "Saved model predictions, not hand-labelled ground truth or an accuracy evaluation. Images are resized only for display. Box coordinates below refer to the original oriented image. A result with no predictions is retained.",
   "images": [
     {
-      "filename": "IMG_6897.JPG",
-      "source_sha256": "20ca4bb2549ad4510a82b84ab0dc66c91c0050ec90d619337e9becc4e09aaaea",
-      "height": 4032,
-      "width": 3024,
-      "predictions": [
+      "id": "img-6425",
+      "title": "Longitudinal cracking beside the pavement edge",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6425.jpg",
+      "source_sha256": "f3d68edbc993397749ee33f39e63ea5301c934a70a529379416b2d485e1cf023",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "longitudinal-cracks/img-6425-after.jpg",
+      "after_sha256": "a998420e319cb890a0ca84c74ce65b03b74e19f9c80b94cd11ad8b83e18c4413",
+      "before": "longitudinal-cracks/img-6425-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
         {
-          "class_id": 1,
           "class_name": "long_crack",
-          "confidence": 0.4089302122592926,
-          "xyxy": [
-            8.907312393188477,
-            785.01611328125,
-            392.34381103515625,
-            1073.8170166015625
-          ],
+          "source_class_id": 1,
+          "confidence": 0.600009,
           "xyxyn": [
-            0.0029455397743731737,
-            0.19469645619392395,
-            0.1297433227300644,
-            0.26632365584373474
+            0.4584364999999999,
+            0.10605600000000004,
+            0.7914135,
+            0.995326
           ]
         }
       ],
-      "id": "example-01",
-      "title": "Roadway view",
-      "before": "example-01-before.jpg",
-      "after": "example-01-after.jpg",
-      "display_width": 1350,
-      "display_height": 1800,
-      "before_sha256": "ae38ddb8fc58be32030e6d8e452761fac6030c8388403b38c50b65d5c7de12fd",
-      "after_sha256": "7f870127051a05a3fa65d90e2b6aa4b012e9ce3440ed9f66204e33504d95370b"
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.4584364999999999,
+            0.10605600000000004,
+            0.7914135,
+            0.995326
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 23164,
+          "sampled_border_pixels": 25522,
+          "ratio": 0.90761
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 0.8637
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "42cae057edf51a83fd796a63e342286e6dbcc6f3562c668a5ea512a7d967d63b",
+      "original_sha256": "0ea5a9a49cfb9383a1869d3515a453ab458d356ed75f4f3bed7bce039207db87"
     },
     {
-      "filename": "IMG_6871.JPG",
-      "source_sha256": "e232d52aff6a7778b10469f5226ce3746ec72bf5621e44fe6316ab24dc0dd783",
-      "height": 3024,
-      "width": 4032,
-      "predictions": [
+      "id": "img-6426",
+      "title": "Transverse crack near a pavement edge",
+      "category": "transverse-cracks",
+      "categories": [
+        "transverse-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6426.jpg",
+      "source_sha256": "8400baa25900c8146bc83602307f6868df25b5deae36e58db21825dd33189f52",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "transverse-cracks/img-6426-after.jpg",
+      "after_sha256": "baa30e440b6224a112355780b65b5af79e8294c68899b4b76e1f5700d25558f9",
+      "before": "transverse-cracks/img-6426-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
         {
-          "class_id": 2,
           "class_name": "lateral_crack",
-          "confidence": 0.8816537261009216,
-          "xyxy": [
-            1631.60205078125,
-            2236.135498046875,
-            1923.734375,
-            2566.949951171875
-          ],
+          "source_class_id": 4,
+          "confidence": 0.587052,
           "xyxyn": [
-            0.40466320514678955,
-            0.7394627928733826,
-            0.4771166741847992,
-            0.8488591313362122
+            0.25970350000000003,
+            0.3266505,
+            0.5773765,
+            0.43437549999999997
           ]
         }
       ],
-      "id": "example-02",
-      "title": "Close-range pavement view",
-      "before": "example-02-before.jpg",
-      "after": "example-02-after.jpg",
-      "display_width": 1800,
-      "display_height": 1350,
-      "before_sha256": "6c990f6645531a356c0a4e68219de33fe7125fb55d4317491d219b1d0ed3abf3",
-      "after_sha256": "395e108bcda145ef7a940af66bf43d5f2585fb197fcc36d43a4a04e18b69b858"
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.25970350000000003,
+            0.3266505,
+            0.5773765,
+            0.43437549999999997
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 3045,
+          "sampled_border_pixels": 7742,
+          "ratio": 0.39331
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 1.1251
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "1ee5e64b342b95c67fde47363c49a858d5e016aeae96de697834bea1be0f97c9",
+      "original_sha256": "b6978b691aa522b4647dc30c7ca968ac3e3c7c71f4f3833c3375983f38ebf48a"
     },
     {
-      "filename": "IMG_6810.JPG",
-      "source_sha256": "467319eaf0b70e704aeaea27e8802e8c7b36e5074a223282444ccff2bf3f953a",
-      "height": 4032,
-      "width": 3024,
-      "predictions": [],
-      "id": "example-03",
-      "title": "Visible crack with no detection",
-      "before": "example-03-before.jpg",
-      "after": "example-03-after.jpg",
-      "display_width": 1350,
-      "display_height": 1800,
-      "before_sha256": "6517dd61689d33865da1658bb258b288175d83cdccdf1ca914bc70aee0ffd9ec",
-      "after_sha256": "6517dd61689d33865da1658bb258b288175d83cdccdf1ca914bc70aee0ffd9ec"
+      "id": "img-6428",
+      "title": "Longitudinal crack beside a gravel shoulder",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6428.jpg",
+      "source_sha256": "95f5a1614238d09a7a9558993725c9b64cfa04b1a3bc06cd4b0ce8e32bf2de41",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "longitudinal-cracks/img-6428-after.jpg",
+      "after_sha256": "9fcc2a425e46cd0c57c6995fc77bf471e6ef3cd896db91cdb9207d1f95256e6a",
+      "before": "longitudinal-cracks/img-6428-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.452811,
+          "xyxyn": [
+            0.383902,
+            0,
+            0.584686,
+            0.864468
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.383902,
+            0,
+            0.584686,
+            0.864468
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 19281,
+          "sampled_border_pixels": 21992,
+          "ratio": 0.87673
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 0.8243
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "18bfb848e4e1c490bea658db6e9541fb9d949d2dc3e317abbe1b8a89f31cad8e",
+      "original_sha256": "53d3f916bdb5d9ed0bfeae14946b77df438385d2bc80dd5a9e3060da6780c1eb"
+    },
+    {
+      "id": "img-6437",
+      "title": "Longitudinal crack beside a brick wall",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6437.jpg",
+      "source_sha256": "311c23a4525249fa1c57447f8386462fb2a5769ff6924be1e73c5e126ff0b72f",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "longitudinal-cracks/img-6437-after.jpg",
+      "after_sha256": "fe87deda50d8f491e622bef7bed461e8eb6756d1af551f5cbe549dfb4bbb9e1b",
+      "before": "longitudinal-cracks/img-6437-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.41142,
+          "xyxyn": [
+            0.327676,
+            0.022620500000000016,
+            0.541792,
+            0.4496375
+          ]
+        },
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.253206,
+          "xyxyn": [
+            0.3138735,
+            0.01759550000000004,
+            0.5515245,
+            0.7775084999999999
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.327676,
+            0.022620500000000016,
+            0.541792,
+            0.4496375
+          ],
+          [
+            0.3138735,
+            0.01759550000000004,
+            0.5515245,
+            0.7775084999999999
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 31642,
+          "sampled_border_pixels": 34174,
+          "ratio": 0.92591
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 0.8019
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "3e1783fd1f74b0b91786ab42ed370eee570412dcb46f7ec119af7c4081cefdaa",
+      "original_sha256": "1442f5e87d49cfa25e3eed2ab4800bbfd6ace6c17e5e8e74354ca9ad400bdaaa"
+    },
+    {
+      "id": "img-6438",
+      "title": "Transverse crack beside a driveway",
+      "category": "transverse-cracks",
+      "categories": [
+        "transverse-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6438.jpg",
+      "source_sha256": "6f9c3a89e791a6c51b9f9540c1ea7187bd11f039d20afcfb0e1eda55be2a29ae",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "transverse-cracks/img-6438-after.jpg",
+      "after_sha256": "26abc48aad62adf962dca165f6e0ac17ee686f07746b139bb0c6444281d0d5e9",
+      "before": "transverse-cracks/img-6438-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "lateral_crack",
+          "source_class_id": 4,
+          "confidence": 0.565259,
+          "xyxyn": [
+            0.25567899999999993,
+            0.3451665,
+            0.8530869999999999,
+            0.4875755
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.25567899999999993,
+            0.3451665,
+            0.8530869999999999,
+            0.4875755
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 4196,
+          "sampled_border_pixels": 13230,
+          "ratio": 0.31716
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 0.9979
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "d9b80800ea17b388e562f0cc489c3352f6b1240ffb6b059c7ef18007ad1a096d",
+      "original_sha256": "7bfa5615dd28d3bff8a917c7037d1055f53ac0337d13494ce14d64964edf0f52"
+    },
+    {
+      "id": "img-6439",
+      "title": "Longitudinal cracking beside a parked vehicle",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6439.jpg",
+      "source_sha256": "28e322cbf0e10ebcb64c9fa40d7146687b7ad80a6e70cf79c5d0d85a72580485",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "longitudinal-cracks/img-6439-after.jpg",
+      "after_sha256": "cfb73b5080313cd2915852ac803cd40782e9d6b72c0b2a9b4d425aaf501f7ca1",
+      "before": "longitudinal-cracks/img-6439-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.446705,
+          "xyxyn": [
+            0.34392765000000003,
+            0.235076,
+            0.43284835,
+            1
+          ]
+        },
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.341785,
+          "xyxyn": [
+            0.341102,
+            0.14648450000000002,
+            0.45838199999999996,
+            0.9935735
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.34392765000000003,
+            0.235076,
+            0.43284835,
+            1
+          ],
+          [
+            0.341102,
+            0.14648450000000002,
+            0.45838199999999996,
+            0.9935735
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 37742,
+          "sampled_border_pixels": 39126,
+          "ratio": 0.96463
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 1.0333
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "97652cbe706ce089a2c2cab0e7a6f73b931fe4649b513ddd688f157dd03d6c7d",
+      "original_sha256": "13881cbe0b901f2863f33caece5a5afb9ca0747eed4d48016230aa5dc2e717fc"
+    },
+    {
+      "id": "img-6440",
+      "title": "Longitudinal cracking along the road edge",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6440.jpg",
+      "source_sha256": "6392416a064db62681cc5f2dbc70e55c0f2ca47f8332117a093aa5e53e2d7d83",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "longitudinal-cracks/img-6440-after.jpg",
+      "after_sha256": "3bb101b7d0a455589e16c8696a672b872bd0c0f1501fb5e875177c165eff5b1e",
+      "before": "longitudinal-cracks/img-6440-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.473479,
+          "xyxyn": [
+            0.1183655,
+            0.13522550000000005,
+            0.3021585,
+            1
+          ]
+        },
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.305051,
+          "xyxyn": [
+            0.15895350000000003,
+            0.13017799999999996,
+            0.3741245,
+            1
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.1183655,
+            0.13522550000000005,
+            0.3021585,
+            1
+          ],
+          [
+            0.15895350000000003,
+            0.13017799999999996,
+            0.3741245,
+            1
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 39387,
+          "sampled_border_pixels": 43598,
+          "ratio": 0.90341
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 1.0914
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "0c1f0a4e3b622566490fae4c25f5c897553b000bbcf363f531dcbd0078f8d380",
+      "original_sha256": "c62c6876f7fd71a197aac8660b3ac1811fcb6187402b3fa5e6bedcfd43885fa0"
+    },
+    {
+      "id": "img-6441",
+      "title": "Alligator cracking beside a drainage channel",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6441.jpg",
+      "source_sha256": "9d0ebc960a749e618056d131acde5e6f17bc87f0492fe7df012bf4ecd74de3e5",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "alligator-cracking/img-6441-after.jpg",
+      "after_sha256": "ac8a991b229523b91ab531636282821e08521aec8ff05a531b9bd8237ca6d338",
+      "before": "alligator-cracking/img-6441-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.374309,
+          "xyxyn": [
+            0.006487500000000035,
+            0.22028000000000003,
+            0.8360205,
+            0.641606
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.006487500000000035,
+            0.22028000000000003,
+            0.8360205,
+            0.641606
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 21189,
+          "sampled_border_pixels": 23380,
+          "ratio": 0.90629
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 1.7848
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "7a9ff8481ad86becafc5c1e2423bbf5f17749fcd3df68801197efceeb4131c62",
+      "original_sha256": "444b2212c6175ab6b9cf19485867c3edf9e89f862348af3e19569e350a9b0602"
+    },
+    {
+      "id": "img-6442",
+      "title": "Longitudinal crack along the pavement margin",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6442.jpg",
+      "source_sha256": "22d01b13244b42c0f4d5e0fdd5c5350e1cb21b1a2d7220e122c03df39ba7fb65",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "longitudinal-cracks/img-6442-after.jpg",
+      "after_sha256": "264af0f4e4cb346b97956d773d6a50c106f07ea3bb45f4bca76bf546b3f15690",
+      "before": "longitudinal-cracks/img-6442-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.474881,
+          "xyxyn": [
+            4.999999999866223e-07,
+            0,
+            0.25965150000000004,
+            0.9892765
+          ]
+        },
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.378205,
+          "xyxyn": [
+            0,
+            0,
+            0.17933680000000002,
+            1
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            4.999999999866223e-07,
+            0,
+            0.25965150000000004,
+            0.9892765
+          ],
+          [
+            0,
+            0,
+            0.17933680000000002,
+            1
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 37941,
+          "sampled_border_pixels": 39868,
+          "ratio": 0.95167
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 0.862
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "0fcd3695e024c547bff91fc871a9623d405b9bd13995b6e2840cf6f8553dcaf2",
+      "original_sha256": "46d2de9a25ff5792f8736869b9bb312a2061e5f3b8fb6587fe75c04696ca5e85"
+    },
+    {
+      "id": "img-6443",
+      "title": "Interconnected alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6443.jpg",
+      "source_sha256": "3097d4196f7ecaace073fd10c9cc0a9401bfd8f812b665e1073b5c33339fb405",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "alligator-cracking/img-6443-after.jpg",
+      "after_sha256": "70e85ef9edc4d93814e0788ae1484b88ee68faca1b28d8f7c0d48d96e8e4a3c0",
+      "before": "alligator-cracking/img-6443-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.354906,
+          "xyxyn": [
+            0.17084000000000005,
+            0.030782500000000046,
+            1,
+            0.9999995
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.17084000000000005,
+            0.030782500000000046,
+            1,
+            0.9999995
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 24594,
+          "sampled_border_pixels": 25420,
+          "ratio": 0.96751
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 1.7857
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "2527c8b6a192eeefb29c74c10c8b67065661118af9f846504d8c03c0b44e916d",
+      "original_sha256": "62036a03e48191e844bc4f9126ee5dbe42093e01e8a50a193d7996766e257a6a"
+    },
+    {
+      "id": "img-6657",
+      "title": "Longitudinal crack across a shaded road surface",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6657.jpg",
+      "source_sha256": "376105a3b8bf65696b61846dcc08713575ff1d3e544247d58af1012179a37ab2",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "longitudinal-cracks/img-6657-after.jpg",
+      "after_sha256": "af525000406e585cda0227623578369e41aeb316dfd0ce17c97ed2e1db2751ac",
+      "before": "longitudinal-cracks/img-6657-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.437422,
+          "xyxyn": [
+            0.23793400000000003,
+            0.07797700000000007,
+            0.430448,
+            0.957755
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.23793400000000003,
+            0.07797700000000007,
+            0.430448,
+            0.957755
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 19527,
+          "sampled_border_pixels": 22932,
+          "ratio": 0.85152
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 0.9769
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "adfe039e6906ea748b0e9e5a1dea83919e4dd63a5c6f334140bb4bc3ba7537bf",
+      "original_sha256": "8d7d1fb540971f00f0fc81dc57a42ec9f0d75fbceac940d8314543deef71d074"
+    },
+    {
+      "id": "img-6676",
+      "title": "Transverse and longitudinal cracks",
+      "category": "transverse-cracks",
+      "categories": [
+        "longitudinal-cracks",
+        "transverse-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6676.jpg",
+      "source_sha256": "b2de80cbdb486a49e73fe8a37f8b587e1ac7cb321776f0b4ee9871fa2f79d7fa",
+      "source_width": 4032,
+      "source_height": 3024,
+      "after": "transverse-cracks/img-6676-after.jpg",
+      "after_sha256": "f4fcf99602be601abd4754df504a814a2d420c94ffaf2ca96e95293ed599f1b2",
+      "before": "transverse-cracks/img-6676-before.jpg",
+      "display_width": 1600,
+      "display_height": 1200,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.589926,
+          "xyxyn": [
+            0.042322499999999985,
+            4.999999999866223e-07,
+            0.2945375,
+            0.36472550000000004
+          ]
+        },
+        {
+          "class_name": "lateral_crack",
+          "source_class_id": 4,
+          "confidence": 0.56459,
+          "xyxyn": [
+            0.13488500000000003,
+            0.31629799999999997,
+            0.903703,
+            0.440674
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.042322499999999985,
+            4.999999999866223e-07,
+            0.2945375,
+            0.36472550000000004
+          ],
+          [
+            0.13488500000000003,
+            0.31629799999999997,
+            0.903703,
+            0.440674
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 16204,
+          "sampled_border_pixels": 29850,
+          "ratio": 0.54285
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 2.6962
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "57c2ef3bdcc65f7cb35e1ab8549f7f5962bfad27e7670933c5dce13b5611c5fd",
+      "original_sha256": "a45473388a5f1c5b1f596d42ef07d2cfbc45a97c4211bcc97ae5e8bf56f2912e"
+    },
+    {
+      "id": "img-6869",
+      "title": "Transverse crack across the road surface",
+      "category": "transverse-cracks",
+      "categories": [
+        "transverse-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6869.jpg",
+      "source_sha256": "979b7ff2438d61d08d5369c46477b6661aa7f78f3c4b6bdbf53f99805a867cbe",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "transverse-cracks/img-6869-after.jpg",
+      "after_sha256": "32a638c085d0cc1cd2c1174da288ac91c8231b1bb7aa6a0ce5b10136411f51c6",
+      "before": "transverse-cracks/img-6869-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "lateral_crack",
+          "source_class_id": 4,
+          "confidence": 0.496161,
+          "xyxyn": [
+            0.3214715000000001,
+            0.44646604999999995,
+            0.8601945,
+            0.51785395
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.3214715000000001,
+            0.44646604999999995,
+            0.8601945,
+            0.51785395
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 2983,
+          "sampled_border_pixels": 10654,
+          "ratio": 0.27999
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 1.2232
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "3da264664c224c99bb8586925cff8e8f834a4554966f9cc63f836ecb3f00ced9",
+      "original_sha256": "14029a16af40164667c93b3ad3dd02bbca986994df878423171d1591a2275b13"
+    },
+    {
+      "id": "img-6871",
+      "title": "Close view of a transverse crack",
+      "category": "transverse-cracks",
+      "categories": [
+        "transverse-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6871.jpg",
+      "source_sha256": "7edfb2522430d3672c7a9f363cd77a5d6b8d23703acd0c3ba32ed1faf2d78565",
+      "source_width": 4032,
+      "source_height": 3024,
+      "after": "transverse-cracks/img-6871-after.jpg",
+      "after_sha256": "9f92d876cabad3dfc8acf35df4d40012530a52d59411fb23ccefaf0eac0bd74f",
+      "before": "transverse-cracks/img-6871-before.jpg",
+      "display_width": 1600,
+      "display_height": 1200,
+      "annotations": [
+        {
+          "class_name": "lateral_crack",
+          "source_class_id": 4,
+          "confidence": 0.268771,
+          "xyxyn": [
+            0,
+            0.3842685,
+            0.998328,
+            0.5505755
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0,
+            0.3842685,
+            0.998328,
+            0.5505755
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 8688,
+          "sampled_border_pixels": 24330,
+          "ratio": 0.35709
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 1.9708
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "04eda6361b5a46fb5a95a349776111b309f71f6400d871da9adb47b01776af7b",
+      "original_sha256": "e232d52aff6a7778b10469f5226ce3746ec72bf5621e44fe6316ab24dc0dd783"
+    },
+    {
+      "id": "img-6872",
+      "title": "Close view of longitudinal cracking",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "historical-phone",
+      "filename": "IMG_6872.jpg",
+      "source_sha256": "2eebf002d56b6eb891f0bfa10bc7f2209c9ab6477987ec8f52eea3a2f9be12eb",
+      "source_width": 3024,
+      "source_height": 4032,
+      "after": "longitudinal-cracks/img-6872-after.jpg",
+      "after_sha256": "263f8c5ed9e72717c3d7aebc691c518d8987d9bb8d1489a2440a957422f45f87",
+      "before": "longitudinal-cracks/img-6872-before.jpg",
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.338316,
+          "xyxyn": [
+            0.3007745,
+            0.0003854999999999831,
+            0.6956195000000001,
+            0.9839045
+          ]
+        },
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.251609,
+          "xyxyn": [
+            0.413962,
+            0.021062000000000025,
+            0.6997800000000001,
+            0.930836
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.3007745,
+            0.0003854999999999831,
+            0.6956195000000001,
+            0.9839045
+          ],
+          [
+            0.413962,
+            0.021062000000000025,
+            0.6997800000000001,
+            0.930836
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 50830,
+          "sampled_border_pixels": 52868,
+          "ratio": 0.96145
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 1.2378
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "dc937b61eb5acd38e183fe64360efd738a747f1faf089023a9fc46975148ca43",
+      "original_sha256": "1f8e78530448acd206da411148af50b6057b42ffdacda8da2c0ee554c0b99e08"
+    },
+    {
+      "id": "roadway-longitudinal",
+      "title": "Longitudinal cracks in a roadway photograph",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "saved-map-export",
+      "filename": "photo-001.jpg",
+      "source_sha256": "a8cd83cbff1f0b6727c3e4e49b55cf4eea11994446e37ca8d684928863a54e66",
+      "source_width": 1350,
+      "source_height": 1800,
+      "after": "longitudinal-cracks/roadway-longitudinal-after.jpg",
+      "after_sha256": "0de071c73467f2ccbbec208e63ebbad26eb33fc3b7dca52e9749939c512452e8",
+      "before": null,
+      "display_width": 1200,
+      "display_height": 1600,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": null,
+          "confidence": null,
+          "xyxyn": null
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.3770833333,
+            0.459375,
+            0.53125,
+            0.796875
+          ],
+          [
+            0.5041666667,
+            0.0390625,
+            0.7041666667,
+            0.2984375
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 5394,
+          "sampled_border_pixels": 19348,
+          "ratio": 0.27879
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "original unavailable; saved labelled image only"
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      }
+    },
+    {
+      "id": "driving-longitudinal",
+      "title": "Longitudinal cracks in a driving view",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "current-app",
+      "filename": "1788911598__PTS_000284.jpg",
+      "source_sha256": "a69f707cf3d043fe6824d4067338bdb5de965c3a171969179238c4737c88e237",
+      "source_width": 3840,
+      "source_height": 2160,
+      "after": "longitudinal-cracks/driving-longitudinal-after.jpg",
+      "after_sha256": "8801df255c058f14fde073b8bdbbcfb46ebabcb3e685a3b61a0d376b57581a7b",
+      "before": "longitudinal-cracks/driving-longitudinal-before.jpg",
+      "display_width": 1600,
+      "display_height": 900,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.628629,
+          "xyxyn": [
+            0.33191424999999997,
+            0.6111405,
+            0.38678775,
+            0.7242475
+          ]
+        },
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.610628,
+          "xyxyn": [
+            0.41752035,
+            0.56549,
+            0.45260365,
+            0.666442
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.33191424999999997,
+            0.6111405,
+            0.38678775,
+            0.7242475
+          ],
+          [
+            0.41752035,
+            0.56549,
+            0.45260365,
+            0.666442
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 4419,
+          "sampled_border_pixels": 4718,
+          "ratio": 0.93663
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "matching source identity, orientation, dimensions and image-content comparison",
+          "mean_luma_difference": 0.8879
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      },
+      "before_sha256": "badfd18248678c7d5b36a7990f546f21d1251383717027586c26a3eb9e2d45bc",
+      "original_sha256": "29245b18e4fd30fdb6599a2dfe6f5bf8f76859c5d0612fb88250d7d2efc79922"
+    },
+    {
+      "id": "saved-driving-export",
+      "title": "Saved labelled driving frame",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "training-export",
+      "filename": "1778033623_frame_00738.jpg",
+      "source_sha256": "5e57d8240d365ca9c044da2e402a0bbd7d0e54579cdf943cc5d8a184aef0bdd9",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "longitudinal-cracks/saved-driving-export-after.jpg",
+      "after_sha256": "af49d43ac169c73629afd6ddb86418fa70cf159c1b6ef29a4aec78dcec06c9bd",
+      "before": null,
+      "display_width": 1600,
+      "display_height": 1200,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": null,
+          "confidence": null,
+          "xyxyn": null
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.524,
+            0.568,
+            0.6,
+            0.694
+          ]
+        ],
+        "border_check": {
+          "coloured_border_pixels": 2285,
+          "sampled_border_pixels": 3822,
+          "ratio": 0.59785
+        },
+        "review_date": "2026-10-23",
+        "pairing": {
+          "method": "original unavailable; saved labelled image only"
+        },
+        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      }
     }
   ]
 }

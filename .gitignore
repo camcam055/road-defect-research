@@ -13,3 +13,8 @@ inspection/
 qa/
 source/
 review/
+
+# Training weights belong outside the static website repository.
+*.pt
+*.pth
+*.onnx

@@ -1,3 +1,25 @@
+# Gallery refresh verification - 23 October 2026
+
+The photo organisation and gallery update were completed and tested locally before the owner's authorised GitHub commit, push and existing Pages deployment.
+
+- Reviewed 128 saved exports and checked the 71-photo source collection for matching originals.
+- Selected 18 annotated photographs: 11 longitudinal-crack, five transverse-crack and two alligator-cracking examples. Sixteen have verified originals; two are labelled-only.
+- Each selected AFTER image passed whole-photo and box-detail visual inspection and a coloured box-border check on its final JPEG. All 34 JPEG files passed integrity, dimensions, hash and EXIF-removal checks.
+- Browser at 1280px desktop width: all four filters return the expected counts; all 16 pairs passed both modes (32 checks), with independent state and correct full-size targets. All 34 image elements decoded successfully.
+- Browser at 390px phone width: one-column layout, no document-level horizontal overflow, category filtering and independent image switching work. Complete image containment was verified for all 18 annotated photographs at both widths, including the portrait-image CSS correction.
+- The two labelled-only cards load without misleading BEFORE controls. A labelled-only full-size image was opened successfully.
+- No application-origin warning/error messages were observed in the gallery browser console.
+- Static site checker: PASS, 13 HTML documents, 10 homepage cards and 401 local references. JavaScript syntax: PASS.
+- Original research text, glossary, homepage, map content/assets, video configuration and the application's detection model were preserved. Detailed local review evidence and screenshots remain outside Git.
+
+The phone-width checks use a desktop browser viewport, not a physical iPhone. This remains a curated visual gallery, not an independent model accuracy evaluation. Historical source/model details unavailable in the saved exports are left unknown.
+
+---
+
+## Previous delivered verification snapshot
+
+The following records the preceding package's checks. Its three-image gallery and no-detection example have been superseded by the reviewed refresh above.
+
 # Delivered website verification
 
 Checked 23 October 2026 (Pacific/Auckland). The package was prepared locally; no GitHub push, publication or external hosting registration occurred.

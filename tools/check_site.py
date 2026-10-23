@@ -54,18 +54,9 @@ import hashlib
 for name,key in [("gallery","images"),("glossary","entries")]:
     data=json.loads((SITE/"data"/(name+".json")).read_text())
     if not data[key]:errors.append(f"Empty {name} data")
+from gallery_checks import check_gallery
 gallery=json.loads((SITE/"data/gallery.json").read_text())
-if len(gallery["images"])<2:errors.append("Gallery examples missing")
-for row in gallery["images"]:
-    for view in ("before","after"):
-        image=SITE/"assets/gallery"/row[view]
-        if not image.is_file():errors.append(f"Missing {view} image: {row['id']}")
-        elif hashlib.sha256(image.read_bytes()).hexdigest()!=row[view+"_sha256"]:errors.append(f"Gallery image hash mismatch: {row['id']} {view}")
-    if not row["predictions"] and row["before_sha256"]!=row["after_sha256"]:errors.append("No-detection image must remain unchanged")
-    for box in row["predictions"]:
-        xy=box["xyxyn"]
-        if not (len(xy)==4 and 0<=xy[0]<xy[2]<=1 and 0<=xy[1]<xy[3]<=1):errors.append("Invalid recorded box coordinates")
-        if box["confidence"]<gallery["options"]["conf"]:errors.append("Prediction below the recorded threshold")
+errors.extend(check_gallery(gallery,SITE/"assets/gallery"))
 glossary=json.loads((SITE/"data/glossary.json").read_text())["entries"]
 if len({r["term"].casefold() for r in glossary})!=len(glossary):errors.append("Duplicate glossary terms")
 if "https://tile.openstreetmap.org/{z}/{x}/{y}.png" not in (SITE/"assets/map/index.html").read_text():errors.append("Working OSM basemap configuration missing")

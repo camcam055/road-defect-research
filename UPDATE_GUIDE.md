@@ -78,24 +78,19 @@ Native Word charts were exported from the report, rather than redrawn using post
 
 ## Update gallery images or detection examples
 
-The three delivered examples use saved inference from the project checkpoint on **22 October 2026**, with `imgsz=960`, `conf=0.40` and `iou=0.70`. The checkpoint hash, software versions, image hashes, class IDs, confidence values and original bounding-box coordinates are retained in `site/data/gallery.json`. Two examples contain real model predictions; the third honestly shows a visible crack for which the model returned no detection. The annotations are visualisations of saved predictions, not manually invented detections.
+The gallery contains 18 reviewed labelled photographs grouped into longitudinal cracks, transverse cracks and alligator cracking. Sixteen have matching originals; two are labelled-only. Every card opens in AFTER mode.
 
-For a replacement or new example:
+Keep gallery assets in category subfolders under site/assets/gallery/. The maintained source is site/data/gallery.json (schema version 2). Each record needs a unique ID, primary category, source ID, AFTER filename/hash, display dimensions, annotations and a completed visible-box review. BEFORE is optional; use null when the original cannot be confirmed.
 
-1. Run the actual project YOLO checkpoint on the original photo and retain the actual inference output. Export the unannotated photo and the annotated output with the same orientation, crop and display dimensions. Resize both proportionally if needed; do not move or redraw detections to make them look better. For a no-detection example, use identical before and after files.
-2. Put the display files in `site/assets/gallery/`, for example `example-04-before.jpg` and `example-04-after.jpg`. Remove EXIF metadata before including new photos and check for personal details.
-3. Duplicate an image record in `site/data/gallery.json`. Give it a unique `id`, a `title`, the two filenames, original `width`/`height`, and display `display_width`/`display_height`. Paste its genuine `predictions` (`class_id`, `class_name`, `confidence`, pixel `xyxy`, normalised `xyxyn`) and source hash. An empty list means no detection. The top-level model/options must describe the run used for all displayed examples; rerun all selected examples if changing the checkpoint or settings.
-4. Run:
+1. Use an existing saved labelled output with a visible road-defect box. Exclude raw standalone photos, zero-detection images, plots, mosaics, irrelevant boxes and duplicated exports. Do not fabricate detections to fill a category.
+2. Confirm the source class-name mapping. Numeric IDs differ between historical runs and the current checkpoint. Record provenance per source; leave unavailable model details, raw coordinates or confidence values null.
+3. Match BEFORE by source identity, orientation, aspect ratio and picture content. A similar filename is insufficient. Resize both views proportionally to identical dimensions and remove EXIF metadata. Keep only AFTER when there is no verified original.
+4. Inspect the full annotated photograph and box detail at final display size. Record normalised review regions around real visible boxes. Set review.reviewed and review.visible_box true only after this inspection and update the review date.
+5. Run python3 tools/refresh_gallery_hashes.py. Replacing either asset invalidates its prior review; inspect it again and restore review flags only when it passes.
+6. Run python3 tools/build_site.py, python3 tools/check_site.py and python3 tools/verify_gallery_photos.py. The photo verifier requires Pillow; the build and static checker use the standard library.
+7. Preview every new image, category filter, BEFORE/AFTER pair and full-size link. The build rejects an unfinished review, and the static checker rejects unused assets, duplicate images, missing box evidence, invalid mappings or unchanged unlabelled pairs.
 
-   ```sh
-   python3 tools/refresh_gallery_hashes.py
-   python3 tools/build_sections.py
-   python3 tools/check_site.py
-   ```
-
-5. Open Section 07. Test BEFORE and AFTER for every example, including the no-detection case and full-size links.
-
-The website displays precomputed output; it does not run YOLO in visitors' browsers. Keep model weights and private inference inputs outside the website package.
+A mixed-defect photograph appears once under its primary category, with all visible classifications retained in its annotation data and caption. See docs/GALLERY_REVIEW.md for this selection and docs/TRAINING_FILES_REVIEW.md for source limitations.
 
 ## Update the searchable glossary
 
@@ -150,7 +145,7 @@ The map is a saved Folium/Leaflet export. Geographic features, layer names, traf
 python3 tools/check_site.py
 ```
 
-This checks all HTML/CSS local links, source anchors, the ten homepage cards, gallery file hashes and bounding-box ranges, JSON structure, private-path leaks, bundled map libraries and the manual Pages workflow. It is not a statistical validation of a new model or dataset.
+This checks all HTML/CSS local links, source anchors, the ten homepage cards, gallery file hashes, class mappings, visible-box review records, optional originals and bounding-box ranges, JSON structure, private-path leaks, bundled map libraries and the manual Pages workflow. It is not a statistical validation of a new model or dataset.
 
 Preview desktop and phone widths. Check all section links, gallery switches/full-size images, glossary search/clear/no-results, readable tables and figures, map tiles/popups/layers, and your video once it is available. Test the final MP4 on a physical iPhone when you have it. See `docs/VERIFICATION.md` for the delivered build's actual test coverage and limits.
 
