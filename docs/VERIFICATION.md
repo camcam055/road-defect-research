@@ -1,3 +1,23 @@
+# Report and map refresh verification - 25 October 2026
+
+The owner requested updating the existing website and GitHub repository while retaining https://camcam055.github.io/road-defect-research/. The local checkout was clean at the existing published revision before this refresh. The repository identity and manual Pages workflow are preserved.
+
+- Seven research/reference pages reproduce 304 nonblank source blocks from the revised report after the four existing privacy substitutions. Equations match the source. The five native chart XML files match the preceding source; all 21 current report figure/chart assets are retained.
+- The conclusion and proposed sensor work are updated. The repeated section 3.7 LLM proposal is retained in Methodology and appears once in Future Work under section 5.2. The glossary has 46 terms, with source anchors remapped to the revised report.
+- The portable map is preserved in full after relative asset paths, a title and the separate website adapter. It contains 2,491 tentative run16 defect locations, 2,977 located observations and 21 observations without GPS, plus 22 historical markers. Grouping qualifications and the separate recovered-density layer are retained.
+- All 1,902 referenced map photographs passed pixel-preserving metadata removal. The 2,998-row observation CSV and bundled vendor files/licences are included. Original reports, source manifests and private audits remain outside the repository.
+- In the in-app browser at 475px width, the homepage, updated conclusion, future-work text, glossary search and sensor source link worked without document-level horizontal overflow.
+- Embedded and full-size maps loaded. OpenFreeMap and the OSM fallback rendered; clusters zoomed, latest/recovered density and historical layers toggled, and a new run16 popup photograph loaded at 960px source width. Popup close restored the controls. On narrow screens the adapter hides the information/layer panels while a popup is open to keep its photo and close control accessible.
+- The original gallery data/assets, homepage card order, visual design and video configuration remain intact. The final MP4 is still an intentional placeholder.
+
+Final checks: static validation PASS (13 HTML documents, 10 homepage cards, 8,372 local references including observation photos); source comparison PASS (304 blocks and equations); Python syntax PASS (13 maintenance scripts); map adapter JavaScript syntax PASS; source hashes, unchanged gallery/video assets and map canonical comparison PASS. MANIFEST.sha256 is regenerated and verified. Narrow-screen checks use a desktop app browser panel, not a physical iPhone. External basemap availability depends on network access. The map is a research demonstration; its observations do not establish measured detection accuracy.
+
+---
+
+# Earlier verification snapshots
+
+The following entries describe earlier revisions and are retained as historical records.
+
 # Gallery refresh verification - 23 October 2026
 
 The photo organisation and gallery update were completed and tested locally before the owner's authorised GitHub commit, push and existing Pages deployment.

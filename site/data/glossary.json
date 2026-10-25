@@ -4,6 +4,13 @@
   "note": "Plain-language definitions based on the report, with links to the relevant report passages.",
   "entries": [
     {
+      "term": "Accelerometer",
+      "definition": "A sensor that measures acceleration. The report proposes using phone acceleration and vibration data alongside GPS and image detections to investigate pavement defects.",
+      "source": "future-work.html#b1246",
+      "source_label": "Report §5.2",
+      "aliases": "acceleration vibration phone sensor proposed future work"
+    },
+    {
       "term": "Alligator cracking",
       "definition": "An interconnected pattern of cracks resembling alligator skin. The report describes it as fatigue distress associated with repeated traffic loading.",
       "source": "literature-review.html#b0300",
@@ -48,7 +55,7 @@
     {
       "term": "Confidence score",
       "definition": "The score attached to an individual model prediction. The gallery retains the saved scores and uses a 0.40 detection threshold. A confidence score is not measured model accuracy.",
-      "source": "methodology.html#b0866",
+      "source": "methodology.html#b0868",
       "source_label": "Report §3.6 and gallery prediction record",
       "aliases": "confidence threshold prediction probability"
     },
@@ -76,7 +83,7 @@
     {
       "term": "Dataset",
       "definition": "A collection of images and their labels used to train or evaluate the model. This project uses RDD2022 and locally collected New Zealand imagery.",
-      "source": "methodology.html#b0757",
+      "source": "methodology.html#b0759",
       "source_label": "Report §3.1",
       "aliases": "data images training data"
     },
@@ -97,30 +104,37 @@
     {
       "term": "Epoch",
       "definition": "One complete pass through the training dataset while the model learns. Training runs in the report are compared across epochs.",
-      "source": "methodology.html#b0781",
+      "source": "methodology.html#b0783",
       "source_label": "Report §3.3",
       "aliases": "training epoch iteration"
     },
     {
       "term": "Generalisation",
       "definition": "How well a trained model performs on new, unseen road imagery. Strong results on a small local validation set do not establish reliable performance across other roads and conditions.",
-      "source": "results.html#b1124",
+      "source": "results.html#b1126",
       "source_label": "Report §4.3",
       "aliases": "generalization unseen data real world"
     },
     {
       "term": "Global positioning system (GPS)",
       "definition": "Location information used to associate road images and detected defects with geographic positions on the interactive map.",
-      "source": "methodology.html#b0864",
+      "source": "methodology.html#b0866",
       "source_label": "Report §3.6",
       "aliases": "GPS coordinates latitude longitude geolocation"
     },
     {
       "term": "Graphics processing unit (GPU)",
       "definition": "Hardware used to accelerate model training. The project moved larger training runs from local hardware to GPUs available through Google Colab.",
-      "source": "methodology.html#b1214",
+      "source": "methodology.html#b1216",
       "source_label": "Report §5.1",
       "aliases": "GPU A100 H100 T4 cloud computing"
+    },
+    {
+      "term": "Gyroscope",
+      "definition": "A sensor that measures rotational movement. The report proposes combining a phone’s gyroscope and accelerometer readings with GPS and YOLO results to assess more pavement defects.",
+      "source": "future-work.html#b1246",
+      "source_label": "Report §5.2",
+      "aliases": "rotation phone sensor proposed future work"
     },
     {
       "term": "Labelled data",
@@ -132,7 +146,7 @@
     {
       "term": "Large language model (LLM)",
       "definition": "A proposed future stage that could examine images after detection to help assess visible defect characteristics. The report proposes this work; the website does not provide automated severity assessment.",
-      "source": "future-work.html#b1242",
+      "source": "future-work.html#b1244",
       "source_label": "Report §5.2",
       "aliases": "LLM severity future work image analysis"
     },
@@ -153,21 +167,21 @@
     {
       "term": "Mean average precision at 0.5 (mAP50)",
       "definition": "The report’s main detection metric, combining classification and bounding-box localisation at an overlap threshold of 0.5. It is reported from 0 to 1 and must be interpreted with the validation dataset.",
-      "source": "literature-review.html#b0694",
+      "source": "literature-review.html#b0695",
       "source_label": "Report §2.5",
       "aliases": "mAP50 mAP AP precision evaluation metric"
     },
     {
       "term": "Overfitting",
       "definition": "Learning patterns specific to a small training or validation dataset without performing reliably on new imagery. The report cautions that its high local validation scores may reflect overfitting.",
-      "source": "results.html#b1124",
+      "source": "results.html#b1126",
       "source_label": "Report §4.3",
       "aliases": "overfit small sample validation"
     },
     {
       "term": "Pavement Distress Index (PDI)",
       "definition": "In this project, the number of detected defects assigned to a 50 m road section. Each defect contributes one, regardless of class; a higher value indicates a greater concentration of detections.",
-      "source": "methodology.html#b0898",
+      "source": "methodology.html#b0900",
       "source_label": "Report §3.7",
       "aliases": "PDI AI-PDI density 50m 50 m defect count"
     },
@@ -188,7 +202,7 @@
     {
       "term": "Precision",
       "definition": "The proportion of reported defect detections that are correct. It describes the reliability of detections, while recall describes how many real defects were found.",
-      "source": "literature-review.html#b0690",
+      "source": "literature-review.html#b0691",
       "source_label": "Report §2.5",
       "aliases": "precision correct detections evaluation"
     },
@@ -202,7 +216,7 @@
     {
       "term": "Recall",
       "definition": "The proportion of real, labelled defects that the model detects. Missing visible defects reduces recall.",
-      "source": "literature-review.html#b0692",
+      "source": "literature-review.html#b0693",
       "source_label": "Report §2.5",
       "aliases": "recall missed defects sensitivity"
     },
@@ -216,7 +230,7 @@
     {
       "term": "Road Damage Dataset 2022 (RDD2022)",
       "definition": "The international labelled road imagery used to establish the project’s baseline detector before introducing New Zealand imagery.",
-      "source": "methodology.html#b0757",
+      "source": "methodology.html#b0759",
       "source_label": "Report §3.1",
       "aliases": "RDD RDD2022 Road Damage Dataset Dataset Ninja baseline"
     },
@@ -279,7 +293,7 @@
     {
       "term": "Training and validation split",
       "definition": "The division between data used to fit the model and data used to evaluate it. The preparation method described in the report uses an 80% training and 20% validation split.",
-      "source": "methodology.html#b0763",
+      "source": "methodology.html#b0765",
       "source_label": "Report §3.2",
       "aliases": "train val validation training test split 80 20"
     },
@@ -307,7 +321,7 @@
     {
       "term": "You Only Look Once (YOLO)",
       "definition": "The object detection model family used to locate and classify pavement defects in images. The report compares several model sizes and training configurations.",
-      "source": "methodology.html#b0781",
+      "source": "methodology.html#b0783",
       "source_label": "Report §3.3",
       "aliases": "YOLO YOLOv8 YOLOv8s YOLOv8L YOLOv8x detector object detection"
     }

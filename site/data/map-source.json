@@ -1,0 +1,19 @@
+{
+  "source": "Latest supplied portable road defect map",
+  "source_saved": "25 October 2026",
+  "source_sha256": "faf46f52997fa2df1233e4fc53c991e2d4512df01e07dc9a3b8473add6ddda7d",
+  "public_sha256": "4a786273114039079d7285f486fcbdd725b0327dd6c89ed0df5d556257049002",
+  "verification": "Entire map matches the source after relative asset paths, a page title and the separate website navigation adapter. Geographic features, grouped observations, density values, labels and qualifications are unchanged.",
+  "marker_count": 2513,
+  "tentative_defect_locations": 2491,
+  "located_observations": 2977,
+  "observations_without_gps": 21,
+  "all_observations_csv_rows": 2998,
+  "map_photographs": 1902,
+  "qualifications": [
+    "Grouping is conservative and provisional; GPS marks the camera position.",
+    "Recovered run16 section density is shown separately from the existing latest-inspection assessment.",
+    "Grey density sections are not assessable.",
+    "Mapped detections and visual observations do not establish measured accuracy."
+  ]
+}

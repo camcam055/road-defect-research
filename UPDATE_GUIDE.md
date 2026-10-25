@@ -1,6 +1,6 @@
 # Website update guide
 
-The website is ready to serve from `site/`. It is a static GitHub Pages website: there is no database, login, build service or upload dashboard. Make changes to the files below, preview them, then upload/commit those files to your own repository when you choose to publish. Nothing was pushed or published during this development session.
+The website is ready to serve from `site/`. It is a static GitHub Pages website: there is no database, login, build service or upload dashboard. Make changes to the files below, preview them, then upload/commit those files to your own repository when you choose to publish. The 25 October 2026 report/map refresh is prepared for the owner's requested update to the existing GitHub Pages site. The repository and Pages URL remain the same.
 
 ## Add your video — the short version
 
@@ -34,7 +34,7 @@ python3 tools/preview.py
 
 Open the printed localhost URL (normally `http://127.0.0.1:8766/`). Stop the server with Control+C. If macOS blocks the double-click launcher, run the Terminal command. Python 3 is needed for the preview and maintenance tools, but visitors need only a browser.
 
-Use the local server for checking the map. Live OpenStreetMap tiles require internet. The map libraries, marker icons, photos, glossary and report figures are bundled locally. The site works at a GitHub project URL such as `https://OWNER.github.io/REPOSITORY/` because internal paths are relative.
+Use the local server for checking the map. The OpenFreeMap street basemap and OpenStreetMap fallback require internet. A local road network fallback is also included. The map libraries, marker icons, photos, glossary and report figures are bundled locally. The site works at a GitHub project URL such as `https://OWNER.github.io/REPOSITORY/` because internal paths are relative.
 
 ## Where things live
 
@@ -47,7 +47,7 @@ Use the local server for checking the map. Live OpenStreetMap tiles require inte
 | Gallery captions, filenames and saved prediction records | `site/data/gallery.json` |
 | Glossary definitions, search aliases and source links | `site/data/glossary.json` |
 | Interactive map and exported geographic data | `site/assets/map/index.html` |
-| Map popup photos | `site/assets/map/photos/` |
+| Map popup photos | `site/assets/map/images/` |
 | Map mobile controls and basemap status | `site/assets/map/map-adapter.css`, `map-adapter.js` |
 | Video path and optional poster | `site/js/config.js` |
 | Video file | `site/assets/video/project-demo.mp4` |
@@ -58,7 +58,7 @@ Use the local server for checking the map. Live OpenStreetMap tiles require inte
 
 For a small correction, edit the relevant HTML page in `site/content/` using a plain-text editor (VS Code, BBEdit, or TextEdit in plain-text mode). Find a distinctive phrase, change only the text inside its existing paragraph/heading/list item, and preserve its tags, `id` and `data-source-id` attributes. IDs support the table of contents and glossary source links. Escape a literal `&` as `&amp;` and `<` as `&lt;`. Save UTF-8 text.
 
-The research pages reproduce the latest supplied report saved on **22 October 2026**. That document is still labelled as a draft. Keep future wording aligned with the report and record any intentional corrections. The public source hash and import comparison are in `site/data/report-source.json`.
+The research pages reproduce the latest supplied report saved on **25 October 2026**. Its cover is labelled Final Report; its supplied filename retains draft. Keep future wording aligned with the report and record any intentional corrections. The public source hash and import comparison are in `site/data/report-source.json`.
 
 For an entire revised Word report, use the existing `tools/extract_report.py` importer. It needs `lxml` and `Pillow` and a reviewed, private content-plan JSON for that exact document. Keep the DOCX, plan and audit outside the website repository. Review section ranges, image identities, chart exports and privacy substitutions before importing; do not only replace the source hash. A fresh import overwrites manual changes in the research HTML pages. Run the importer again with `--verify-only` to compare source wording and equations. `tools/build_site.py` does not overwrite research paragraphs.
 
@@ -117,27 +117,13 @@ JSON edits alone do not change the rendered page: the first command regenerates 
 
 ## Update map data
 
-The map is a saved Folium/Leaflet export. Geographic features, layer names, traffic values, soils and defect-section data are embedded in `site/assets/map/index.html`. This file is not generated from the glossary or gallery.
+The current map is the portable export saved on 25 October 2026. It retains the source's grouped observations, recovered density, historical observations, overlays, basemap fallbacks and uncertainty notes. Public provenance is in `site/data/map-source.json`. The observation CSV is linked from the map.
 
-1. Generate a new map from the actual project inspection outputs. Preserve coordinate systems, count definitions and documented limitations. Work on a copy; do not edit or round coordinates merely to change the display.
-2. Replace the exported map and its associated popup photos. Photos must be web-relative, such as `photos/photo-001.jpg`; `file:///` links and private computer paths will not work on GitHub Pages. For an export containing local photo links, use the provided importer:
+Keep a revised `master_defect_map.html` together with its `master_defect_map_assets/` folder outside the repository. After reviewing the source and referenced photos, run `python3 tools/import_portable_map.py --source PATH_TO_HTML --audit PRIVATE_AUDIT_DIRECTORY`. The audit directory must be outside this repository. The importer copies referenced images, the observation CSV and bundled vendor files, removes image metadata and preserves the complete map after documented relative-path and navigation additions. Source manifests and private review records stay outside Git. Back up the existing public map before import.
 
-   ```sh
-   python3 tools/import_map.py --source "/path/to/new-map.html" --output site/assets/map --audit "/path/to/private-map-audit" --openstreetmap-basemap
-   ```
+The portable export has its own responsive controls and basemap fallbacks. The separate map adapter supplies the Home link, accessibility label and loading-status messages. On narrow screens, the inspection panel and layers control are hidden while a popup is open so its photo and close control remain accessible. Closing the popup restores them.
 
-   The importer needs Pillow and lxml. Add `--withhold FILENAME` for any source photo that should stay withheld. Keep the current three withheld images unless you have reviewed replacement photos. The importer changes display/asset paths, not research coordinates or values.
-3. Retain `map-adapter.css` in the map `<head>` and `<script src="map-adapter.js" defer></script>` after the generated map script. Retain the existing local `vendor/` directory. For a freshly exported map with CDN script links, run:
-
-   ```sh
-   python3 tools/bundle_map_assets.py
-   ```
-
-   This downloads the referenced library assets and rewrites them to local paths. Internet is needed for that preparation step. A new library dependency requires checking its license and adding its notice to `vendor/`.
-4. The basemap URL is **`https://tile.openstreetmap.org/{z}/{x}/{y}.png`**, with OpenStreetMap attribution and native tile zoom limited to 19. It requires no API key. Keep attribution visible. Do not add API credentials to a static website or bundle/download a region of tiles for offline use.
-5. Use web-sized copies of popup photos (up to about 1800 pixels on their longest side). Preserve the original photographs privately. This avoids loading full camera originals on phones. Keep detections and any existing annotation geometry aligned when resizing.
-6. Change the iframe version in `tools/layout.py` (the `?v=...` value) when replacing a released map, then run `python3 tools/build_site.py`. Remove superseded public photos only after confirming the new links and privacy review.
-7. Preview `map.html` and the **Open map** link. Wait for actual street/land/water tiles to appear, zoom in/out, pan, toggle layers, open a defect photo popup and check both legends. On a phone-width view, use **Map layers** and **Soil legend**. A tile failure displays a retry message rather than pretending the basemap loaded.
+Run the static checks, preview the embedded and full-size map, open a defect photo, toggle density/overlay controls, and check a phone-width viewport before deployment. Preserve the distinction between tentative grouped locations, located observations, observations without GPS and assessable road sections.
 
 ## Checks after an update
 
@@ -160,4 +146,4 @@ The package contains the existing repository layout: `site/` is the public docum
 
 Alternative: if you already use **Deploy from a branch**, copy the *contents* of `site/` to that branch's configured root (including `.nojekyll`) and use that normal Pages process. Do not point branch deployment at this package's repository root, which contains maintenance files rather than the website's `index.html`.
 
-No automatic publishing, GitHub push or external hosting registration was performed to create this package.
+The existing Pages workflow remains manual. Each requested public update requires its publication approval input; the repository name and current URL are retained.

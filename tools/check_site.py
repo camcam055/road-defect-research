@@ -61,6 +61,25 @@ glossary=json.loads((SITE/"data/glossary.json").read_text())["entries"]
 if len({r["term"].casefold() for r in glossary})!=len(glossary):errors.append("Duplicate glossary terms")
 if "https://tile.openstreetmap.org/{z}/{x}/{y}.png" not in (SITE/"assets/map/index.html").read_text():errors.append("Working OSM basemap configuration missing")
 if re.search(r'<script src="https?://', (SITE/"assets/map/index.html").read_text()):errors.append("Map runtime libraries are not bundled")
+# Validate the downloadable observation export alongside its map photos.
+import csv
+map_source=json.loads((SITE/"data/map-source.json").read_text())
+with (SITE/"assets/map/observations.csv").open(newline="") as stream:
+    observations=list(csv.DictReader(stream))
+if len(observations)!=map_source["all_observations_csv_rows"]:errors.append("Map observation count does not match provenance")
+located=sum(bool(row["lat"] and row["lon"]) for row in observations)
+if located!=map_source["located_observations"]:errors.append("Located map observations do not match provenance")
+for row in observations:
+    ref=row.get("image_url","")
+    if not ref:continue
+    target=(SITE/"assets/map"/ref).resolve()
+    if urlsplit(ref).scheme or not target.is_relative_to(SITE.resolve()) or not target.is_file():errors.append("Observation CSV has an unavailable photo")
+    links+=1
+for public in SITE.rglob("*"):
+    if public.is_file() and public.suffix in (".csv",".json"):
+        content=public.read_text()
+        if re.search(r"file:///|/Users/[A-Za-z0-9]|-----BEGIN .*PRIVATE KEY-----",content):errors.append(f"Private data path or key in {public.relative_to(SITE)}")
+    if public.is_file() and public.stat().st_size>=100*1024*1024:errors.append(f"File exceeds GitHub size limit: {public.relative_to(SITE)}")
 home=pages[(SITE/"index.html").resolve()]
 expected=["video.html","map.html","content/problem.html","content/methodology.html","content/literature-review.html","content/results.html","content/conclusion.html","content/future-work.html","content/gallery.html","content/glossary.html"]
 if home.cards!=expected:errors.append("Homepage card order/targets changed")

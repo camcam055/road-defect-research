@@ -1,23 +1,22 @@
-/* Display-only additions. Original Folium layers and geographic data are untouched. */
-.leaflet-popup-content{max-width:calc(100vw - 80px)!important;overflow-wrap:anywhere}
-.leaflet-popup-content img{max-width:100%!important;height:auto!important}
-.leaflet-control-layers-expanded{max-height:58vh;overflow:auto}
-.research-home{position:absolute;top:85px;left:10px;z-index:1100;background:white;border:2px solid #aaa;border-radius:4px;padding:8px 11px;color:#092744;font:600 13px Arial,sans-serif;text-decoration:none;box-shadow:0 1px 5px #0003}
-.research-legend-button{display:none}
-@media(max-width:600px){.leaflet-control-zoom a{width:38px!important;height:38px!important;line-height:38px!important}.research-home{top:99px}.research-soil-legend{left:10px!important;bottom:61px!important;max-width:230px;max-height:42vh;overflow:auto;display:none}.research-soil-legend.is-open{display:block}.research-legend-button{display:block;position:absolute;left:10px;bottom:22px;z-index:1100;min-height:36px;padding:8px 12px;border:1px solid #7c98ae;border-radius:5px;background:white;color:#092744;font:600 12px Arial,sans-serif}.leaflet-control-layers-expanded{max-width:calc(100vw - 80px);font-size:12px;line-height:1.65}.leaflet-bottom .legend{max-width:calc(100vw - 24px);overflow:hidden}.leaflet-control-attribution{max-width:78vw;font-size:9px!important}}
-
-/* Keep the existing legends and layer controls usable on phones. */
-.research-layers-button{display:none}
-@media(max-width:600px){
-.leaflet-control.legend{width:calc(100vw - 90px)!important;max-width:450px!important;height:auto!important;background:rgba(255,255,255,.94);border-radius:4px}
-.leaflet-control.legend svg{width:100%!important;height:auto!important;display:block}
-.research-layers-button{display:block;min-height:40px;padding:8px 12px;border:0;border-radius:4px;color:#092744;background:white;font:600 13px Arial,sans-serif;cursor:pointer}
-.research-mobile-layers .leaflet-control-layers-list{display:none!important}
-.research-mobile-layers.is-open .leaflet-control-layers-list{display:block!important;padding:8px}
-.research-mobile-layers{padding:0!important}
+.research-home {
+  position: fixed;
+  left: 12px;
+  bottom: 56px;
+  z-index: 1000;
+  padding: 9px 14px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 12px #12304733;
+  color: #176aab;
+  font: 600 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-decoration: none;
 }
+.research-home:focus-visible { outline: 3px solid #176aab; outline-offset: 3px; }
 
-.research-basemap-status{position:absolute;top:10px;left:58px;z-index:1200;max-width:calc(100vw - 150px);padding:10px 12px;border:1px solid #9db7ca;border-radius:5px;background:white;color:#092744;font:13px/1.5 Arial,sans-serif;box-shadow:0 2px 8px #0002}.research-basemap-status[hidden]{display:none!important}.research-basemap-status button{min-height:44px;padding:6px 12px;border:1px solid #7c98ae;border-radius:4px;background:#edf6fe;color:#092744;font:600 13px Arial,sans-serif}.leaflet-container{background:#edf2f5}.leaflet-control-layers label{min-height:30px}.leaflet-control-layers input{accent-color:#087ff5}@media(max-width:600px){.leaflet-control-layers label{min-height:40px;display:flex;align-items:center;gap:7px}.research-basemap-status{top:54px;left:58px;max-width:calc(100vw - 120px)}}
-
-/* Keep mobile photo popups readable and their close control reachable. */
-.leaflet-popup-content{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}.leaflet-popup-scrolled{overflow-x:hidden!important}.research-popup-open .leaflet-control.legend{visibility:hidden}@media(max-width:600px){.research-popup-open .research-mobile-layers{visibility:hidden}}
+@media (max-width: 650px) {
+  html.research-popup-open .inspection-card,
+  html.research-popup-open .leaflet-control-layers {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
