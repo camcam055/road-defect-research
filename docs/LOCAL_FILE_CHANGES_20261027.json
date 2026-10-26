@@ -1,0 +1,198 @@
+{
+  "date": "2026-10-27",
+  "scope": "Reviewed website corrections explicitly approved for commit, push and publication by the owner on 27 October 2026",
+  "baseline_head": "22aa906dccf5675b932a0b469d348ee44fe940d3",
+  "counts": {
+    "modified": 23,
+    "added": 8,
+    "removed": 14
+  },
+  "files": [
+    {
+      "status": "modified",
+      "path": "MANIFEST.sha256"
+    },
+    {
+      "status": "modified",
+      "path": "UPDATE_GUIDE.md"
+    },
+    {
+      "status": "modified",
+      "path": "docs/VIDEO_VERIFICATION.md"
+    },
+    {
+      "status": "modified",
+      "path": "site/content/conclusion.html"
+    },
+    {
+      "status": "modified",
+      "path": "site/content/future-work.html"
+    },
+    {
+      "status": "modified",
+      "path": "site/content/gallery.html"
+    },
+    {
+      "status": "modified",
+      "path": "site/content/glossary.html"
+    },
+    {
+      "status": "modified",
+      "path": "site/content/literature-review.html"
+    },
+    {
+      "status": "modified",
+      "path": "site/content/methodology.html"
+    },
+    {
+      "status": "modified",
+      "path": "site/content/problem.html"
+    },
+    {
+      "status": "modified",
+      "path": "site/content/references.html"
+    },
+    {
+      "status": "modified",
+      "path": "site/content/results.html"
+    },
+    {
+      "status": "modified",
+      "path": "site/data/glossary.json"
+    },
+    {
+      "status": "modified",
+      "path": "site/data/report-source.json"
+    },
+    {
+      "status": "modified",
+      "path": "site/data/videos.json"
+    },
+    {
+      "status": "modified",
+      "path": "site/index.html"
+    },
+    {
+      "status": "modified",
+      "path": "site/video.html"
+    },
+    {
+      "status": "modified",
+      "path": "tools/build_sections.py"
+    },
+    {
+      "status": "modified",
+      "path": "tools/check_site.py"
+    },
+    {
+      "status": "modified",
+      "path": "tools/extract_report.py"
+    },
+    {
+      "status": "modified",
+      "path": "tools/gallery_page.py"
+    },
+    {
+      "status": "modified",
+      "path": "tools/layout.py"
+    },
+    {
+      "status": "modified",
+      "path": "tools/video_checks.py"
+    },
+    {
+      "status": "added",
+      "path": "docs/LOCAL_FILE_CHANGES_20261027.json"
+    },
+    {
+      "status": "added",
+      "path": "docs/LOCAL_REVIEW_20261027.md"
+    },
+    {
+      "status": "added",
+      "path": "site/assets/video/ai-training-updated-20261027.jpg"
+    },
+    {
+      "status": "added",
+      "path": "site/assets/video/ai-training-updated-20261027.mp4"
+    },
+    {
+      "status": "added",
+      "path": "site/assets/video/data-collection-updated-20261027.jpg"
+    },
+    {
+      "status": "added",
+      "path": "site/assets/video/data-collection-updated-20261027.mp4"
+    },
+    {
+      "status": "added",
+      "path": "site/assets/video/road-defect-detection-updated-20261027.jpg"
+    },
+    {
+      "status": "added",
+      "path": "site/assets/video/road-defect-detection-updated-20261027.mp4"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/figures/image16.jpeg"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/figures/image17.jpeg"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/figures/image18.jpeg"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/figures/image19.jpeg"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/figures/image29.png"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/figures/image30.png"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/figures/image31.png"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/figures/image32.png"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/video/ai-training-final-20261026.jpg"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/video/ai-training-final-20261026.mp4"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/video/data-collection-trimmed-20261026.jpg"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/video/data-collection-trimmed-20261026.mp4"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/video/road-to-results-final-20261026.jpg"
+    },
+    {
+      "status": "removed",
+      "path": "site/assets/video/road-to-results-final-20261026.mp4"
+    }
+  ],
+  "publication_approval": {
+    "date": "2026-10-27",
+    "repository": "camcam055/road-defect-research",
+    "website_url": "https://camcam055.github.io/road-defect-research/",
+    "keep_existing_url": true
+  }
+}

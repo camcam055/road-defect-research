@@ -3,16 +3,11 @@
   "source_saved": "26 October 2026",
   "source_sha256": "6ae997953fbe1a3d5bcb9c0cf74ddefc123d3815895e106b488145e62f516cb9",
   "source_status": "Cover labelled Final Report; supplied filename retains draft.",
-  "verification": "Verbatim source blocks after four existing privacy substitutions; equations compared separately and all eight original native chart sources verified. Front matter is excluded.",
+  "verification": "Source wording matches after four existing privacy substitutions and three website heading-number substitutions; equations compared separately and all eight original native chart sources verified. Front matter and administrative material are excluded.",
   "pages": [
     {
       "page": "problem",
       "matched_blocks": 42,
-      "status": "PASS"
-    },
-    {
-      "page": "methodology",
-      "matched_blocks": 114,
       "status": "PASS"
     },
     {
@@ -21,8 +16,13 @@
       "status": "PASS"
     },
     {
+      "page": "methodology",
+      "matched_blocks": 100,
+      "status": "PASS"
+    },
+    {
       "page": "results",
-      "matched_blocks": 62,
+      "matched_blocks": 54,
       "status": "PASS"
     },
     {
@@ -151,46 +151,6 @@
       "source_sha256": "febdb814c9a56f01dafc94f86410b6b3d1662b9e16ae67a25e4d4fce4839607a",
       "source_block": 1300,
       "public_sha256": "893472cf527cc401ec05d5b022f9c58e9a002f61cca4bd84e6043c919ae52734"
-    },
-    "image16.jpeg": {
-      "source_sha256": "1cb2628fb497cb2d03d77c42d167dda5e844c15c271a7d15333c6377feaa4991",
-      "source_block": 1735,
-      "public_sha256": "066a675e4c0618b440139c12d1197f02b0f0a4d968dd8bb5ce26a5a8850c2b13"
-    },
-    "image17.jpeg": {
-      "source_sha256": "bfe601498650039c618764205324d058c5ae3d8627dc7820d05b4c391768627b",
-      "source_block": 1735,
-      "public_sha256": "9578640f92b69e5b2056d5fb1a7caf100c2290463c503ffeff1b78429dddee48"
-    },
-    "image18.jpeg": {
-      "source_sha256": "7f41b5f58017e386913300ace4e0823d8b4e9adaad250253f7acc4fc26bfc047",
-      "source_block": 1735,
-      "public_sha256": "39518a04b346ae393ae891eb227aed8f0909617fe3a1672d13a5f6350627b0be"
-    },
-    "image19.jpeg": {
-      "source_sha256": "bfe0c82b9bf5acf261c7016fc1c9b8f255431b6ed7ad58bf6ddcd145106a39bf",
-      "source_block": 1735,
-      "public_sha256": "2a9e3d547d842b2cbb0b39c12e16713823c2291c757cbe57bad5c061e9caf5c2"
-    },
-    "image29.png": {
-      "source_sha256": "047188790468c2c3cba06cd5d1495a6398dccfc2d5511d4e20b2e617bea9b2f5",
-      "source_block": 1865,
-      "public_sha256": "e363a8c5b2eaa6cca18b88065e1687fa7057e564858ebdc6e0ec6e6c979fb98e"
-    },
-    "image30.png": {
-      "source_sha256": "a483d6bd2db2f22e6f1bf54a8b06ea5c3f16112ec51385ed39c57c1bce8d6afb",
-      "source_block": 1866,
-      "public_sha256": "2c86686186bac3b5c999ef4b6adef03ca5fc6784bf3c960ecfea7373ba98189c"
-    },
-    "image31.png": {
-      "source_sha256": "ae0d8875bb21e02caa95c9e20a34fec40f7ea31ff72c6807d6bf9af0e2b8ba4d",
-      "source_block": 1867,
-      "public_sha256": "80f9a2eeb6c852a9fae5fca981f090ed19e473c3e5c4d6242ddede8551e3027c"
-    },
-    "image32.png": {
-      "source_sha256": "63d20c1cbb624256adb37ab59e5227897b82c67ab8eac257194d7c3d918c8457",
-      "source_block": 1870,
-      "public_sha256": "620cc44893dcda77182a188f2d279cfbe2112b75640147edef4a1536f72ce8cb"
     }
   }
 }

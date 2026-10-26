@@ -96,8 +96,23 @@ if map_wrapper.count('class="map-relationships"')!=1 or map_wrapper.index('class
 for required in ("Exploring Potential Relationships","High Traffic + Many Defects:","Less Favourable Soil Conditions + Many Defects:","Low Traffic + Many Defects:","These relationships are possible explanations rather than confirmed causes."):
     if required not in map_wrapper:errors.append("Requested map interpretation text missing")
 home=pages[(SITE/"index.html").resolve()]
-expected=["video.html","map.html","content/problem.html","content/methodology.html","content/literature-review.html","content/results.html","content/conclusion.html","content/future-work.html","content/gallery.html","content/glossary.html"]
+expected=["video.html","map.html","content/problem.html","content/literature-review.html","content/methodology.html","content/results.html","content/conclusion.html","content/future-work.html","content/gallery.html","content/glossary.html"]
 if [urlsplit(card).path for card in home.cards]!=expected:errors.append("Homepage card order/targets changed")
+# Owner-approved research order and administrative-content exclusions.
+for slug,number in (("literature-review","02"),("methodology","03")):
+    if f'<p class="eyebrow">SECTION {number}</p>' not in (SITE/"content"/(slug+".html")).read_text():
+        errors.append(f"Incorrect section number: {slug}")
+for slug,bid,number in (("conclusion","b1501","5.0"),("future-work","b1435","6.0"),("results","b1346","4.5")):
+    text=(SITE/"content"/(slug+".html")).read_text()
+    if f'data-source-id="{bid}">{number} ' not in text or f'href="#{bid}">{number} ' not in text:
+        errors.append(f"Heading and contents numbering disagree: {slug}")
+for public in SITE.rglob("*"):
+    if public.is_file() and public.suffix in (".html",".json",".js",".css",".csv"):
+        text=public.read_text()
+        if re.search(r"project\s+management|progress to date and timeline|risks, mitigation and challenges|cost considerations",text,re.I):
+            errors.append(f"Excluded administrative content in {public.relative_to(SITE)}")
+        if any(1407<=int(b)<1435 or 1454<=int(b)<1501 for b in re.findall(r"\bb(\d{4})\b",text)):
+            errors.append(f"Removed source block or anchor in {public.relative_to(SITE)}")
 for p in SITE.rglob("*"):
     if p.is_symlink():errors.append(f"Symbolic link in deployment: {p.name}")
     if p.suffix.lower() in (".docx",".pptx",".pdf",".zip",".py",".md"):errors.append(f"Non-public source/review file in deployment: {p.name}")

@@ -29,6 +29,13 @@ def redact(s):
     s=re.sub(r'"/Users/[^"]+/data\.yaml"', '"[LOCAL_DATA_YAML]"', s)
     s=re.sub(r'(?i)(?<=labelerLogin": ")[^"]+@[^"]+', "[LABELER_EMAIL_REMOVED]", s)
     return s
+def display_numbering(s,index,plan):
+    change=plan.get("display_numbering",{}).get(str(index))
+    if not change:return s
+    original,replacement=change["from"],change["to"]
+    if not s.startswith(original+" "):
+        raise ValueError(f"Unexpected source heading number at block {index}")
+    return replacement+s[len(original):]
 def strip_jpeg(data):
     # Preserve compressed image data and color profiles; remove EXIF, IPTC and comments.
     if data[:2]!=b"\xff\xd8":raise ValueError("Invalid JPEG")
@@ -100,6 +107,16 @@ def main():
             summary_end=next((i for i in range(summary_start+1,len(blocks)) if blocks[i].xpath("./w:pPr/w:pStyle/@w:val",namespaces=NS)==["Heading1"] and text_of(blocks[i]).strip()),len(blocks))
             if any(start<summary_end and end>summary_start for ranges in plan["sections"].values() for start,end in ranges):
                 raise SystemExit("The content plan includes excluded Executive Summary material")
+        # Keep the owner's excluded administrative chapter out of later imports.
+        # The standalone Future Work research content remains approved.
+        admin_start=next((i for i,b in enumerate(blocks) if norm(text_of(b)).casefold()=="5.0 project management"),None)
+        if admin_start is not None:
+            admin_end=next((i for i in range(admin_start+1,len(blocks)) if blocks[i].xpath("./w:pPr/w:pStyle/@w:val",namespaces=NS)==["Heading1"] and text_of(blocks[i]).strip()),len(blocks))
+            future_start=next((i for i in range(admin_start+1,admin_end) if norm(text_of(blocks[i])).casefold()=="5.2 future work and large-scale implementation"),admin_end)
+            future_end=next((i for i in range(future_start+1,admin_end) if blocks[i].xpath("./w:pPr/w:pStyle/@w:val",namespaces=NS)==["Heading2"] and text_of(blocks[i]).strip()),admin_end)
+            for slug,ranges in plan["sections"].items():
+                if any(admin_start<=i<admin_end and not (slug=="future-work" and future_start<=i<future_end) for start,end in ranges for i in range(start,end)):
+                    raise SystemExit("The content plan includes excluded administrative material")
         relxml=E.fromstring(z.read("word/_rels/document.xml.rels"))
         rels={r.get("Id"):r.get("Target") for r in relxml}
         heading="";locations={}
@@ -113,10 +130,10 @@ def main():
             article=[];headings=[];inlist=False
             expected={}
             for i in ids:
-                b=blocks[i];txt=text_of(b);approved=redact(txt);bid=f"b{i:04d}"
+                b=blocks[i];txt=text_of(b);approved=display_numbering(redact(txt),i,plan);bid=f"b{i:04d}"
                 if approved.strip():
                     expected[bid]=norm(approved)
-                    record.append({"website_section":slug,"source_block":i,"source_heading":locations[i],"source_text_hash":sha(norm(txt).encode()),"website_text_hash":sha(norm(approved).encode()),"copied_unchanged":txt==approved,"reason":None if txt==approved else "Privacy: local file path or dataset labeler email replaced with a neutral placeholder"})
+                    record.append({"website_section":slug,"source_block":i,"source_heading":locations[i],"source_text_hash":sha(norm(txt).encode()),"website_text_hash":sha(norm(approved).encode()),"copied_unchanged":txt==approved,"reason":None if txt==approved else ("Website heading numbering only; research wording unchanged" if redact(txt)==txt else "Privacy: local file path or dataset labeler email replaced with a neutral placeholder")})
                 st=b.xpath("./w:pPr/w:pStyle/@w:val",namespaces=NS)
                 st=st[0] if st else ""
                 islist=st=="ListParagraph"
@@ -137,8 +154,8 @@ def main():
                         level=min(4,int(st[-1])+1);prefix=plan.get("numbering",{}).get(str(i),"")
                         # Automatic numbering is presentation, not added report wording.
                         numbered=f'<span data-generated="number">{escape(prefix)}</span>' if prefix else ""
-                        article.append(f'<h{level} id="{bid}">{numbered}<span data-source-id="{bid}">{inline(b,rels)}</span></h{level}>')
-                        headings.append((bid,prefix+txt.strip()))
+                        article.append(f'<h{level} id="{bid}">{numbered}<span data-source-id="{bid}">{display_numbering(inline(b,rels),i,plan)}</span></h{level}>')
+                        headings.append((bid,prefix+display_numbering(txt.strip(),i,plan)))
                     elif islist:
                         if not inlist:article.append("<ul>");inlist=True
                         article.append(f'<li id="{bid}" data-source-id="{bid}">{inline(b,rels)}</li>')
@@ -188,12 +205,12 @@ def main():
                     original="".join(m.xpath(".//m:t/text()",namespaces=NS))
                     if len(target)!=1 or target[0].text_content()!=original:raise SystemExit(f"MATH MISMATCH b{i:04d}")
             verifications.append({"page":slug,"matched_blocks":len(expected),"status":"PASS"})
-        audit={"source_sha256":sha(data),"comparison":"Per-block exact text after documented privacy replacements; layout whitespace normalized. Equations compared separately.","pages":verifications,"blocks":record,"assets":assets}
+        audit={"source_sha256":sha(data),"comparison":"Per-block exact text after documented privacy replacements and website heading-number substitutions; layout whitespace normalized. Equations compared separately.","pages":verifications,"blocks":record,"assets":assets}
         (args.audit/"content-audit.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2))
-        lines=["# Report-to-website content mapping","","Source locations use zero-based body child indices in word/document.xml; they remain stable for the recorded source hash.","","All displayed text is copied unchanged except the explicitly marked privacy substitutions. Empty layout paragraphs and the unused OOXML compatibility fallback are presentation only.","","| Website | Original heading | Source block | Unchanged | Reason |","|---|---|---:|---|---|"]
+        lines=["# Report-to-website content mapping","","Source locations use zero-based body child indices in word/document.xml; they remain stable for the recorded source hash.","","All research wording is copied unchanged except the explicitly marked privacy substitutions and website heading-number changes. Empty layout paragraphs and the unused OOXML compatibility fallback are presentation only.","","| Website | Original heading | Source block | Unchanged | Reason |","|---|---|---:|---|---|"]
         lines += [f'| {r["website_section"]} | {r["source_heading"]} | {r["source_block"]} | {"Yes" if r["copied_unchanged"] else "No"} | {r["reason"] or ""} |' for r in record]
         lines+=["","## Intentional exclusions",""]+["- "+x for x in plan["exclusions"]]
         (args.audit/"CONTENT_MAPPING.md").write_text("\n".join(lines))
-        print(json.dumps({"status":"PASS","pages":verifications,"assets":len(assets),"privacy_modified_blocks":sum(not r["copied_unchanged"] for r in record)},indent=2))
+        print(json.dumps({"status":"PASS","pages":verifications,"assets":len(assets),"privacy_modified_blocks":sum((r["reason"] or "").startswith("Privacy:") for r in record),"numbering_modified_blocks":sum((r["reason"] or "").startswith("Website heading") for r in record)},indent=2))
     if not args.verify_only:build_shell()
 if __name__=="__main__":main()

@@ -5,7 +5,7 @@ import hashlib
 import json
 import struct
 
-EXPECTED_SOURCES = ["Updated video.mov", "Training the AI new.mov", "From Road to Results.mov"]
+EXPECTED_SOURCES = ["Updated data collection 01.mov", "02 AI training.mov", "03 Road defect detection.mov"]
 EXPECTED_TITLES = ["Data Collection", "AI Training", "Road Defect Detection"]
 
 class VideoPage(HTMLParser):

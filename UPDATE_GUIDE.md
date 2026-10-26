@@ -2,15 +2,17 @@
 
 The website is ready to serve from `site/`. It is a static GitHub Pages website: there is no database, login, build service or upload dashboard. Make changes to the files below, preview them, then upload/commit those files to your own repository when you choose to publish. The owner reviewed the 26 October 2026 report/map refresh and explicitly approved its commit, push and publication to the existing GitHub Pages URL. Future publication still requires the owner's instruction. The repository and Pages URL remain the same.
 
+The owner reviewed and explicitly approved the 27 October 2026 corrections for commit, push and publication to the existing GitHub Pages URL. Future publication still requires the owner's instruction.
+
 ## Project video sequence
 
 The Project Video page presents the final videos in this order:
 
-1. **Data Collection** — source: `Updated video.mov`
-2. **AI Training** — source: `Training the AI new.mov`
-3. **Road Defect Detection** — source: `From Road to Results.mov`
+1. **Data Collection** — source: `Updated data collection 01.mov`
+2. **AI Training** — source: `02 AI training.mov`
+3. **Road Defect Detection** — source: `03 Road defect detection.mov`
 
-The published MP4s and matching JPG poster frames are listed in `site/data/videos.json`. Data Collection uses the trimmed 26 October 2026 export; the other two stages retain their existing files. They are silent H.264 video with the original dimensions and timing and fast-start metadata. The silent audio streams were removed at the owner's request. The original MOV files are preserved outside the website.
+The website MP4s and matching JPG poster frames are listed in `site/data/videos.json`. All three stages use the replacement files supplied on 27 October 2026. They are silent H.264 video with the original dimensions and timing and fast-start metadata. The silent audio streams were removed at the owner's request. The original MOV files are preserved outside the website.
 
 The maintained sequence and source checksums are in **`site/data/videos.json`**. **`tools/video_page.py`** renders the page; **`site/js/video.js`** and **`site/css/video.css`** supply its interactions and styling. The older single-video `SHOWCASE_CONFIG.videoSrc` setting is unused by this page.
 
@@ -63,7 +65,9 @@ For a small correction, edit the relevant HTML page in `site/content/` using a p
 
 The research pages reproduce the latest supplied report saved on **26 October 2026**. Its cover is labelled Final Report; its supplied filename retains draft. Keep future wording aligned with the report and record any intentional corrections. The public source hash and import comparison are in `site/data/report-source.json`.
 
-For an entire revised Word report, use the existing `tools/extract_report.py` importer. It needs `lxml` and `Pillow` and a reviewed, private content-plan JSON for that exact document. Keep the DOCX, plan and audit outside the website repository. Review section ranges, image identities, chart exports and privacy substitutions before importing; do not only replace the source hash. The importer rejects plans containing the Executive Summary. A fresh import overwrites manual changes in the research HTML pages. Run the importer again with `--verify-only` to compare source wording and equations. `tools/build_site.py` does not overwrite research paragraphs.
+Website sections are 01 The Problem, 02 Literature Review, 03 Methodology, 04 Results, 05 Conclusion and 06 Future Work. Headings and contents use the website numbering; the research wording remains unchanged. Results omits its sample-photo and static-map appendices and their pointer sentence. Its findings, real-world testing and discussion remain; technical appendices under Methodology are retained.
+
+For an entire revised Word report, use the existing `tools/extract_report.py` importer. It needs `lxml` and `Pillow` and a reviewed, private content-plan JSON for that exact document. Keep the DOCX, plan and audit outside the website repository. Review section ranges, image identities, chart exports and privacy substitutions before importing; do not only replace the source hash. The importer rejects plans containing excluded front matter or administrative chapter material. Use the reviewed 27 October content plan; retain the standalone Future Work research. Record website heading-number substitutions in the plan. A fresh import overwrites manual changes in the research HTML pages. Run the importer again with `--verify-only` to compare source wording and equations. `tools/build_site.py` does not overwrite research paragraphs.
 
 ## Update images and figures
 

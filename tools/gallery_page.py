@@ -51,7 +51,6 @@ def build_gallery():
             raise ValueError("Gallery image requires a completed visible-box review: " + row["id"])
     counts = Counter(row["category"] for row in data["images"])
     total = len(data["images"])
-    paired = sum(bool(row.get("before")) for row in data["images"])
     filters = f'<button type="button" data-gallery-filter="all" aria-pressed="true" aria-controls="gallery-categories">All photos ({total})</button>'
     sections = []
     for category in data["categories"]:
@@ -64,10 +63,9 @@ def build_gallery():
         cards = "".join(card(row, data["sources"]) for row in data["images"] if row["category"] == category["id"])
         sections.append(f'<section class="gallery-category" data-gallery-category="{ident}" aria-labelledby="category-{ident}"><h2 id="category-{ident}">{title} <span class="gallery-category-count">({count})</span></h2><div class="gallery-grid">{cards}</div></section>')
     intro = f'''<p class="interactive-intro">Browse labelled road-defect photographs by category. Every example opens with its saved bounding boxes visible. Select <strong>BEFORE</strong> to compare a confirmed matching original.</p>
-<aside class="notice">{total} reviewed labelled photographs: {paired} matched pairs and {total-paired} labelled-only images. These are saved annotations from different project runs. They illustrate defect classifications and are not an accuracy evaluation. <a href="../data/gallery.json">View photo and annotation provenance</a>.</aside>
 <div class="gallery-filters" role="group" aria-label="Filter photographs by defect category">{filters}</div>
 <p id="gallery-count" class="gallery-count" role="status" aria-live="polite">{total} photos</p>
 <noscript><p class="notice">All labelled photographs are shown below. Enable JavaScript to filter categories or compare original photographs.</p></noscript>'''
     section_page("gallery", "PHOTO GALLERY", intro + '<div id="gallery-categories">' + "".join(sections) + "</div>", [],
-                 source_note='Saved road-defect annotations, organised by classification. <a href="methodology.html#b0866">Detection workflow</a> · <a href="results.html#b1124">Model limitations</a>', wide=True)
+                 source_note="", wide=True)
     return total
