@@ -1,31 +1,25 @@
-# Project video verification — 26 October 2026
+# Corrected Data Collection video — 26 October 2026
 
-The Project Video page uses only the final sources supplied by the owner, in this order:
+The owner supplied a corrected Data Collection source and explicitly requested updating the website and GitHub. Only the first stage's media, poster and recorded metadata are replaced.
 
-1. `Data Collection Video new.mov` → Data Collection
-2. `Training the AI new.mov` → AI Training
-3. `From Road to Results.mov` → Road Defect Detection
+- Source basename: copy_41C08113-0C6F-4D24-974A-BD7129D6E1A4.MOV
+- Original source: 53.428 seconds, 960 × 720, HEVC video.
+- Browser copy: H.264/yuv420p MP4 at the same dimensions and timing, with fast-start metadata.
+- Published MP4: assets/video/data-collection-corrected-20261026.mp4
+- Published size: 44,623,452 bytes.
+- The existing silent playback convention is retained. The AI Training and Road Defect Detection files, metadata and stage order are unchanged.
+- The original MOV remains outside the repository and is unchanged. The preceding Data Collection web copies are preserved privately.
 
-`site/data/videos.json` records the source names and SHA-256 checksums, output checksums, dimensions, durations and byte counts. All three original source files still match their recorded hashes. The source MOV files remain outside the website; no original was renamed or modified.
+## Verification completed
 
-The published copies are silent H.264/yuv420p MP4s with fast-start metadata, at the original dimensions (1440×1080, 1920×910 and 1720×1080). The silent audio tracks were removed at the owner's request without re-encoding the converted video. Each MP4 is under 100 MiB. The three final MP4s passed full video decoding without errors.
+The replacement passed full video decoding with no errors. Codec, duration, dimensions, output checksum and absence of an audio stream were checked. The standard website and browser checks are recorded after completion below.
 
-## Observed local checks
+The source and output checksums are maintained in site/data/videos.json. Private review records and the original MOV are excluded from publication.
 
-- The static site checker passes: 13 HTML pages, 10 homepage cards, 8,577 local references and no errors. The deployable directory is 796,107,560 bytes.
-- Browser checks at 1280×900, 390×844 and 320×780 showed no horizontal page overflow. The first video loads paused; exactly one native player is present.
-- All three stage buttons select the correct final source, title, description and poster. Home and ArrowRight keyboard navigation moved both selection and focus correctly.
-- The first video completed through playback. Native keyboard seeking also exercised the AI Training and detection completion events. Completed stages receive check marks; the next stage receives the completion highlight. Clicking a stage after completion starts that selected video.
-- Finishing the final video reveals `Explore Interactive Map →` with `href="map.html"`. The existing local interactive map loads with its Back link, clusters and basemap.
-- The lower Previous/Next buttons, direct video links and visible playback guidance were removed as requested. The native download option is suppressed with `controlslist="nodownload"`; the player menu starts with Playback speed. Native sound controls are hidden and the final media has no audio stream. The player's context menu is suppressed.
-- JavaScript and Python syntax checks pass. The maintained video renderer reproduces the saved page, so a future normal site rebuild retains this experience.
-- The local preview server supports video byte ranges. Full-page GET, MP4 MIME type, start/middle/suffix/open-ended ranges, HEAD and invalid-range responses passed. Native seeking works with the complete video duration available.
-- A repository-wide before/after SHA-256 comparison confirms that existing files outside the named video/supporting documentation/preview changes remain byte-identical. In particular, the current homepage, research pages, gallery, glossary and map files were preserved.
+## Website and browser checks
 
-## Boundaries
-
-These are local desktop browser checks, including phone-size viewports; no physical phone or live GitHub Pages deployment was tested. Relative asset URLs, browser-compatible encoding, fast-start metadata, asset checksums and GitHub file-size limits were checked locally.
-
-Hiding download controls and removing direct links changes the interface; it is not copy protection. A determined visitor can still save or capture browser-playable media.
-
-No Git commit, push, publication or deployment was performed. The owner's local preview remains at `http://127.0.0.1:8778/video.html`.
+- Static site validation passed: 13 HTML pages, 10 homepage cards and 1,710 checked local references, with no errors.
+- The corrected first source loads in the native player at 960 × 720, with an approximately 53-second duration and no media error. Playback advanced successfully; the owner also confirmed the video works.
+- The three stage controls, page layout and existing navigation are retained. The two later video records and their files remain unchanged.
+- The corrected MP4 passed full decoding and the existing H.264/fast-start/checksum checks. The original replacement MOV still matches its source hash.
+- The owner explicitly authorised updating GitHub and publishing this correction at the existing website URL.
