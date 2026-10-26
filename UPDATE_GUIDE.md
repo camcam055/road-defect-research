@@ -1,28 +1,31 @@
 # Website update guide
 
-The website is ready to serve from `site/`. It is a static GitHub Pages website: there is no database, login, build service or upload dashboard. Make changes to the files below, preview them, then upload/commit those files to your own repository when you choose to publish. The 25 October 2026 report/map refresh is prepared for the owner's requested update to the existing GitHub Pages site. The repository and Pages URL remain the same.
+The website is ready to serve from `site/`. It is a static GitHub Pages website: there is no database, login, build service or upload dashboard. Make changes to the files below, preview them, then upload/commit those files to your own repository when you choose to publish. The owner reviewed the 26 October 2026 report/map refresh and explicitly approved its commit, push and publication to the existing GitHub Pages URL. Future publication still requires the owner's instruction. The repository and Pages URL remain the same.
 
-## Add your video — the short version
+## Project video sequence
 
-1. Export the final video as **MP4 with H.264 video and AAC audio**. This format works in Safari. Name it **`project-demo.mp4`** (lowercase, no spaces).
-2. Put it in **`site/assets/video/project-demo.mp4`**. On GitHub, open the repository folder `site/assets/video`, select **Add file → Upload files**, and upload the MP4 there.
-3. Open **`site/js/config.js`** and change the configuration to:
+The Project Video page presents the final videos in this order:
 
-   ```js
-   window.SHOWCASE_CONFIG = {
-     videoSrc: "assets/video/project-demo.mp4",
-     videoPoster: ""
-   };
-   ```
+1. **Data Collection** — source: `Data Collection Video new.mov`
+2. **AI Training** — source: `Training the AI new.mov`
+3. **Road Defect Detection** — source: `From Road to Results.mov`
 
-   In GitHub, use the pencil icon to edit that file and save the change. The path is relative to `video.html`; do not add `site/` at the start of `videoSrc`.
-4. Preview `video.html`, or redeploy your Pages site after saving both files. Check play, pause, seeking, sound, fullscreen and rotation in Safari. The player uses native controls and `playsinline`; it does not autoplay.
+The published assets are the `*-final-20261026.mp4` files in `site/assets/video/`, with matching JPG poster frames. They are silent H.264 video with the original dimensions and timing and fast-start metadata. The silent audio streams were removed at the owner's request. The original MOV files are preserved outside the website.
 
-That is all: **one MP4 upload and one configuration edit**. There is no need to change HTML or install video software on the website. Until the MP4 is supplied, the intentional placeholder stays visible.
+The maintained sequence and source checksums are in **`site/data/videos.json`**. **`tools/video_page.py`** renders the page; **`site/js/video.js`** and **`site/css/video.css`** supply its interactions and styling. The older single-video `SHOWCASE_CONFIG.videoSrc` setting is unused by this page.
 
-Optional: put a poster frame at `site/assets/video/poster.jpg` and set `videoPoster: "assets/video/poster.jpg"`. For practical mobile loading, use 1080p and a sensible bitrate. Keep each Git file below GitHub's 100 MiB file limit. If needed, export a smaller MP4 or set `videoSrc` to a direct public HTTPS MP4 URL that permits playback; a YouTube watch-page URL is not an MP4 source. Do not commit raw camera footage or credentials.
+Visitors select any of the three stage buttons above the video. Only one player loads a video at a time. Native controls provide play, pause, seeking and fullscreen. Volume controls and the native download option are hidden; `playsinline` supports mobile playback. The first video waits for Play. Selecting a stage while playing, or after a video finishes, starts the selected video following the visitor's click. Finishing a video marks its stage complete and highlights the next stage above the player; finishing the third reveals **Explore Interactive Map →**, linking to the existing `map.html`. Returning to an unfinished stage resumes its position for the current page session. Keyboard users can Tab to each stage or use Left/Right/Home/End within the stage controls. Reduced-motion preferences are respected.
 
-If the player shows an error: check spelling/capitalisation of the filename, confirm the MP4 is in the published `site/assets/video/` folder, and verify its H.264/AAC encoding. Set `videoSrc` back to `""` to restore the placeholder.
+To replace a video later, export a silent H.264 MP4 below GitHub's 100 MiB per-file limit, preserve the approved content, and use a new versioned asset name. Update the sequence's paths, poster, duration, dimensions, byte count and SHA-256 checksums, then run:
+
+```sh
+python3 tools/video_page.py
+python3 tools/check_site.py
+```
+
+A normal `python3 tools/build_site.py` also regenerates the video page from this sequence. No original MOV, local filesystem path or private review record belongs in `site/`. Relative MP4/JPG URLs work under the existing GitHub Pages repository path, without Git LFS or an external media service.
+
+The visible page keeps navigation above the player, without duplicate Previous/Next controls, direct MP4 links or playback guidance text. If playback fails, the error message offers Try again while preserving stage navigation. The native player uses controlslist=nodownload, hides volume controls, and suppresses its context menu; these are user interface choices, not copy protection. Browser-playable media can still be saved or captured by a determined visitor. With JavaScript disabled, the first native video remains available; switching stages requires JavaScript. Check playback, seeking and completion prompts at desktop and phone widths; a physical phone check remains useful before public release.
 
 ## Preview on your Mac
 
@@ -49,8 +52,8 @@ Use the local server for checking the map. The OpenFreeMap street basemap and Op
 | Interactive map and exported geographic data | `site/assets/map/index.html` |
 | Map popup photos | `site/assets/map/images/` |
 | Map mobile controls and basemap status | `site/assets/map/map-adapter.css`, `map-adapter.js` |
-| Video path and optional poster | `site/js/config.js` |
-| Video file | `site/assets/video/project-demo.mp4` |
+| Video sequence, provenance and posters | `site/data/videos.json` |
+| Final video files and poster frames | `site/assets/video/` |
 | Shared page navigation and homepage labels | `tools/layout.py` |
 | General styling | `site/css/styles.css` |
 
@@ -58,9 +61,9 @@ Use the local server for checking the map. The OpenFreeMap street basemap and Op
 
 For a small correction, edit the relevant HTML page in `site/content/` using a plain-text editor (VS Code, BBEdit, or TextEdit in plain-text mode). Find a distinctive phrase, change only the text inside its existing paragraph/heading/list item, and preserve its tags, `id` and `data-source-id` attributes. IDs support the table of contents and glossary source links. Escape a literal `&` as `&amp;` and `<` as `&lt;`. Save UTF-8 text.
 
-The research pages reproduce the latest supplied report saved on **25 October 2026**. Its cover is labelled Final Report; its supplied filename retains draft. Keep future wording aligned with the report and record any intentional corrections. The public source hash and import comparison are in `site/data/report-source.json`.
+The research pages reproduce the latest supplied report saved on **26 October 2026**. Its cover is labelled Final Report; its supplied filename retains draft. Keep future wording aligned with the report and record any intentional corrections. The public source hash and import comparison are in `site/data/report-source.json`.
 
-For an entire revised Word report, use the existing `tools/extract_report.py` importer. It needs `lxml` and `Pillow` and a reviewed, private content-plan JSON for that exact document. Keep the DOCX, plan and audit outside the website repository. Review section ranges, image identities, chart exports and privacy substitutions before importing; do not only replace the source hash. A fresh import overwrites manual changes in the research HTML pages. Run the importer again with `--verify-only` to compare source wording and equations. `tools/build_site.py` does not overwrite research paragraphs.
+For an entire revised Word report, use the existing `tools/extract_report.py` importer. It needs `lxml` and `Pillow` and a reviewed, private content-plan JSON for that exact document. Keep the DOCX, plan and audit outside the website repository. Review section ranges, image identities, chart exports and privacy substitutions before importing; do not only replace the source hash. The importer rejects plans containing the Executive Summary. A fresh import overwrites manual changes in the research HTML pages. Run the importer again with `--verify-only` to compare source wording and equations. `tools/build_site.py` does not overwrite research paragraphs.
 
 ## Update images and figures
 
@@ -117,13 +120,17 @@ JSON edits alone do not change the rendered page: the first command regenerates 
 
 ## Update map data
 
-The current map is the portable export saved on 25 October 2026. It retains the source's grouped observations, recovered density, historical observations, overlays, basemap fallbacks and uncertainty notes. Public provenance is in `site/data/map-source.json`. The observation CSV is linked from the map.
+The map fills the first viewport and has one Back link. Exploring Potential Relationships follows directly underneath. The map's controls, legends and provider attribution remain available. All defect runs share a single Road defects switch, and run identities remain in the popups.
 
-Keep a revised `master_defect_map.html` together with its `master_defect_map_assets/` folder outside the repository. After reviewing the source and referenced photos, run `python3 tools/import_portable_map.py --source PATH_TO_HTML --audit PRIVATE_AUDIT_DIRECTORY`. The audit directory must be outside this repository. The importer copies referenced images, the observation CSV and bundled vendor files, removes image metadata and preserves the complete map after documented relative-path and navigation additions. Source manifests and private review records stay outside Git. Back up the existing public map before import.
+All saved run folders are retained in the export. All runs with usable GPS are visible by default through the unified Road defects switch. Per-run counts and owner exclusions are in `site/data/map-source.json`. The CSV uses `map_display_status` to distinguish mapped records, unavailable GPS and owner-requested exclusions. Run6 IMG_6869, IMG_6871 and IMG_6872 are excluded from the map; their original detection records are retained.
 
-The portable export has its own responsive controls and basemap fallbacks. The separate map adapter supplies the Home link, accessibility label and loading-status messages. On narrow screens, the inspection panel and layers control are hidden while a popup is open so its photo and close control remain accessible. Closing the popup restores them.
+Keep `master_defect_map.html` with its `master_defect_map_assets/` folder outside the repository. A current application export can place its assets inside a versioned build directory identified by the HTML metadata. It includes `observations.csv` and `run_coverage.json` and applies its persistent display-exclusion list. After reviewing the export, run `python3 tools/import_portable_map.py --source PATH_TO_HTML --audit PRIVATE_AUDIT_DIRECTORY`. Back up the public map first and keep the audit outside this repository.
 
-Run the static checks, preview the embedded and full-size map, open a defect photo, toggle density/overlay controls, and check a phone-width viewport before deployment. Preserve the distinction between tentative grouped locations, located observations, observations without GPS and assessable road sections.
+The importer copies every referenced photograph from the master export, including annotated images stored in run folders, the observation CSV and bundled vendor files. It removes private image metadata without changing pixels and checks the complete map against the source after relative paths and the separate website adapter. It compares the marker count with the all-run coverage record. Original reports, source manifests and private reviews stay outside Git.
+
+The website supplies the Back link in its full-page map. The separate map adapter supplies Back when the map is opened directly and keeps controls clear of narrow-screen popups. Version queries refresh the map and its changed CSS/JavaScript while retaining the public root address.
+
+Check desktop and phone sizes, earlier-run markers, density/layer controls and Back/homepage navigation before deployment. Keep observations, marker groups, missing GPS, display exclusions and density assessments distinct.
 
 ## Checks after an update
 
@@ -133,7 +140,7 @@ python3 tools/check_site.py
 
 This checks all HTML/CSS local links, source anchors, the ten homepage cards, gallery file hashes, class mappings, visible-box review records, optional originals and bounding-box ranges, JSON structure, private-path leaks, bundled map libraries and the manual Pages workflow. It is not a statistical validation of a new model or dataset.
 
-Preview desktop and phone widths. Check all section links, gallery switches/full-size images, glossary search/clear/no-results, readable tables and figures, map tiles/popups/layers, and your video once it is available. Test the final MP4 on a physical iPhone when you have it. See `docs/VERIFICATION.md` for the delivered build's actual test coverage and limits.
+Preview desktop and phone widths. Check all section links, gallery switches/full-size images, glossary search/clear/no-results, readable tables and figures, map tiles/popups/layers, and the three final videos, including end-of-video prompts. Check the final MP4s on a physical phone before release. See `docs/VERIFICATION.md` for the delivered build's actual test coverage and limits.
 
 ## GitHub Pages deployment when you are ready
 

@@ -1,0 +1,2279 @@
+{
+  "comparison": "Changes made during this update relative to the pre-existing local working tree, including previously uncommitted work as the baseline.",
+  "local_only": true,
+  "summary": {
+    "added": 538,
+    "modified": 29,
+    "deleted": 0
+  },
+  "files": [
+    {
+      "path": "MANIFEST.sha256",
+      "status": "modified"
+    },
+    {
+      "path": "README.md",
+      "status": "modified"
+    },
+    {
+      "path": "UPDATE_GUIDE.md",
+      "status": "modified"
+    },
+    {
+      "path": "docs/LOCAL_FILE_CHANGES_20261026.json",
+      "status": "added"
+    },
+    {
+      "path": "docs/LOCAL_REVIEW_20261026.md",
+      "status": "added"
+    },
+    {
+      "path": "docs/PUBLICATION_20261026.md",
+      "status": "added"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "status": "modified"
+    },
+    {
+      "path": "site/assets/figures/chart6.png",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/figures/chart7.png",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/figures/chart8.png",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/figures/image13.jpeg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/figures/image14.jpeg",
+      "status": "modified"
+    },
+    {
+      "path": "site/assets/figures/image15.png",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/figures/image16.jpeg",
+      "status": "modified"
+    },
+    {
+      "path": "site/assets/figures/image17.jpeg",
+      "status": "modified"
+    },
+    {
+      "path": "site/assets/figures/image18.jpeg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/figures/image19.jpeg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/figures/image29.png",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/figures/image30.png",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/figures/image31.png",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/figures/image32.png",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/index.html",
+      "status": "modified"
+    },
+    {
+      "path": "site/assets/map/map-adapter.css",
+      "status": "modified"
+    },
+    {
+      "path": "site/assets/map/map-adapter.js",
+      "status": "modified"
+    },
+    {
+      "path": "site/assets/map/observations.csv",
+      "status": "modified"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0007.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0028.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0029.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0046.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0055.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0058.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0064.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0066.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0073.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0074.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0078.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0081.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0144.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0166.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0180.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0181.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0182.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0184.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0185.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0190.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0195.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0207.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0211.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0217.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0218.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0221.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0233.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0234.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0235.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0237.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0238.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0239.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0240.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0241.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0242.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0243.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0244.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0245.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0246.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0247.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0248.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0249.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0250.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0251.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0252.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0253.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0254.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0255.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0256.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0257.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0258.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0259.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0260.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0261.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0262.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0263.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0264.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0267.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0268.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0269.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0284.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0285.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0287.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0289.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0290.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0291.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0292.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0295.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0296.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0297.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0298.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0301.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0327.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0337.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0348.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0365.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0377.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0429.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0452.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0454.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0459.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0465.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0472.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0473.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0479.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0480.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0481.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0484.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0485.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0486.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0487.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0515.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0523.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0557.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0560.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0561.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0562.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0566.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0567.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0568.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0602.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0606.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0607.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0618.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0623.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0626.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0627.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0637.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0638.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0657.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0660.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0663.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0670.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0671.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0673.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0674.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0677.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0678.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0680.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0681.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0693.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0704.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0710.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0731.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0737.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0824.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0825.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0828.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0829.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0830.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0832.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0833.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0836.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0838.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0844.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0854.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0869.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0887.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0894.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run10/annotated_images/frame_0896.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0000.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0001.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0002.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0003.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0004.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0005.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0006.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0007.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0014.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0017.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0035.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0036.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0037.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0043.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0044.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0055.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0056.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0059.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0078.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0081.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0137.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0141.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0205.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0238.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0244.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0270.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0309.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0312.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0314.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0315.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0316.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0318.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0319.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0321.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0322.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0323.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0324.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0325.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0340.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0342.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0344.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0352.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0361.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0363.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0365.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0366.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0393.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0402.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0413.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0421.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0476.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0478.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0480.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0485.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0554.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0564.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0565.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run11/annotated_images/frame_0566.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run3/IMG_6425.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run3/IMG_6426.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run3/IMG_6428.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run3/IMG_6437.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run3/IMG_6438.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run3/IMG_6439.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0007.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0008.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0009.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0010.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0011.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0012.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0017.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0019.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0020.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0021.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0022.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0023.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0024.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0025.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0026.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0027.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0028.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0034.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0037.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0040.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0041.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0046.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0058.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0059.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0060.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0061.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0062.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0063.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0065.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0083.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0159.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0163.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0173.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0176.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run4/annotated_images/frame_0193.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0006.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0016.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0017.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0018.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0092.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0098.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0109.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0111.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0119.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0122.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0138.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0142.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0143.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0153.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0167.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0175.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0176.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0182.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0190.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0191.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0197.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0198.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0200.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0202.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0203.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0209.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0211.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0214.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0217.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0218.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0224.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0236.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0238.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0245.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0251.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run5/annotated_images/frame_0253.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6425.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6426.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6428.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6437.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6438.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6439.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6440.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6441.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6442.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6443.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6657.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6676.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6869.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6871.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6872.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run6/IMG_6897.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0002.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0009.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0010.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0037.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0038.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0059.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0060.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0061.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0062.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0085.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0101.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0112.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0167.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0174.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0175.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0178.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0179.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0204.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0208.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0214.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0215.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0216.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0217.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0224.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0225.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0226.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0228.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0229.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0230.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0232.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0258.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0270.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0301.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run7/annotated_images/frame_0322.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0014.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0015.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0023.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0024.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0028.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0029.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0030.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0031.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0032.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0033.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0034.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0035.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0037.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0045.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0058.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0060.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0103.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0128.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0146.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0187.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0193.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0201.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0202.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0203.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0204.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0205.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0206.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0207.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0210.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0211.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0220.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0233.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0234.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0235.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0237.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0239.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0247.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0277.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0280.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0282.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0288.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0294.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0295.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0296.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0297.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0314.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0315.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0316.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0317.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0318.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0321.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0322.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0323.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0324.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0325.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0327.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0328.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0329.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0331.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0340.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0341.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0342.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0343.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0344.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0346.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0359.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0373.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0374.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0375.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0406.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0430.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0433.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0441.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0443.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0446.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0449.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0454.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0456.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0476.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0477.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0483.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0498.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0501.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0514.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0518.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0550.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0572.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0573.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0575.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0616.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0617.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0637.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0642.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0659.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0660.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0661.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0662.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0666.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0668.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0669.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0671.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0682.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0744.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0751.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0842.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0867.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0880.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0883.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0889.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0897.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run8/annotated_images/frame_0898.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0007.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0008.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0031.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0033.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0035.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0036.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0042.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0068.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0069.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0071.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0077.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0082.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0092.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0095.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0102.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0103.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0106.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0109.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0113.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0117.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0130.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0153.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0162.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0164.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0169.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0181.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0202.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0204.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0213.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0216.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0217.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0221.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0241.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0249.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0252.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0258.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0272.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0279.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0282.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0286.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0295.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0296.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0302.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0332.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0333.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0339.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0345.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0347.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0350.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0351.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0352.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0353.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0355.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0356.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0357.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0358.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0361.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0372.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0375.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0457.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0494.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0527.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0531.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0597.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0598.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0599.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0604.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0620.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0623.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0641.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0643.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0657.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0674.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0700.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0708.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0734.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0742.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0750.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0781.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0788.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0801.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0806.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0807.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0808.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0813.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0821.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0825.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/assets/map/run9/annotated_images/frame_0828.jpg",
+      "status": "added"
+    },
+    {
+      "path": "site/content/conclusion.html",
+      "status": "modified"
+    },
+    {
+      "path": "site/content/future-work.html",
+      "status": "modified"
+    },
+    {
+      "path": "site/content/glossary.html",
+      "status": "modified"
+    },
+    {
+      "path": "site/content/literature-review.html",
+      "status": "modified"
+    },
+    {
+      "path": "site/content/methodology.html",
+      "status": "modified"
+    },
+    {
+      "path": "site/content/problem.html",
+      "status": "modified"
+    },
+    {
+      "path": "site/content/references.html",
+      "status": "modified"
+    },
+    {
+      "path": "site/content/results.html",
+      "status": "modified"
+    },
+    {
+      "path": "site/css/styles.css",
+      "status": "modified"
+    },
+    {
+      "path": "site/data/glossary.json",
+      "status": "modified"
+    },
+    {
+      "path": "site/data/map-source.json",
+      "status": "modified"
+    },
+    {
+      "path": "site/data/report-source.json",
+      "status": "modified"
+    },
+    {
+      "path": "site/index.html",
+      "status": "modified"
+    },
+    {
+      "path": "site/map.html",
+      "status": "modified"
+    },
+    {
+      "path": "tools/check_site.py",
+      "status": "modified"
+    },
+    {
+      "path": "tools/extract_report.py",
+      "status": "modified"
+    },
+    {
+      "path": "tools/import_portable_map.py",
+      "status": "modified"
+    },
+    {
+      "path": "tools/layout.py",
+      "status": "modified"
+    }
+  ]
+}

@@ -73,7 +73,8 @@ def check_gallery(data, assets):
                 continue
             relative = PurePosixPath(filename)
             if (relative.is_absolute() or ".." in relative.parts or len(relative.parts) != 2
-                    or relative.parts[0] != category or relative.suffix.lower() != ".jpg"):
+                    or relative.parts[0] != category
+                    or relative.suffix.lower() not in ((".jpg", ".png") if mode == "before" else (".jpg",))):
                 errors.append("Unsafe or incorrectly organised image path: " + ident)
                 continue
             path = assets / filename

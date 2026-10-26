@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-23",
-  "source": "Latest supplied research report, saved 22 October 2026",
+  "updated": "2026-10-26",
+  "source": "Latest supplied research report, saved 26 October 2026",
   "note": "Plain-language definitions based on the report, with links to the relevant report passages.",
   "entries": [
     {
       "term": "Accelerometer",
       "definition": "A sensor that measures acceleration. The report proposes using phone acceleration and vibration data alongside GPS and image detections to investigate pavement defects.",
-      "source": "future-work.html#b1246",
+      "source": "future-work.html#b1445",
       "source_label": "Report §5.2",
       "aliases": "acceleration vibration phone sensor proposed future work"
     },
@@ -111,7 +111,7 @@
     {
       "term": "Generalisation",
       "definition": "How well a trained model performs on new, unseen road imagery. Strong results on a small local validation set do not establish reliable performance across other roads and conditions.",
-      "source": "results.html#b1126",
+      "source": "results.html#b1128",
       "source_label": "Report §4.3",
       "aliases": "generalization unseen data real world"
     },
@@ -125,14 +125,14 @@
     {
       "term": "Graphics processing unit (GPU)",
       "definition": "Hardware used to accelerate model training. The project moved larger training runs from local hardware to GPUs available through Google Colab.",
-      "source": "methodology.html#b1216",
+      "source": "methodology.html#b1415",
       "source_label": "Report §5.1",
       "aliases": "GPU A100 H100 T4 cloud computing"
     },
     {
       "term": "Gyroscope",
       "definition": "A sensor that measures rotational movement. The report proposes combining a phone’s gyroscope and accelerometer readings with GPS and YOLO results to assess more pavement defects.",
-      "source": "future-work.html#b1246",
+      "source": "future-work.html#b1445",
       "source_label": "Report §5.2",
       "aliases": "rotation phone sensor proposed future work"
     },
@@ -146,7 +146,7 @@
     {
       "term": "Large language model (LLM)",
       "definition": "A proposed future stage that could examine images after detection to help assess visible defect characteristics. The report proposes this work; the website does not provide automated severity assessment.",
-      "source": "future-work.html#b1244",
+      "source": "future-work.html#b1443",
       "source_label": "Report §5.2",
       "aliases": "LLM severity future work image analysis"
     },
@@ -174,14 +174,14 @@
     {
       "term": "Overfitting",
       "definition": "Learning patterns specific to a small training or validation dataset without performing reliably on new imagery. The report cautions that its high local validation scores may reflect overfitting.",
-      "source": "results.html#b1126",
+      "source": "results.html#b1128",
       "source_label": "Report §4.3",
       "aliases": "overfit small sample validation"
     },
     {
       "term": "Pavement Distress Index (PDI)",
       "definition": "In this project, the number of detected defects assigned to a 50 m road section. Each defect contributes one, regardless of class; a higher value indicates a greater concentration of detections.",
-      "source": "methodology.html#b0900",
+      "source": "methodology.html#b0902",
       "source_label": "Report §3.7",
       "aliases": "PDI AI-PDI density 50m 50 m defect count"
     },

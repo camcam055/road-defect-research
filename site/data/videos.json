@@ -1,0 +1,50 @@
+{
+  "updated": "2026-10-26",
+  "videos": [
+    {
+      "title": "Data Collection",
+      "description": "See how road imagery is collected for the project.",
+      "source_file": "Data Collection Video new.mov",
+      "source_sha256": "4b449b04fc5fdfe45e4e4b184058989b23cc19b562588b05937a139594705889",
+      "source_bytes": 112077519,
+      "duration_seconds": 50.808005,
+      "width": 1440,
+      "height": 1080,
+      "src": "assets/video/data-collection-final-20261026.mp4",
+      "poster": "assets/video/data-collection-final-20261026.jpg",
+      "sha256": "bf6fd086f667b52d625b80262cd6bddd866d04f58cc0135bb093cb004110de98",
+      "bytes": 36652715,
+      "audio": false
+    },
+    {
+      "title": "AI Training",
+      "description": "Follow the process of training the road defect detection model.",
+      "source_file": "Training the AI new.mov",
+      "source_sha256": "e82c7b05c8d82478c837ffdf6a51b70d0445667b49c23cc3c399acb4b763b4ea",
+      "source_bytes": 77012787,
+      "duration_seconds": 91.964,
+      "width": 1920,
+      "height": 910,
+      "src": "assets/video/ai-training-final-20261026.mp4",
+      "poster": "assets/video/ai-training-final-20261026.jpg",
+      "sha256": "887f3c198a68328e730b52f3ddae2c963bc2cda0efe5dcd5ac46cc2ef2a0d151",
+      "bytes": 10447664,
+      "audio": false
+    },
+    {
+      "title": "Road Defect Detection",
+      "description": "See the trained model turn road imagery into defect detections.",
+      "source_file": "From Road to Results.mov",
+      "source_sha256": "7c299146501344c63e6b288d9bc253684f3a06c5b84e78cac6bc1a31354b846e",
+      "source_bytes": 84110036,
+      "duration_seconds": 77.357007,
+      "width": 1720,
+      "height": 1080,
+      "src": "assets/video/road-to-results-final-20261026.mp4",
+      "poster": "assets/video/road-to-results-final-20261026.jpg",
+      "sha256": "d5e78efc9feb00d6a4ce3ea72528050c79cc2eea17432350e9dead98d72ae13b",
+      "bytes": 32510635,
+      "audio": false
+    }
+  ]
+}

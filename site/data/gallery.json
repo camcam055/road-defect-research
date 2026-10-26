@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "review_date": "2026-10-23",
+  "review_date": "2026-10-26",
   "default_view": "after",
   "note": "Curated saved annotations with visible road-defect boxes. Examples come from different historical runs; model details and class IDs are recorded per source. These illustrations are not ground truth or an accuracy evaluation.",
   "categories": [
@@ -15,6 +15,14 @@
     {
       "id": "alligator-cracking",
       "title": "Alligator cracking"
+    },
+    {
+      "id": "other-surface-defects",
+      "title": "Other surface defects"
+    },
+    {
+      "id": "potholes",
+      "title": "Potholes"
     }
   ],
   "sources": {
@@ -59,6 +67,61 @@
       "model_sha256": null,
       "confidence_threshold": null,
       "note": "Labelled export without an original photo or raw prediction sidecar. Visible labels are retained; no confidence or vector coordinates are invented."
+    },
+    "run2-video-20261026": {
+      "label": "Run2 saved video detections",
+      "run_id": "run2",
+      "source_video": "IMG_0825.MOV",
+      "processed_at": "2026-10-26T09:19:01.744113+13:00",
+      "model_name": "Final_model.pt",
+      "model_sha256": null,
+      "model_sha256_expected": "523b481069c4dbd70922801c5e54750619befe566f352cd1654a3944bade7d46",
+      "class_names": {
+        "0": "alligator_crack",
+        "1": "long_crack",
+        "2": "other_corruption"
+      },
+      "confidence_threshold": 0.4,
+      "annotation_manifest_sha256": "8fd4ff521de9199eb053302fc77ffdd6c375ca78508c958a64bc2b80655c2933",
+      "note": "Saved YOLO-rendered annotations and prediction sidecars. Class names for the included IDs were checked against the visible image labels; the separate density CSV uses a different class mapping and is not used here. The checkpoint hash is recorded only as an unverified expectation from the run metadata. Original and annotated JPEGs are copied unchanged."
+    },
+    "run4-video-20261026": {
+      "label": "Run4 saved video detections",
+      "run_id": "run4",
+      "source_video": "IMG_0825.MOV",
+      "processed_at": "2026-10-26T09:30:15.154350+13:00",
+      "model_name": "FINEtuned_chch.pt",
+      "model_sha256": null,
+      "model_sha256_expected": "523b481069c4dbd70922801c5e54750619befe566f352cd1654a3944bade7d46",
+      "class_names": {
+        "0": "alligator_crack",
+        "1": "long_crack",
+        "2": "other_corruption",
+        "3": "pothole"
+      },
+      "confidence_threshold": 0.4,
+      "annotation_manifest_sha256": "8f9292b335d71690469d1342e995a1f363739303d9396fa9b3f34d50f12fd2d5",
+      "note": "Saved YOLO-rendered annotations and prediction sidecars. Included class IDs were checked against the rendered labels. The checkpoint hash is an unverified expectation from run metadata. Original and annotated JPEG bytes are preserved. Within a 2 metre GPS match radius, the owner selected these newer pairs to replace the corresponding Run2 gallery examples."
+    },
+    "run2-photos-20261026-095926": {
+      "label": "Run2 photo batch, 26 October 2026",
+      "run_id": "run2",
+      "source_kind": "photos",
+      "processed_at": "2026-10-26T09:59:26.611041+13:00",
+      "source_name": "Run13 Unlabelled Originals",
+      "source_fingerprint": "995926df825a3fc05eac499ad484bdadc63d4afa1e7f22cacf87f9cac835bf2b",
+      "model_name": "FINEtuned_chch.pt",
+      "model_sha256": null,
+      "model_sha256_expected": "523b481069c4dbd70922801c5e54750619befe566f352cd1654a3944bade7d46",
+      "class_names": {
+        "0": "alligator_crack",
+        "1": "long_crack",
+        "2": "other_corruption",
+        "3": "pothole"
+      },
+      "confidence_threshold": 0.4,
+      "annotation_manifest_sha256": "0cecfdf3cc08d08490a7bcdb2c1ed3735d355ef28a33004eb5a60806f8eef7e6",
+      "note": "All 39 saved annotations from this photo batch, matched by exact frame IDs to the unlabelled source PNGs. Class IDs were checked against the saved rendered labels. The expected model hash is unverified run metadata. The PNG originals and annotated JPEG files are copied unchanged. This is a later Run2 photo batch, distinct from the earlier Run2 video examples retained in the gallery."
     }
   },
   "images": [
@@ -1066,71 +1129,63 @@
       "categories": [
         "longitudinal-cracks"
       ],
-      "source_id": "current-app",
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000284",
       "filename": "1788911598__PTS_000284.jpg",
-      "source_sha256": "a69f707cf3d043fe6824d4067338bdb5de965c3a171969179238c4737c88e237",
+      "source_sha256": "10536dcdf65b0f3da79c3b024bd040db842397e995334a8620bd9d9c1b050bd6",
       "source_width": 3840,
       "source_height": 2160,
-      "after": "longitudinal-cracks/driving-longitudinal-after.jpg",
-      "after_sha256": "8801df255c058f14fde073b8bdbbcfb46ebabcb3e685a3b61a0d376b57581a7b",
-      "before": "longitudinal-cracks/driving-longitudinal-before.jpg",
-      "display_width": 1600,
-      "display_height": 900,
+      "before": "longitudinal-cracks/run2-photo-1788911598-pts-000284-before.png",
+      "before_sha256": "29245b18e4fd30fdb6599a2dfe6f5bf8f76859c5d0612fb88250d7d2efc79922",
+      "original_sha256": "29245b18e4fd30fdb6599a2dfe6f5bf8f76859c5d0612fb88250d7d2efc79922",
+      "after": "longitudinal-cracks/run2-photo-1788911598-pts-000284-after.jpg",
+      "after_sha256": "10536dcdf65b0f3da79c3b024bd040db842397e995334a8620bd9d9c1b050bd6",
+      "display_width": 3840,
+      "display_height": 2160,
       "annotations": [
         {
           "class_name": "long_crack",
           "source_class_id": 1,
-          "confidence": 0.628629,
+          "confidence": 0.719265,
           "xyxyn": [
-            0.33191424999999997,
-            0.6111405,
-            0.38678775,
-            0.7242475
-          ]
-        },
-        {
-          "class_name": "long_crack",
-          "source_class_id": 1,
-          "confidence": 0.610628,
-          "xyxyn": [
-            0.41752035,
-            0.56549,
-            0.45260365,
-            0.666442
+            0.41410475,
+            0.563118,
+            0.45534725,
+            0.672558
           ]
         }
       ],
       "review": {
         "visible_box": true,
         "reviewed": true,
+        "review_date": "2026-10-26",
         "box_regions": [
           [
-            0.33191424999999997,
-            0.6111405,
-            0.38678775,
-            0.7242475
-          ],
-          [
-            0.41752035,
-            0.56549,
-            0.45260365,
-            0.666442
+            0.41410475,
+            0.563118,
+            0.45534725,
+            0.672558
           ]
         ],
         "border_check": {
-          "coloured_border_pixels": 4419,
-          "sampled_border_pixels": 4718,
-          "ratio": 0.93663
+          "annotation_border_pixels": 5530,
+          "ratio": 0.99747,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
         },
-        "review_date": "2026-10-23",
         "pairing": {
-          "method": "matching source identity, orientation, dimensions and image-content comparison",
-          "mean_luma_difference": 0.8879
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.575
         },
-        "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
       },
-      "before_sha256": "badfd18248678c7d5b36a7990f546f21d1251383717027586c26a3eb9e2d45bc",
-      "original_sha256": "29245b18e4fd30fdb6599a2dfe6f5bf8f76859c5d0612fb88250d7d2efc79922"
+      "previous_gallery_source": {
+        "source_id": "current-app",
+        "after_sha256": "8801df255c058f14fde073b8bdbbcfb46ebabcb3e685a3b61a0d376b57581a7b"
+      }
     },
     {
       "id": "saved-driving-export",
@@ -1178,6 +1233,3756 @@
           "method": "original unavailable; saved labelled image only"
         },
         "method": "Visual full-photo and box-detail inspection, with coloured box-border verification on the final display JPEG."
+      }
+    },
+    {
+      "id": "run2-frame-0009",
+      "title": "Run2 · frame_0009 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0009",
+      "filename": "frame_0009.jpg",
+      "source_sha256": "e3686b87cc2a0e669e1028b0425aa0371e78978d5106012d3ff172fb6417170a",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "alligator-cracking/run2-frame-0009-after.jpg",
+      "after_sha256": "e3686b87cc2a0e669e1028b0425aa0371e78978d5106012d3ff172fb6417170a",
+      "before": "alligator-cracking/run2-frame-0009-before.jpg",
+      "before_sha256": "4b64ba5daf63daba32f119f3a2d104665343bb5dbaff8909630e0dc625a96bdd",
+      "original_sha256": "4b64ba5daf63daba32f119f3a2d104665343bb5dbaff8909630e0dc625a96bdd",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.468747,
+          "xyxyn": [
+            0.461211,
+            0.5991815,
+            0.596955,
+            0.7003325
+          ]
+        },
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.456896,
+          "xyxyn": [
+            0.284662,
+            0.5802495000000001,
+            0.392612,
+            0.7261985
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.461211,
+            0.5991815,
+            0.596955,
+            0.7003325
+          ],
+          [
+            0.284662,
+            0.5802495000000001,
+            0.392612,
+            0.7261985
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 11460,
+          "ratio": 0.99583,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 1.79241
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-frame-0010",
+      "title": "Run2 · frame_0010 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0010",
+      "filename": "frame_0010.jpg",
+      "source_sha256": "86f15ca2785b827205dc18babb6e16aadbe72380ba9df611c0eba0ec6c1bc50e",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "alligator-cracking/run2-frame-0010-after.jpg",
+      "after_sha256": "86f15ca2785b827205dc18babb6e16aadbe72380ba9df611c0eba0ec6c1bc50e",
+      "before": "alligator-cracking/run2-frame-0010-before.jpg",
+      "before_sha256": "5d97153e3d655e9892377c4e8636f2360322a234c5da0b78b2e790f32a8fe524",
+      "original_sha256": "5d97153e3d655e9892377c4e8636f2360322a234c5da0b78b2e790f32a8fe524",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.733674,
+          "xyxyn": [
+            0.5227335000000001,
+            0.6458363,
+            0.6599965,
+            0.7378956999999999
+          ]
+        },
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.487441,
+          "xyxyn": [
+            0.28504850000000004,
+            0.68511195,
+            0.4157295,
+            0.7786320499999999
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.5227335000000001,
+            0.6458363,
+            0.6599965,
+            0.7378956999999999
+          ],
+          [
+            0.28504850000000004,
+            0.68511195,
+            0.4157295,
+            0.7786320499999999
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 10882,
+          "ratio": 0.99524,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 1.81628
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-frame-0011",
+      "title": "Run2 · frame_0011 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0011",
+      "filename": "frame_0011.jpg",
+      "source_sha256": "8dd6a6b2ff13b539c21a6124fbdd72b2afa40be3df71cff1da7584ce81380d6a",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "alligator-cracking/run2-frame-0011-after.jpg",
+      "after_sha256": "8dd6a6b2ff13b539c21a6124fbdd72b2afa40be3df71cff1da7584ce81380d6a",
+      "before": "alligator-cracking/run2-frame-0011-before.jpg",
+      "before_sha256": "897499ca44912110243d39dd5ad2a0f41de1283ab85a679b1038665b7ffdb022",
+      "original_sha256": "897499ca44912110243d39dd5ad2a0f41de1283ab85a679b1038665b7ffdb022",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.719793,
+          "xyxyn": [
+            0.3150765,
+            0.6561185,
+            0.4246455,
+            0.7571135
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.3150765,
+            0.6561185,
+            0.4246455,
+            0.7571135
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 4930,
+          "ratio": 0.99195,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.91593
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-frame-0019",
+      "title": "Run2 · frame_0019 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0019",
+      "filename": "frame_0019.jpg",
+      "source_sha256": "7dee9e80be84ca127123583a414715ac92d02bec7b28028538d07a150c501a22",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "alligator-cracking/run2-frame-0019-after.jpg",
+      "after_sha256": "7dee9e80be84ca127123583a414715ac92d02bec7b28028538d07a150c501a22",
+      "before": "alligator-cracking/run2-frame-0019-before.jpg",
+      "before_sha256": "6f2f2139afdf9951b8526a0916ae09f790e84248e5c9d1c687d3e2f4c9afd0c6",
+      "original_sha256": "6f2f2139afdf9951b8526a0916ae09f790e84248e5c9d1c687d3e2f4c9afd0c6",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.716587,
+          "xyxyn": [
+            0.3193285,
+            0.645698,
+            0.4486055,
+            0.7459680000000001
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.3193285,
+            0.645698,
+            0.4486055,
+            0.7459680000000001
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 5464,
+          "ratio": 0.99563,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.85035
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-frame-0020",
+      "title": "Run2 · frame_0020 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0020",
+      "filename": "frame_0020.jpg",
+      "source_sha256": "395c7b6067150d3465f12c59e803681a9990a8380e50efe56ea25a8ec4e37c9b",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "alligator-cracking/run2-frame-0020-after.jpg",
+      "after_sha256": "395c7b6067150d3465f12c59e803681a9990a8380e50efe56ea25a8ec4e37c9b",
+      "before": "alligator-cracking/run2-frame-0020-before.jpg",
+      "before_sha256": "e135a055505d02852277151c5a5fd90824587fb8d17afe8e42cbfe684a206e5a",
+      "original_sha256": "e135a055505d02852277151c5a5fd90824587fb8d17afe8e42cbfe684a206e5a",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.625946,
+          "xyxyn": [
+            0.297313,
+            0.6578175,
+            0.442567,
+            0.7649065
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.297313,
+            0.6578175,
+            0.442567,
+            0.7649065
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 6018,
+          "ratio": 0.99274,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.94248
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-frame-0027",
+      "title": "Run2 · frame_0027 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0027",
+      "filename": "frame_0027.jpg",
+      "source_sha256": "534ea8390b1de15e08d7822c17ab6dab04983d1d91c641759969d2d844cc93aa",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "alligator-cracking/run2-frame-0027-after.jpg",
+      "after_sha256": "534ea8390b1de15e08d7822c17ab6dab04983d1d91c641759969d2d844cc93aa",
+      "before": "alligator-cracking/run2-frame-0027-before.jpg",
+      "before_sha256": "6990091c6224de859ab3f2d01101d1d7bb3e57d9d9d5a917bece2dd99ba0d417",
+      "original_sha256": "6990091c6224de859ab3f2d01101d1d7bb3e57d9d9d5a917bece2dd99ba0d417",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.615918,
+          "xyxyn": [
+            0.5345805,
+            0.5925005000000001,
+            0.6922475,
+            0.7356235
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.5345805,
+            0.5925005000000001,
+            0.6922475,
+            0.7356235
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 7100,
+          "ratio": 0.99635,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.98476
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-frame-0029",
+      "title": "Run2 · frame_0029 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0029",
+      "filename": "frame_0029.jpg",
+      "source_sha256": "cf5aeb0db8b9d65d507b5ba6d13d2d780867d4818f568bfb8132b793e8936c57",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "alligator-cracking/run2-frame-0029-after.jpg",
+      "after_sha256": "cf5aeb0db8b9d65d507b5ba6d13d2d780867d4818f568bfb8132b793e8936c57",
+      "before": "alligator-cracking/run2-frame-0029-before.jpg",
+      "before_sha256": "29974972e2d65c0940bab5aa028d37a9ff3e7720ed1e9336fd6da4a0651b1ffb",
+      "original_sha256": "29974972e2d65c0940bab5aa028d37a9ff3e7720ed1e9336fd6da4a0651b1ffb",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.842069,
+          "xyxyn": [
+            0.5703535,
+            0.6031515000000001,
+            0.6753965,
+            0.7161385
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.5703535,
+            0.6031515000000001,
+            0.6753965,
+            0.7161385
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 5079,
+          "ratio": 0.99666,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.89338
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-frame-0037",
+      "title": "Run2 · frame_0037 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0037",
+      "filename": "frame_0037.jpg",
+      "source_sha256": "bfc0abc29a560b0c659709d4236e1460e39510dac50234a6a44e2eb7c35e109c",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "alligator-cracking/run2-frame-0037-after.jpg",
+      "after_sha256": "bfc0abc29a560b0c659709d4236e1460e39510dac50234a6a44e2eb7c35e109c",
+      "before": "alligator-cracking/run2-frame-0037-before.jpg",
+      "before_sha256": "b66c0b74a1c4903576ecf91f407d604c3b4483884379cb2d712b15847f2f8c11",
+      "original_sha256": "b66c0b74a1c4903576ecf91f407d604c3b4483884379cb2d712b15847f2f8c11",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.568425,
+          "xyxyn": [
+            0.354362,
+            0.6367984999999999,
+            0.527278,
+            0.7558735
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.354362,
+            0.6367984999999999,
+            0.527278,
+            0.7558735
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 7012,
+          "ratio": 0.99574,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 1.02469
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-frame-0058",
+      "title": "Run2 · frame_0058 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0058",
+      "filename": "frame_0058.jpg",
+      "source_sha256": "c094d193f1da09d154c57c4c61f3dd7dc97f500e769a4c010f63ec5bb4d513b6",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "other-surface-defects/run2-frame-0058-after.jpg",
+      "after_sha256": "c094d193f1da09d154c57c4c61f3dd7dc97f500e769a4c010f63ec5bb4d513b6",
+      "before": "other-surface-defects/run2-frame-0058-before.jpg",
+      "before_sha256": "c2960d14c86f3fad4b066ad4ad701c06b691a8f7169071ea3b6b0887a7b5d132",
+      "original_sha256": "c2960d14c86f3fad4b066ad4ad701c06b691a8f7169071ea3b6b0887a7b5d132",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.43586,
+          "xyxyn": [
+            0.44541325,
+            0.5008048,
+            0.50721275,
+            0.5487252
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.44541325,
+            0.5008048,
+            0.50721275,
+            0.5487252
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 2381,
+          "ratio": 0.90464,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.95395
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run4-frame-0059",
+      "title": "Run4 · frame_0059 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects",
+        "potholes"
+      ],
+      "source_id": "run4-video-20261026",
+      "run_id": "run4",
+      "frame_id": "frame_0059",
+      "filename": "frame_0059.jpg",
+      "source_sha256": "b113252a49fadd113b92a8ae7b7e49dee33a542c67725f67a15a28928fa86aec",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "other-surface-defects/run4-frame-0059-after.jpg",
+      "after_sha256": "b113252a49fadd113b92a8ae7b7e49dee33a542c67725f67a15a28928fa86aec",
+      "before": "other-surface-defects/run4-frame-0059-before.jpg",
+      "before_sha256": "b03fe89e98e4754034056b82427d63662d08ca17a157ef54adf8e1f5cb7ba7e3",
+      "original_sha256": "b03fe89e98e4754034056b82427d63662d08ca17a157ef54adf8e1f5cb7ba7e3",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.895159,
+          "xyxyn": [
+            0.41291,
+            0.5366917999999999,
+            0.51536,
+            0.5883462
+          ]
+        },
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.750181,
+          "xyxyn": [
+            0.301971,
+            0.6008209999999999,
+            0.515095,
+            0.743489
+          ]
+        },
+        {
+          "class_name": "pothole",
+          "source_class_id": 3,
+          "confidence": 0.536894,
+          "xyxyn": [
+            0.4449587,
+            0.6626945000000001,
+            0.5098093,
+            0.7171735
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.41291,
+            0.5366917999999999,
+            0.51536,
+            0.5883462
+          ],
+          [
+            0.301971,
+            0.6008209999999999,
+            0.515095,
+            0.743489
+          ],
+          [
+            0.4449587,
+            0.6626945000000001,
+            0.5098093,
+            0.7171735
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 13482,
+          "ratio": 0.8843,
+          "method": "Saved blue/cyan/green borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 1.89951
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      },
+      "replaces": {
+        "run_id": "run2",
+        "frame_id": "frame_0059",
+        "gps_distance_m": 0.0,
+        "match_radius_m": 2
+      }
+    },
+    {
+      "id": "run2-frame-0061",
+      "title": "Run2 · frame_0061 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0061",
+      "filename": "frame_0061.jpg",
+      "source_sha256": "4e0f659801eec21cc514bb95fd3a8cdc1c977076f97a83642c1a503f3fe8b1ba",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "other-surface-defects/run2-frame-0061-after.jpg",
+      "after_sha256": "4e0f659801eec21cc514bb95fd3a8cdc1c977076f97a83642c1a503f3fe8b1ba",
+      "before": "other-surface-defects/run2-frame-0061-before.jpg",
+      "before_sha256": "c188686dc61c7b8ae7e7408a7ded5b93ba862a9dc7630b98c265f733ee44adfd",
+      "original_sha256": "c188686dc61c7b8ae7e7408a7ded5b93ba862a9dc7630b98c265f733ee44adfd",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.748523,
+          "xyxyn": [
+            0.3939005,
+            0.51393645,
+            0.5242015,
+            0.6009455499999999
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.3939005,
+            0.51393645,
+            0.5242015,
+            0.6009455499999999
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 4904,
+          "ratio": 0.9341,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.92739
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-frame-0080",
+      "title": "Run2 · frame_0080 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0080",
+      "filename": "frame_0080.jpg",
+      "source_sha256": "afeb0dcabd43c28566e68bc8e1dd7de56a12eeba03d9192679b6ee6e7c3f3ce2",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "alligator-cracking/run2-frame-0080-after.jpg",
+      "after_sha256": "afeb0dcabd43c28566e68bc8e1dd7de56a12eeba03d9192679b6ee6e7c3f3ce2",
+      "before": "alligator-cracking/run2-frame-0080-before.jpg",
+      "before_sha256": "76cfb10eaea6772add3d8e9288e6c85c2526a22d2085dc621dca330d75eeacab",
+      "original_sha256": "76cfb10eaea6772add3d8e9288e6c85c2526a22d2085dc621dca330d75eeacab",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.409359,
+          "xyxyn": [
+            0.5070933000000001,
+            0.6220655,
+            0.5924047,
+            0.7480165
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.5070933000000001,
+            0.6220655,
+            0.5924047,
+            0.7480165
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 4799,
+          "ratio": 0.99647,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 1.07387
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-frame-0083",
+      "title": "Run2 · frame_0083 · Longitudinal crack",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0083",
+      "filename": "frame_0083.jpg",
+      "source_sha256": "ee7687a0f94c27f83ce392d311f5ef3b7f61b90c5755fff4f87cb52b8693cbd3",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "longitudinal-cracks/run2-frame-0083-after.jpg",
+      "after_sha256": "ee7687a0f94c27f83ce392d311f5ef3b7f61b90c5755fff4f87cb52b8693cbd3",
+      "before": "longitudinal-cracks/run2-frame-0083-before.jpg",
+      "before_sha256": "70625e60add4f2240812401770554d45d63d286f09f56dd268918587695d9751",
+      "original_sha256": "70625e60add4f2240812401770554d45d63d286f09f56dd268918587695d9751",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.493201,
+          "xyxyn": [
+            0.5574965000000001,
+            0.5418275,
+            0.6262235,
+            0.6770525
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.5574965000000001,
+            0.5418275,
+            0.6262235,
+            0.6770525
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 4564,
+          "ratio": 0.99694,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.62204
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run4-frame-0163",
+      "title": "Run4 · frame_0163 · Longitudinal crack",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "run4-video-20261026",
+      "run_id": "run4",
+      "frame_id": "frame_0163",
+      "filename": "frame_0163.jpg",
+      "source_sha256": "361947940ee4258abe45eb00fa5ed06e3f689ce519e28a4e4e77102830709cc9",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "longitudinal-cracks/run4-frame-0163-after.jpg",
+      "after_sha256": "361947940ee4258abe45eb00fa5ed06e3f689ce519e28a4e4e77102830709cc9",
+      "before": "longitudinal-cracks/run4-frame-0163-before.jpg",
+      "before_sha256": "eecf67665a47cdc4fafd98f8cf159ff409552b13a6684e3982b45378377d7bd1",
+      "original_sha256": "eecf67665a47cdc4fafd98f8cf159ff409552b13a6684e3982b45378377d7bd1",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.692325,
+          "xyxyn": [
+            0.4589758,
+            0.5290170000000001,
+            0.5126702,
+            0.743071
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.4589758,
+            0.5290170000000001,
+            0.5126702,
+            0.743071
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 5742,
+          "ratio": 0.99791,
+          "method": "Saved blue/cyan/green borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.54878
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      },
+      "replaces": {
+        "run_id": "run2",
+        "frame_id": "frame_0163",
+        "gps_distance_m": 0.0,
+        "match_radius_m": 2
+      }
+    },
+    {
+      "id": "run2-frame-0173",
+      "title": "Run2 · frame_0173 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0173",
+      "filename": "frame_0173.jpg",
+      "source_sha256": "08b5877757667651179506f6e6a5ee67c16a0205232e66d5c49f7f20bac82cd5",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "alligator-cracking/run2-frame-0173-after.jpg",
+      "after_sha256": "08b5877757667651179506f6e6a5ee67c16a0205232e66d5c49f7f20bac82cd5",
+      "before": "alligator-cracking/run2-frame-0173-before.jpg",
+      "before_sha256": "43f4b4e346d4f341b8b11b8178f39a56c540498e77c2fcee69b38a25a9535bcf",
+      "original_sha256": "43f4b4e346d4f341b8b11b8178f39a56c540498e77c2fcee69b38a25a9535bcf",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.650481,
+          "xyxyn": [
+            0.45749899999999993,
+            0.625841,
+            0.6430809999999999,
+            0.746755
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.45749899999999993,
+            0.625841,
+            0.6430809999999999,
+            0.746755
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 7399,
+          "ratio": 0.99529,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.92491
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-frame-0175",
+      "title": "Run2 · frame_0175 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-video-20261026",
+      "run_id": "run2",
+      "frame_id": "frame_0175",
+      "filename": "frame_0175.jpg",
+      "source_sha256": "6ef16ed5ee7c46be165ab4787b6a087041246b6278af24644cf3b5ecb5119774",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "other-surface-defects/run2-frame-0175-after.jpg",
+      "after_sha256": "6ef16ed5ee7c46be165ab4787b6a087041246b6278af24644cf3b5ecb5119774",
+      "before": "other-surface-defects/run2-frame-0175-before.jpg",
+      "before_sha256": "a2b88dc91fc36d983064d8784a1aadd8bfaa7a235dd8834819e16ca5191cf9d4",
+      "original_sha256": "a2b88dc91fc36d983064d8784a1aadd8bfaa7a235dd8834819e16ca5191cf9d4",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.513594,
+          "xyxyn": [
+            0.7955285,
+            0.5733779999999999,
+            0.9999995,
+            0.7010000000000001
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.7955285,
+            0.5733779999999999,
+            0.9999995,
+            0.7010000000000001
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 6104,
+          "ratio": 0.83571,
+          "method": "Saved blue/cyan borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 1.00764
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run4-frame-0040",
+      "title": "Run4 · frame_0040 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking",
+        "other-surface-defects"
+      ],
+      "source_id": "run4-video-20261026",
+      "run_id": "run4",
+      "frame_id": "frame_0040",
+      "filename": "frame_0040.jpg",
+      "source_sha256": "bd6640b4ff97c4c97dfdc874757c9690e5afb1d95ce5ce0ef7bf86bb6a0dda9e",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "alligator-cracking/run4-frame-0040-after.jpg",
+      "after_sha256": "bd6640b4ff97c4c97dfdc874757c9690e5afb1d95ce5ce0ef7bf86bb6a0dda9e",
+      "before": "alligator-cracking/run4-frame-0040-before.jpg",
+      "before_sha256": "c203a2bbd3ca36d9cc744da069dfc5158fe8767aff2c232dca931c7e0b308876",
+      "original_sha256": "c203a2bbd3ca36d9cc744da069dfc5158fe8767aff2c232dca931c7e0b308876",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.617527,
+          "xyxyn": [
+            0.3060805,
+            0.69374755,
+            0.4220895,
+            0.7647144499999999
+          ]
+        },
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.415544,
+          "xyxyn": [
+            0.396266,
+            0.5795996,
+            0.527866,
+            0.6554804
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.3060805,
+            0.69374755,
+            0.4220895,
+            0.7647144499999999
+          ],
+          [
+            0.396266,
+            0.5795996,
+            0.527866,
+            0.6554804
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 8660,
+          "ratio": 0.90171,
+          "method": "Saved blue/cyan/green borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 1.80292
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run4-frame-0041",
+      "title": "Run4 · frame_0041 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run4-video-20261026",
+      "run_id": "run4",
+      "frame_id": "frame_0041",
+      "filename": "frame_0041.jpg",
+      "source_sha256": "177bd6c7ffafdf49d64af7570103ce9927715f234521c4b12b5625c596d23655",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "other-surface-defects/run4-frame-0041-after.jpg",
+      "after_sha256": "177bd6c7ffafdf49d64af7570103ce9927715f234521c4b12b5625c596d23655",
+      "before": "other-surface-defects/run4-frame-0041-before.jpg",
+      "before_sha256": "3b9d8e254e7f474f3eb13de2daae5b3495f6bf73022535a5a26f96f0b7b1f9e6",
+      "original_sha256": "3b9d8e254e7f474f3eb13de2daae5b3495f6bf73022535a5a26f96f0b7b1f9e6",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.470215,
+          "xyxyn": [
+            0.33151299999999995,
+            0.6003395,
+            0.501263,
+            0.7358345
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.33151299999999995,
+            0.6003395,
+            0.501263,
+            0.7358345
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 6400,
+          "ratio": 0.87743,
+          "method": "Saved blue/cyan/green borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.9668
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run4-frame-0062",
+      "title": "Run4 · frame_0062 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run4-video-20261026",
+      "run_id": "run4",
+      "frame_id": "frame_0062",
+      "filename": "frame_0062.jpg",
+      "source_sha256": "38ef12a064c43492869593fadc512a35ff0d2c263aa5cb7a25ae9050735aa017",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "other-surface-defects/run4-frame-0062-after.jpg",
+      "after_sha256": "38ef12a064c43492869593fadc512a35ff0d2c263aa5cb7a25ae9050735aa017",
+      "before": "other-surface-defects/run4-frame-0062-before.jpg",
+      "before_sha256": "9d6b3e2c2121401207c9f036dceaa5b20fa30bed4ede6f13c9437fa92584357e",
+      "original_sha256": "9d6b3e2c2121401207c9f036dceaa5b20fa30bed4ede6f13c9437fa92584357e",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.877691,
+          "xyxyn": [
+            0.291097,
+            0.64643325,
+            0.5474749999999999,
+            0.74559075
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.291097,
+            0.64643325,
+            0.5474749999999999,
+            0.74559075
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 7348,
+          "ratio": 0.82655,
+          "method": "Saved blue/cyan/green borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.85961
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run4-frame-0065",
+      "title": "Run4 · frame_0065 · Pothole",
+      "category": "potholes",
+      "categories": [
+        "potholes"
+      ],
+      "source_id": "run4-video-20261026",
+      "run_id": "run4",
+      "frame_id": "frame_0065",
+      "filename": "frame_0065.jpg",
+      "source_sha256": "811cde965d245d8234f0b50d3234514edff81a9af6f61773fdca6481c777956b",
+      "source_width": 1920,
+      "source_height": 1440,
+      "after": "potholes/run4-frame-0065-after.jpg",
+      "after_sha256": "811cde965d245d8234f0b50d3234514edff81a9af6f61773fdca6481c777956b",
+      "before": "potholes/run4-frame-0065-before.jpg",
+      "before_sha256": "7968c38767fada3929b43f500c31f2e70587b6a594326ca115d96603df53fde7",
+      "original_sha256": "7968c38767fada3929b43f500c31f2e70587b6a594326ca115d96603df53fde7",
+      "display_width": 1920,
+      "display_height": 1440,
+      "annotations": [
+        {
+          "class_name": "pothole",
+          "source_class_id": 3,
+          "confidence": 0.613948,
+          "xyxyn": [
+            0.62426545,
+            0.5321199,
+            0.67397855,
+            0.5590501
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "box_regions": [
+          [
+            0.62426545,
+            0.5321199,
+            0.67397855,
+            0.5590501
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 1793,
+          "ratio": 0.95576,
+          "method": "Saved blue/cyan/green borders, or white borders that differ from the matching original."
+        },
+        "review_date": "2026-10-26",
+        "pairing": {
+          "method": "Exact frame identifier and source-video frame manifest, matching dimensions, visual comparison and image-content check.",
+          "mean_luma_difference": 0.24499
+        },
+        "method": "Visual BEFORE/AFTER inspection and saved box-border verification. Both source JPEGs are copied byte-for-byte without resizing, re-encoding or regenerating annotations."
+      }
+    },
+    {
+      "id": "run2-photo-1788911348-pts-000195",
+      "title": "Run2 · 1788911348 · frame 000195 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911348__PTS_000195",
+      "filename": "1788911348__PTS_000195.jpg",
+      "source_sha256": "fa031103e349dda61a83fac1765f415df2295501a93d7dce9dd9430725e77d35",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911348-pts-000195-before.png",
+      "before_sha256": "45d2c5261af4d438f0a8cb0e49c24de7fa6f1e0044fdb26f265cd6008a669752",
+      "original_sha256": "45d2c5261af4d438f0a8cb0e49c24de7fa6f1e0044fdb26f265cd6008a669752",
+      "after": "other-surface-defects/run2-photo-1788911348-pts-000195-after.jpg",
+      "after_sha256": "fa031103e349dda61a83fac1765f415df2295501a93d7dce9dd9430725e77d35",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.816133,
+          "xyxyn": [
+            0.5379436500000001,
+            0.5912778999999999,
+            0.59671235,
+            0.6859301
+          ]
+        },
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.765173,
+          "xyxyn": [
+            0.6300454,
+            0.59558215,
+            0.7172126000000001,
+            0.67824985
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.5379436500000001,
+            0.5912778999999999,
+            0.59671235,
+            0.6859301
+          ],
+          [
+            0.6300454,
+            0.59558215,
+            0.7172126000000001,
+            0.67824985
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 12623,
+          "ratio": 0.95513,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.31284
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000032",
+      "title": "Run2 · 1788911598 · frame 000032 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000032",
+      "filename": "1788911598__PTS_000032.jpg",
+      "source_sha256": "ec5d6bfe5310f7cb09b206a969d0a5a76cfae6d86aa05ff604b663bc70064fe4",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911598-pts-000032-before.png",
+      "before_sha256": "bbf12e2eb837517169fe8d225efd85141c4c0f4a60673b1fb0fc2f6e8596e312",
+      "original_sha256": "bbf12e2eb837517169fe8d225efd85141c4c0f4a60673b1fb0fc2f6e8596e312",
+      "after": "other-surface-defects/run2-photo-1788911598-pts-000032-after.jpg",
+      "after_sha256": "ec5d6bfe5310f7cb09b206a969d0a5a76cfae6d86aa05ff604b663bc70064fe4",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.859985,
+          "xyxyn": [
+            0.347993,
+            0.61001595,
+            0.454329,
+            0.67692405
+          ]
+        },
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.644056,
+          "xyxyn": [
+            0.201173,
+            0.5950235,
+            0.308189,
+            0.7073865
+          ]
+        },
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.494262,
+          "xyxyn": [
+            0.1760505,
+            0.6083205,
+            0.3064155,
+            0.7192475
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.347993,
+            0.61001595,
+            0.454329,
+            0.67692405
+          ],
+          [
+            0.201173,
+            0.5950235,
+            0.308189,
+            0.7073865
+          ],
+          [
+            0.1760505,
+            0.6083205,
+            0.3064155,
+            0.7192475
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 26111,
+          "ratio": 0.95792,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.96876
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000039",
+      "title": "Run2 · 1788911598 · frame 000039 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000039",
+      "filename": "1788911598__PTS_000039.jpg",
+      "source_sha256": "b03073d6a399a646d33b9a41f983f9bcc032d8a6aa9b6210a726125046e062cc",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911598-pts-000039-before.png",
+      "before_sha256": "02be1baae2d7d6b9840c622375411e2f805892f83b5df234bd2b0d0f8fe084bd",
+      "original_sha256": "02be1baae2d7d6b9840c622375411e2f805892f83b5df234bd2b0d0f8fe084bd",
+      "after": "other-surface-defects/run2-photo-1788911598-pts-000039-after.jpg",
+      "after_sha256": "b03073d6a399a646d33b9a41f983f9bcc032d8a6aa9b6210a726125046e062cc",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.873239,
+          "xyxyn": [
+            0.42932505,
+            0.5657475,
+            0.51494695,
+            0.6701605
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.42932505,
+            0.5657475,
+            0.51494695,
+            0.6701605
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 7438,
+          "ratio": 0.959,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.92875
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000042",
+      "title": "Run2 · 1788911598 · frame 000042 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000042",
+      "filename": "1788911598__PTS_000042.jpg",
+      "source_sha256": "41e3d1bfcdbf687e441ab1aa852e3aca3afbc2a4f9bd878e33645c41ac918624",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911598-pts-000042-before.png",
+      "before_sha256": "352529424adefbf04550a0bbbb02bd439bddce0f20920260b1da7000247f5624",
+      "original_sha256": "352529424adefbf04550a0bbbb02bd439bddce0f20920260b1da7000247f5624",
+      "after": "other-surface-defects/run2-photo-1788911598-pts-000042-after.jpg",
+      "after_sha256": "41e3d1bfcdbf687e441ab1aa852e3aca3afbc2a4f9bd878e33645c41ac918624",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.909599,
+          "xyxyn": [
+            0.34657960000000004,
+            0.60152015,
+            0.4281664,
+            0.69780785
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.34657960000000004,
+            0.60152015,
+            0.4281664,
+            0.69780785
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 7028,
+          "ratio": 0.96353,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.91007
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000044",
+      "title": "Run2 · 1788911598 · frame 000044 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000044",
+      "filename": "1788911598__PTS_000044.jpg",
+      "source_sha256": "15170dfecc1812d44f92a7461a962f33111057852ef5117773b9fd5a3cdd821a",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911598-pts-000044-before.png",
+      "before_sha256": "65fa46a29aa01c817a8ae5fe650dfaf0541b4dcc709feedebd0df0663f6161e0",
+      "original_sha256": "65fa46a29aa01c817a8ae5fe650dfaf0541b4dcc709feedebd0df0663f6161e0",
+      "after": "other-surface-defects/run2-photo-1788911598-pts-000044-after.jpg",
+      "after_sha256": "15170dfecc1812d44f92a7461a962f33111057852ef5117773b9fd5a3cdd821a",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.477706,
+          "xyxyn": [
+            0.33376,
+            0.5847985,
+            0.438204,
+            0.7172535
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.33376,
+            0.5847985,
+            0.438204,
+            0.7172535
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 9234,
+          "ratio": 0.96007,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.18542
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000144",
+      "title": "Run2 · 1788911598 · frame 000144 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000144",
+      "filename": "1788911598__PTS_000144.jpg",
+      "source_sha256": "cc65f26662152c506d802b8c08ce72f72741109f5cd6ee52e0e8ce18850fe055",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911598-pts-000144-before.png",
+      "before_sha256": "bf85bbc795e9a526597975be78507600eefe9d2ec07032f21d65228589c6ccd3",
+      "original_sha256": "bf85bbc795e9a526597975be78507600eefe9d2ec07032f21d65228589c6ccd3",
+      "after": "other-surface-defects/run2-photo-1788911598-pts-000144-after.jpg",
+      "after_sha256": "cc65f26662152c506d802b8c08ce72f72741109f5cd6ee52e0e8ce18850fe055",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.764201,
+          "xyxyn": [
+            0.377196,
+            0.5931875,
+            0.561538,
+            0.7157285
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.377196,
+            0.5931875,
+            0.561538,
+            0.7157285
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 12846,
+          "ratio": 0.94303,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.35358
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000147",
+      "title": "Run2 · 1788911598 · frame 000147 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000147",
+      "filename": "1788911598__PTS_000147.jpg",
+      "source_sha256": "c83829de4e2d44c861c3c8402fd74f7410b6e54095df87ba163cfbcc8e02ff32",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911598-pts-000147-before.png",
+      "before_sha256": "d09a934d3f52b5d954fc813e712501c500668d2f67b7170ee35b4d1d90b84626",
+      "original_sha256": "d09a934d3f52b5d954fc813e712501c500668d2f67b7170ee35b4d1d90b84626",
+      "after": "other-surface-defects/run2-photo-1788911598-pts-000147-after.jpg",
+      "after_sha256": "c83829de4e2d44c861c3c8402fd74f7410b6e54095df87ba163cfbcc8e02ff32",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.837021,
+          "xyxyn": [
+            0.3977765,
+            0.5816145,
+            0.5333435,
+            0.7082674999999999
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.3977765,
+            0.5816145,
+            0.5333435,
+            0.7082674999999999
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 10564,
+          "ratio": 0.94915,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.1567
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000152",
+      "title": "Run2 · 1788911598 · frame 000152 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000152",
+      "filename": "1788911598__PTS_000152.jpg",
+      "source_sha256": "2060c915950cd06e31c438f115f944e1557f446c88704b5b6c1ddce3238fbfab",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911598-pts-000152-before.png",
+      "before_sha256": "3a0f322ef62b8157f61211e7840d96a28ec2b096a4b4bf1ea8c6bee9b36acda9",
+      "original_sha256": "3a0f322ef62b8157f61211e7840d96a28ec2b096a4b4bf1ea8c6bee9b36acda9",
+      "after": "other-surface-defects/run2-photo-1788911598-pts-000152-after.jpg",
+      "after_sha256": "2060c915950cd06e31c438f115f944e1557f446c88704b5b6c1ddce3238fbfab",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.617301,
+          "xyxyn": [
+            0.37321679999999996,
+            0.574394,
+            0.4602232,
+            0.71335
+          ]
+        },
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.521026,
+          "xyxyn": [
+            0.47330825000000004,
+            0.5823705,
+            0.5725997500000001,
+            0.6920354999999999
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.37321679999999996,
+            0.574394,
+            0.4602232,
+            0.71335
+          ],
+          [
+            0.47330825000000004,
+            0.5823705,
+            0.5725997500000001,
+            0.6920354999999999
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 16250,
+          "ratio": 0.92709,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.48697
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000161",
+      "title": "Run2 · 1788911598 · frame 000161 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000161",
+      "filename": "1788911598__PTS_000161.jpg",
+      "source_sha256": "669a7f9b84f1f9deeac6da54e93e41064cc4618d236cdc6940b9f40ece28e36c",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911598-pts-000161-before.png",
+      "before_sha256": "f4ba957b7665c2fd8a03c7ae0af1bae635e5d029100b77fb31e762285c065484",
+      "original_sha256": "f4ba957b7665c2fd8a03c7ae0af1bae635e5d029100b77fb31e762285c065484",
+      "after": "other-surface-defects/run2-photo-1788911598-pts-000161-after.jpg",
+      "after_sha256": "669a7f9b84f1f9deeac6da54e93e41064cc4618d236cdc6940b9f40ece28e36c",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.674872,
+          "xyxyn": [
+            0.44810540000000004,
+            0.57044195,
+            0.5395066000000001,
+            0.6630200500000001
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.44810540000000004,
+            0.57044195,
+            0.5395066000000001,
+            0.6630200500000001
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 7162,
+          "ratio": 0.92844,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.03591
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000286",
+      "title": "Run2 · 1788911598 · frame 000286 · Longitudinal crack",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000286",
+      "filename": "1788911598__PTS_000286.jpg",
+      "source_sha256": "fe8f89e1fb12b44a7247c6c8021362fb92eaf9c7848f8010721b394e097d6ed1",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "longitudinal-cracks/run2-photo-1788911598-pts-000286-before.png",
+      "before_sha256": "85b856393310c44c580fc28f719612a43df020424b5ecf02a3c1914f936f81f0",
+      "original_sha256": "85b856393310c44c580fc28f719612a43df020424b5ecf02a3c1914f936f81f0",
+      "after": "longitudinal-cracks/run2-photo-1788911598-pts-000286-after.jpg",
+      "after_sha256": "fe8f89e1fb12b44a7247c6c8021362fb92eaf9c7848f8010721b394e097d6ed1",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.444373,
+          "xyxyn": [
+            0.4649928,
+            0.5805049999999999,
+            0.5140412,
+            0.711863
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.4649928,
+            0.5805049999999999,
+            0.5140412,
+            0.711863
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 6584,
+          "ratio": 0.99637,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.55956
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000430",
+      "title": "Run2 · 1788911598 · frame 000430 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000430",
+      "filename": "1788911598__PTS_000430.jpg",
+      "source_sha256": "5e78622a5bd99c03a9a229d65eee6d785b7e560b4a3f47190ee13ee52e665a6e",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788911598-pts-000430-before.png",
+      "before_sha256": "a4c7f9462c5b4060696effc520415e3f9408244e7ae1dff19039c08b04027503",
+      "original_sha256": "a4c7f9462c5b4060696effc520415e3f9408244e7ae1dff19039c08b04027503",
+      "after": "alligator-cracking/run2-photo-1788911598-pts-000430-after.jpg",
+      "after_sha256": "5e78622a5bd99c03a9a229d65eee6d785b7e560b4a3f47190ee13ee52e665a6e",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.775626,
+          "xyxyn": [
+            0.33825530000000004,
+            0.6105605000000001,
+            0.4302967,
+            0.7239795
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.33825530000000004,
+            0.6105605000000001,
+            0.4302967,
+            0.7239795
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 8310,
+          "ratio": 0.99259,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.95296
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000450",
+      "title": "Run2 · 1788911598 · frame 000450 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000450",
+      "filename": "1788911598__PTS_000450.jpg",
+      "source_sha256": "17744c09276c4a7c5d038f3f5148fe4e40a36a7c936d919788bb3cf0352706fd",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911598-pts-000450-before.png",
+      "before_sha256": "cb0c34a72b9ff1f3623f9f25e422b7b6985c331cb799349f765e54739481bfc4",
+      "original_sha256": "cb0c34a72b9ff1f3623f9f25e422b7b6985c331cb799349f765e54739481bfc4",
+      "after": "other-surface-defects/run2-photo-1788911598-pts-000450-after.jpg",
+      "after_sha256": "17744c09276c4a7c5d038f3f5148fe4e40a36a7c936d919788bb3cf0352706fd",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.725246,
+          "xyxyn": [
+            0.46611355,
+            0.55265095,
+            0.51642045,
+            0.63183505
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.46611355,
+            0.55265095,
+            0.51642045,
+            0.63183505
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 4798,
+          "ratio": 0.94152,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.17536
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000454",
+      "title": "Run2 · 1788911598 · frame 000454 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking",
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000454",
+      "filename": "1788911598__PTS_000454.jpg",
+      "source_sha256": "17874dd1be175a9c5d64f73e6f2a91105c07fa4c9a0af01ce06cb0dc9a331d79",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788911598-pts-000454-before.png",
+      "before_sha256": "98799b38dd1dfe7d3d49037f0baf4782b2cdbc322390f7f8081acb7d57570cc5",
+      "original_sha256": "98799b38dd1dfe7d3d49037f0baf4782b2cdbc322390f7f8081acb7d57570cc5",
+      "after": "alligator-cracking/run2-photo-1788911598-pts-000454-after.jpg",
+      "after_sha256": "17874dd1be175a9c5d64f73e6f2a91105c07fa4c9a0af01ce06cb0dc9a331d79",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.680901,
+          "xyxyn": [
+            0.47344555,
+            0.584276,
+            0.56924645,
+            0.7024859999999999
+          ]
+        },
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.408579,
+          "xyxyn": [
+            0.47454975,
+            0.5842965,
+            0.56456825,
+            0.7024695000000001
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.47344555,
+            0.584276,
+            0.56924645,
+            0.7024859999999999
+          ],
+          [
+            0.47454975,
+            0.5842965,
+            0.56456825,
+            0.7024695000000001
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 17066,
+          "ratio": 0.99592,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.05346
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000478",
+      "title": "Run2 · 1788911598 · frame 000478 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000478",
+      "filename": "1788911598__PTS_000478.jpg",
+      "source_sha256": "f3dc10ef15fdc4d0d1b2640754e25975b1d00e0bf68641922c1a435b68460e5d",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911598-pts-000478-before.png",
+      "before_sha256": "ad62b46d4aad5aa6076e748bcb28ec9d2c9fa7a4d8fd32c56a87bfbff3df0a77",
+      "original_sha256": "ad62b46d4aad5aa6076e748bcb28ec9d2c9fa7a4d8fd32c56a87bfbff3df0a77",
+      "after": "other-surface-defects/run2-photo-1788911598-pts-000478-after.jpg",
+      "after_sha256": "f3dc10ef15fdc4d0d1b2640754e25975b1d00e0bf68641922c1a435b68460e5d",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.674729,
+          "xyxyn": [
+            0.4156025,
+            0.5491025,
+            0.5295255,
+            0.6901835000000001
+          ]
+        },
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.478845,
+          "xyxyn": [
+            0.4076465,
+            0.5772280000000001,
+            0.5386915,
+            0.697516
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.4156025,
+            0.5491025,
+            0.5295255,
+            0.6901835000000001
+          ],
+          [
+            0.4076465,
+            0.5772280000000001,
+            0.5386915,
+            0.697516
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 20227,
+          "ratio": 0.95935,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.6997
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000491",
+      "title": "Run2 · 1788911598 · frame 000491 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000491",
+      "filename": "1788911598__PTS_000491.jpg",
+      "source_sha256": "139709d5c30c24692b119139c5202092593b7a1badfabe15cb4d2b6703f5efee",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788911598-pts-000491-before.png",
+      "before_sha256": "30a7270e6b1084da7024fa5d56ed01831a1847d516c031675d5f66afee50d717",
+      "original_sha256": "30a7270e6b1084da7024fa5d56ed01831a1847d516c031675d5f66afee50d717",
+      "after": "other-surface-defects/run2-photo-1788911598-pts-000491-after.jpg",
+      "after_sha256": "139709d5c30c24692b119139c5202092593b7a1badfabe15cb4d2b6703f5efee",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.827247,
+          "xyxyn": [
+            0.4307597,
+            0.5653568999999999,
+            0.4965483,
+            0.6182091
+          ]
+        },
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.702401,
+          "xyxyn": [
+            0.3702241,
+            0.56852165,
+            0.4235999,
+            0.6186563500000001
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.4307597,
+            0.5653568999999999,
+            0.4965483,
+            0.6182091
+          ],
+          [
+            0.3702241,
+            0.56852165,
+            0.4235999,
+            0.6186563500000001
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 8997,
+          "ratio": 0.94506,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.17738
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788911598-pts-000714",
+      "title": "Run2 · 1788911598 · frame 000714 · Longitudinal crack",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788911598__PTS_000714",
+      "filename": "1788911598__PTS_000714.jpg",
+      "source_sha256": "582f0bad61855b2e27d35f23e09bcd8f43a8b0feba617901ccbb5726373e2865",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "longitudinal-cracks/run2-photo-1788911598-pts-000714-before.png",
+      "before_sha256": "d350f8be29719dd7cbe3277447102640cbd3d887466abc35d2233ef14a3e5331",
+      "original_sha256": "d350f8be29719dd7cbe3277447102640cbd3d887466abc35d2233ef14a3e5331",
+      "after": "longitudinal-cracks/run2-photo-1788911598-pts-000714-after.jpg",
+      "after_sha256": "582f0bad61855b2e27d35f23e09bcd8f43a8b0feba617901ccbb5726373e2865",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.670891,
+          "xyxyn": [
+            0.39571959999999995,
+            0.610058,
+            0.4190064,
+            0.7137899999999999
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.39571959999999995,
+            0.610058,
+            0.4190064,
+            0.7137899999999999
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 4373,
+          "ratio": 0.99795,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.60337
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788912786-pts-000246",
+      "title": "Run2 · 1788912786 · frame 000246 · Longitudinal crack",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788912786__PTS_000246",
+      "filename": "1788912786__PTS_000246.jpg",
+      "source_sha256": "d7d4b787baea358a41498139484118af3dd6492625a52fcb0814bad687765524",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "longitudinal-cracks/run2-photo-1788912786-pts-000246-before.png",
+      "before_sha256": "544256e5185837af0efb23a33755cc0a455beae93553521f524126d3dbfe2fe2",
+      "original_sha256": "544256e5185837af0efb23a33755cc0a455beae93553521f524126d3dbfe2fe2",
+      "after": "longitudinal-cracks/run2-photo-1788912786-pts-000246-after.jpg",
+      "after_sha256": "d7d4b787baea358a41498139484118af3dd6492625a52fcb0814bad687765524",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.644593,
+          "xyxyn": [
+            0.48294960000000003,
+            0.59786555,
+            0.5284424000000001,
+            0.68071245
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.48294960000000003,
+            0.59786555,
+            0.5284424000000001,
+            0.68071245
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 4920,
+          "ratio": 0.99555,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.61425
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788912786-pts-000306",
+      "title": "Run2 · 1788912786 · frame 000306 · Longitudinal crack",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788912786__PTS_000306",
+      "filename": "1788912786__PTS_000306.jpg",
+      "source_sha256": "083584f52d4fa3b851fdc97066c0507f9c9b3135d9c437a999e262ec289d722b",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "longitudinal-cracks/run2-photo-1788912786-pts-000306-before.png",
+      "before_sha256": "92dd832f1b093e0d33865ec7aff0361e93ff747db366db1f6d110f56da19dd34",
+      "original_sha256": "92dd832f1b093e0d33865ec7aff0361e93ff747db366db1f6d110f56da19dd34",
+      "after": "longitudinal-cracks/run2-photo-1788912786-pts-000306-after.jpg",
+      "after_sha256": "083584f52d4fa3b851fdc97066c0507f9c9b3135d9c437a999e262ec289d722b",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.531139,
+          "xyxyn": [
+            0.45895495000000003,
+            0.5574295,
+            0.5201590500000001,
+            0.6958745
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.45895495000000003,
+            0.5574295,
+            0.5201590500000001,
+            0.6958745
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 7460,
+          "ratio": 0.99786,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.66218
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788912786-pts-000319",
+      "title": "Run2 · 1788912786 · frame 000319 · Pothole",
+      "category": "potholes",
+      "categories": [
+        "potholes"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788912786__PTS_000319",
+      "filename": "1788912786__PTS_000319.jpg",
+      "source_sha256": "5cb5174c9fe1adb7b3f47a329212f194d20a0daa6e02d9e9aef11a4f38d6787f",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "potholes/run2-photo-1788912786-pts-000319-before.png",
+      "before_sha256": "1ce8eac5fee2644e2eb0fd28ede27e34d4d2bf9bf69fdcc764a446e0a23aa7c3",
+      "original_sha256": "1ce8eac5fee2644e2eb0fd28ede27e34d4d2bf9bf69fdcc764a446e0a23aa7c3",
+      "after": "potholes/run2-photo-1788912786-pts-000319-after.jpg",
+      "after_sha256": "5cb5174c9fe1adb7b3f47a329212f194d20a0daa6e02d9e9aef11a4f38d6787f",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "pothole",
+          "source_class_id": 3,
+          "confidence": 0.457106,
+          "xyxyn": [
+            0.37414125000000004,
+            0.6617822,
+            0.40097875,
+            0.6925357999999999
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.37414125000000004,
+            0.6617822,
+            0.40097875,
+            0.6925357999999999
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 2282,
+          "ratio": 0.95882,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.29446
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000227",
+      "title": "Run2 · 1788913753 · frame 000227 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000227",
+      "filename": "1788913753__PTS_000227.jpg",
+      "source_sha256": "a12f337b59a2007afab80efa9332ff325e05fcaedc1ec96c2785d14a8bd5cb4c",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788913753-pts-000227-before.png",
+      "before_sha256": "d76ab585cd0b3a1740b47bc55ded293e3d11a2b61b42977fa63aada0ba662b86",
+      "original_sha256": "d76ab585cd0b3a1740b47bc55ded293e3d11a2b61b42977fa63aada0ba662b86",
+      "after": "other-surface-defects/run2-photo-1788913753-pts-000227-after.jpg",
+      "after_sha256": "a12f337b59a2007afab80efa9332ff325e05fcaedc1ec96c2785d14a8bd5cb4c",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.836068,
+          "xyxyn": [
+            0.43751945000000003,
+            0.6013499999999999,
+            0.53748655,
+            0.709898
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.43751945000000003,
+            0.6013499999999999,
+            0.53748655,
+            0.709898
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 8118,
+          "ratio": 0.93828,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.97317
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000274",
+      "title": "Run2 · 1788913753 · frame 000274 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000274",
+      "filename": "1788913753__PTS_000274.jpg",
+      "source_sha256": "bf3068f3e80dcd1a72854150c23a45eb6baf9a746df17ad293eb76d45e37e7ad",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788913753-pts-000274-before.png",
+      "before_sha256": "470bb5d7a108db775e1904c41b89903392339ce250590ff347a3a91dedbd3351",
+      "original_sha256": "470bb5d7a108db775e1904c41b89903392339ce250590ff347a3a91dedbd3351",
+      "after": "other-surface-defects/run2-photo-1788913753-pts-000274-after.jpg",
+      "after_sha256": "bf3068f3e80dcd1a72854150c23a45eb6baf9a746df17ad293eb76d45e37e7ad",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.577031,
+          "xyxyn": [
+            0.46538235,
+            0.54347785,
+            0.5283396499999999,
+            0.60798615
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.46538235,
+            0.54347785,
+            0.5283396499999999,
+            0.60798615
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 5109,
+          "ratio": 0.95782,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.11227
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000333",
+      "title": "Run2 · 1788913753 · frame 000333 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000333",
+      "filename": "1788913753__PTS_000333.jpg",
+      "source_sha256": "9f29f0de81fab8d234982a4b324873988ff8f3db72a1ab01e4156cb2168682cc",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788913753-pts-000333-before.png",
+      "before_sha256": "0292d276bc076b05e95eff4f833058255e4cf83d9557257ad1859d774b1abbde",
+      "original_sha256": "0292d276bc076b05e95eff4f833058255e4cf83d9557257ad1859d774b1abbde",
+      "after": "alligator-cracking/run2-photo-1788913753-pts-000333-after.jpg",
+      "after_sha256": "9f29f0de81fab8d234982a4b324873988ff8f3db72a1ab01e4156cb2168682cc",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.894464,
+          "xyxyn": [
+            0.32832100000000003,
+            0.5632176,
+            0.407325,
+            0.6429204
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.32832100000000003,
+            0.5632176,
+            0.407325,
+            0.6429204
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 6618,
+          "ratio": 0.99519,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.83589
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000334",
+      "title": "Run2 · 1788913753 · frame 000334 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000334",
+      "filename": "1788913753__PTS_000334.jpg",
+      "source_sha256": "bd6e0130d4448d59cacc52b355f66dc1a56e44dbdd29d7e54900c93f24b13ec3",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788913753-pts-000334-before.png",
+      "before_sha256": "6ba0b3c6ff2fa22cc32c803db6db7171504f46bb6c4091c4248c7252a1930240",
+      "original_sha256": "6ba0b3c6ff2fa22cc32c803db6db7171504f46bb6c4091c4248c7252a1930240",
+      "after": "alligator-cracking/run2-photo-1788913753-pts-000334-after.jpg",
+      "after_sha256": "bd6e0130d4448d59cacc52b355f66dc1a56e44dbdd29d7e54900c93f24b13ec3",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.800053,
+          "xyxyn": [
+            0.313395,
+            0.5801695,
+            0.437167,
+            0.7371525000000001
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.313395,
+            0.5801695,
+            0.437167,
+            0.7371525000000001
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 11382,
+          "ratio": 0.99755,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.88937
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000377",
+      "title": "Run2 · 1788913753 · frame 000377 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000377",
+      "filename": "1788913753__PTS_000377.jpg",
+      "source_sha256": "6aa2d6f9e83decd8e9123109835485df8235400add9bfadf6765e6bf80f900e3",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788913753-pts-000377-before.png",
+      "before_sha256": "7d0932df3e6e83d39bf204404780da75cc680a82bb95d5516f36466535a84708",
+      "original_sha256": "7d0932df3e6e83d39bf204404780da75cc680a82bb95d5516f36466535a84708",
+      "after": "alligator-cracking/run2-photo-1788913753-pts-000377-after.jpg",
+      "after_sha256": "6aa2d6f9e83decd8e9123109835485df8235400add9bfadf6765e6bf80f900e3",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.673299,
+          "xyxyn": [
+            0.4456215,
+            0.64794265,
+            0.5752665,
+            0.70585335
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.4456215,
+            0.64794265,
+            0.5752665,
+            0.70585335
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 8697,
+          "ratio": 0.99713,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.89773
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000378",
+      "title": "Run2 · 1788913753 · frame 000378 · Longitudinal crack",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000378",
+      "filename": "1788913753__PTS_000378.jpg",
+      "source_sha256": "677c7ef34ff2afc57c6b9234ef048390bf079461dba0535d579fce6451f3de5f",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "longitudinal-cracks/run2-photo-1788913753-pts-000378-before.png",
+      "before_sha256": "aa1833c63e5b8c7ea1674af6a8c3fb17f35268c47af660a7ebc4728ebfe5566e",
+      "original_sha256": "aa1833c63e5b8c7ea1674af6a8c3fb17f35268c47af660a7ebc4728ebfe5566e",
+      "after": "longitudinal-cracks/run2-photo-1788913753-pts-000378-after.jpg",
+      "after_sha256": "677c7ef34ff2afc57c6b9234ef048390bf079461dba0535d579fce6451f3de5f",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.771501,
+          "xyxyn": [
+            0.45424975,
+            0.5896065,
+            0.50601025,
+            0.7081555
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.45424975,
+            0.5896065,
+            0.50601025,
+            0.7081555
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 6363,
+          "ratio": 0.9989,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.57543
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000379",
+      "title": "Run2 · 1788913753 · frame 000379 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000379",
+      "filename": "1788913753__PTS_000379.jpg",
+      "source_sha256": "4b9cf20d46ac4d43d9696ba55736c9e572d3ee0d567782522c03c7901664d3a6",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788913753-pts-000379-before.png",
+      "before_sha256": "b133be9bebf2ac9ae02204def0505b2cf6ee28cf10dcd90310f70097ef03b1b3",
+      "original_sha256": "b133be9bebf2ac9ae02204def0505b2cf6ee28cf10dcd90310f70097ef03b1b3",
+      "after": "alligator-cracking/run2-photo-1788913753-pts-000379-after.jpg",
+      "after_sha256": "4b9cf20d46ac4d43d9696ba55736c9e572d3ee0d567782522c03c7901664d3a6",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.598949,
+          "xyxyn": [
+            0.4247139,
+            0.62947215,
+            0.5036701,
+            0.6864278500000001
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.4247139,
+            0.62947215,
+            0.5036701,
+            0.6864278500000001
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 5947,
+          "ratio": 0.99715,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.93845
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000391",
+      "title": "Run2 · 1788913753 · frame 000391 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000391",
+      "filename": "1788913753__PTS_000391.jpg",
+      "source_sha256": "4e0042b9d88bc498d62503b28f90d5460185faf34627a344a631cfc04fcae191",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788913753-pts-000391-before.png",
+      "before_sha256": "125872487067c441d62fe0cd63a98a29b9230015048caf734100a50f4a3ffda7",
+      "original_sha256": "125872487067c441d62fe0cd63a98a29b9230015048caf734100a50f4a3ffda7",
+      "after": "alligator-cracking/run2-photo-1788913753-pts-000391-after.jpg",
+      "after_sha256": "4e0042b9d88bc498d62503b28f90d5460185faf34627a344a631cfc04fcae191",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.891626,
+          "xyxyn": [
+            0.4600147,
+            0.63493525,
+            0.5372393,
+            0.70513875
+          ]
+        },
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.685257,
+          "xyxyn": [
+            0.3268135,
+            0.6511449500000001,
+            0.42885850000000003,
+            0.71602705
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.4600147,
+            0.63493525,
+            0.5372393,
+            0.70513875
+          ],
+          [
+            0.3268135,
+            0.6511449500000001,
+            0.42885850000000003,
+            0.71602705
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 13691,
+          "ratio": 0.99585,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.50108
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000453",
+      "title": "Run2 · 1788913753 · frame 000453 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000453",
+      "filename": "1788913753__PTS_000453.jpg",
+      "source_sha256": "9a37b5323c8b70e603ecd403b5901150822b8339e9b73a2cf2f996fda0651229",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788913753-pts-000453-before.png",
+      "before_sha256": "7c4c6b53d1c48366dcb53c5733fe3ef880fbfa4d657790f0b8cac21d94b67ffe",
+      "original_sha256": "7c4c6b53d1c48366dcb53c5733fe3ef880fbfa4d657790f0b8cac21d94b67ffe",
+      "after": "other-surface-defects/run2-photo-1788913753-pts-000453-after.jpg",
+      "after_sha256": "9a37b5323c8b70e603ecd403b5901150822b8339e9b73a2cf2f996fda0651229",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.851944,
+          "xyxyn": [
+            0.43938065000000004,
+            0.6048802000000001,
+            0.51179535,
+            0.6480038
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.43938065000000004,
+            0.6048802000000001,
+            0.51179535,
+            0.6480038
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 4960,
+          "ratio": 0.95495,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.05708
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000775",
+      "title": "Run2 · 1788913753 · frame 000775 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000775",
+      "filename": "1788913753__PTS_000775.jpg",
+      "source_sha256": "5c496cc7d0befa7bbfb63eefff50c9431e256cb9fe45fadc10425872faacee22",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788913753-pts-000775-before.png",
+      "before_sha256": "11319ae215c23e3ca44bcabc00e051d7a53b5a72323614edfca641c6d8892725",
+      "original_sha256": "11319ae215c23e3ca44bcabc00e051d7a53b5a72323614edfca641c6d8892725",
+      "after": "other-surface-defects/run2-photo-1788913753-pts-000775-after.jpg",
+      "after_sha256": "5c496cc7d0befa7bbfb63eefff50c9431e256cb9fe45fadc10425872faacee22",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.825717,
+          "xyxyn": [
+            0.38472615,
+            0.5760311,
+            0.45819984999999996,
+            0.6401988999999999
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.38472615,
+            0.5760311,
+            0.45819984999999996,
+            0.6401988999999999
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 5621,
+          "ratio": 0.95368,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.95262
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000778",
+      "title": "Run2 · 1788913753 · frame 000778 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000778",
+      "filename": "1788913753__PTS_000778.jpg",
+      "source_sha256": "57e9fd43d8c2ce049d0c425aaa3a8b365592f7508a5f8993728d43bdeec40e70",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788913753-pts-000778-before.png",
+      "before_sha256": "eb4be2097843dd7a40206d9b4ab39bc9a9384c4427f46e0ac9c05b307b74800c",
+      "original_sha256": "eb4be2097843dd7a40206d9b4ab39bc9a9384c4427f46e0ac9c05b307b74800c",
+      "after": "other-surface-defects/run2-photo-1788913753-pts-000778-after.jpg",
+      "after_sha256": "57e9fd43d8c2ce049d0c425aaa3a8b365592f7508a5f8993728d43bdeec40e70",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.596044,
+          "xyxyn": [
+            0.4514033,
+            0.62340875,
+            0.5441787,
+            0.69339125
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.4514033,
+            0.62340875,
+            0.5441787,
+            0.69339125
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 6786,
+          "ratio": 0.95416,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.93167
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000788",
+      "title": "Run2 · 1788913753 · frame 000788 · Other surface defect",
+      "category": "other-surface-defects",
+      "categories": [
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000788",
+      "filename": "1788913753__PTS_000788.jpg",
+      "source_sha256": "1d189228b1ebfa0651ae239c8eea5e45088ffe00a96b85612e20af68ea2dea72",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "other-surface-defects/run2-photo-1788913753-pts-000788-before.png",
+      "before_sha256": "1f7848345330fd039cf49e2aa9f6deac99a34ed79f0dcb84df08a401850e4c22",
+      "original_sha256": "1f7848345330fd039cf49e2aa9f6deac99a34ed79f0dcb84df08a401850e4c22",
+      "after": "other-surface-defects/run2-photo-1788913753-pts-000788-after.jpg",
+      "after_sha256": "1d189228b1ebfa0651ae239c8eea5e45088ffe00a96b85612e20af68ea2dea72",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.707423,
+          "xyxyn": [
+            0.47723614999999997,
+            0.56881125,
+            0.52034985,
+            0.63699675
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.47723614999999997,
+            0.56881125,
+            0.52034985,
+            0.63699675
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 4083,
+          "ratio": 0.93475,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.97425
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000792",
+      "title": "Run2 · 1788913753 · frame 000792 · Pothole",
+      "category": "potholes",
+      "categories": [
+        "potholes"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000792",
+      "filename": "1788913753__PTS_000792.jpg",
+      "source_sha256": "51b8d8221f7e4e3ee603073c37213e9ee3c07757e6fad8b1f99b0efd7898a1ff",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "potholes/run2-photo-1788913753-pts-000792-before.png",
+      "before_sha256": "ff3860a3e7f7973e1582fad287456fa376cb2207a83d36b182b5b2aac11a2376",
+      "original_sha256": "ff3860a3e7f7973e1582fad287456fa376cb2207a83d36b182b5b2aac11a2376",
+      "after": "potholes/run2-photo-1788913753-pts-000792-after.jpg",
+      "after_sha256": "51b8d8221f7e4e3ee603073c37213e9ee3c07757e6fad8b1f99b0efd7898a1ff",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "pothole",
+          "source_class_id": 3,
+          "confidence": 0.524537,
+          "xyxyn": [
+            0.3743647,
+            0.69467015,
+            0.4224753,
+            0.71814385
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.3743647,
+            0.69467015,
+            0.4224753,
+            0.71814385
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 3132,
+          "ratio": 0.95198,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.35473
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000796",
+      "title": "Run2 · 1788913753 · frame 000796 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000796",
+      "filename": "1788913753__PTS_000796.jpg",
+      "source_sha256": "872e5c906a68767b5f1f4e7cc7289287a6a7e9a33a555c78bbda0569dba20142",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788913753-pts-000796-before.png",
+      "before_sha256": "93105a4ffbb7266ed3e93e2cee0d498974cb1026f3fb3af61a0a3c3919765443",
+      "original_sha256": "93105a4ffbb7266ed3e93e2cee0d498974cb1026f3fb3af61a0a3c3919765443",
+      "after": "alligator-cracking/run2-photo-1788913753-pts-000796-after.jpg",
+      "after_sha256": "872e5c906a68767b5f1f4e7cc7289287a6a7e9a33a555c78bbda0569dba20142",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.947536,
+          "xyxyn": [
+            0.37067475,
+            0.616249,
+            0.44280925,
+            0.729697
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.37067475,
+            0.616249,
+            0.44280925,
+            0.729697
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 7292,
+          "ratio": 0.99781,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.88699
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000797",
+      "title": "Run2 · 1788913753 · frame 000797 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000797",
+      "filename": "1788913753__PTS_000797.jpg",
+      "source_sha256": "a6cbe026777dea4b6bce3e0f658b8a244fb80ed6fce354f79596fa21a68d2e7d",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788913753-pts-000797-before.png",
+      "before_sha256": "280320eb1dcefe951b5ea5bb9eff9ea741a6a332c67bf4775384ceab5fa050a4",
+      "original_sha256": "280320eb1dcefe951b5ea5bb9eff9ea741a6a332c67bf4775384ceab5fa050a4",
+      "after": "alligator-cracking/run2-photo-1788913753-pts-000797-after.jpg",
+      "after_sha256": "a6cbe026777dea4b6bce3e0f658b8a244fb80ed6fce354f79596fa21a68d2e7d",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.490657,
+          "xyxyn": [
+            0.38549855,
+            0.590739,
+            0.44455944999999997,
+            0.7024670000000001
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.38549855,
+            0.590739,
+            0.44455944999999997,
+            0.7024670000000001
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 6537,
+          "ratio": 0.99771,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.89025
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000800",
+      "title": "Run2 · 1788913753 · frame 000800 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000800",
+      "filename": "1788913753__PTS_000800.jpg",
+      "source_sha256": "15ff15f50539509d9c34dd6480a4e8d5652b34a6f924247d59589a99dd6b6123",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788913753-pts-000800-before.png",
+      "before_sha256": "2a44d7de2224f41891d97cda4191b9d78770e7cd9e86638c8e53e02d0020e1fe",
+      "original_sha256": "2a44d7de2224f41891d97cda4191b9d78770e7cd9e86638c8e53e02d0020e1fe",
+      "after": "alligator-cracking/run2-photo-1788913753-pts-000800-after.jpg",
+      "after_sha256": "15ff15f50539509d9c34dd6480a4e8d5652b34a6f924247d59589a99dd6b6123",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.545075,
+          "xyxyn": [
+            0.36694350000000003,
+            0.59171945,
+            0.4327745,
+            0.69019655
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.36694350000000003,
+            0.59171945,
+            0.4327745,
+            0.69019655
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 6499,
+          "ratio": 0.99617,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.85949
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000869",
+      "title": "Run2 · 1788913753 · frame 000869 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000869",
+      "filename": "1788913753__PTS_000869.jpg",
+      "source_sha256": "8d8f37c8889a401391fe4cadd7e6cff089fc13afb496487b21c32da34d175691",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788913753-pts-000869-before.png",
+      "before_sha256": "0c6d1f01ff90857f50d0e9f2c1a5eb96f690d12a37e71100ce73780ddeba3f35",
+      "original_sha256": "0c6d1f01ff90857f50d0e9f2c1a5eb96f690d12a37e71100ce73780ddeba3f35",
+      "after": "alligator-cracking/run2-photo-1788913753-pts-000869-after.jpg",
+      "after_sha256": "8d8f37c8889a401391fe4cadd7e6cff089fc13afb496487b21c32da34d175691",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.450701,
+          "xyxyn": [
+            0.45682465,
+            0.600856,
+            0.52095935,
+            0.707982
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.45682465,
+            0.600856,
+            0.52095935,
+            0.707982
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 6656,
+          "ratio": 0.99671,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 0.87336
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000876",
+      "title": "Run2 · 1788913753 · frame 000876 · Longitudinal crack",
+      "category": "longitudinal-cracks",
+      "categories": [
+        "longitudinal-cracks",
+        "other-surface-defects"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000876",
+      "filename": "1788913753__PTS_000876.jpg",
+      "source_sha256": "ca5edc00065fbeb855c7e22724eac3f1765904cc74eec010e980ed65317b304a",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "longitudinal-cracks/run2-photo-1788913753-pts-000876-before.png",
+      "before_sha256": "cdb10e1f7fc0ebaa987de9032a88cbcfad1fb4ba04599afdb6447fd53849f92a",
+      "original_sha256": "cdb10e1f7fc0ebaa987de9032a88cbcfad1fb4ba04599afdb6447fd53849f92a",
+      "after": "longitudinal-cracks/run2-photo-1788913753-pts-000876-after.jpg",
+      "after_sha256": "ca5edc00065fbeb855c7e22724eac3f1765904cc74eec010e980ed65317b304a",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.705225,
+          "xyxyn": [
+            0.3979594,
+            0.6154689999999999,
+            0.4273986,
+            0.703439
+          ]
+        },
+        {
+          "class_name": "other_corruption",
+          "source_class_id": 2,
+          "confidence": 0.695747,
+          "xyxyn": [
+            0.5288916,
+            0.6086575,
+            0.6073284,
+            0.6897965
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.3979594,
+            0.6154689999999999,
+            0.4273986,
+            0.703439
+          ],
+          [
+            0.5288916,
+            0.6086575,
+            0.6073284,
+            0.6897965
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 10885,
+          "ratio": 0.99807,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.05339
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
+      }
+    },
+    {
+      "id": "run2-photo-1788913753-pts-000897",
+      "title": "Run2 · 1788913753 · frame 000897 · Alligator cracking",
+      "category": "alligator-cracking",
+      "categories": [
+        "alligator-cracking",
+        "longitudinal-cracks"
+      ],
+      "source_id": "run2-photos-20261026-095926",
+      "run_id": "run2",
+      "run_batch_id": "photos-20261026-095926",
+      "frame_id": "1788913753__PTS_000897",
+      "filename": "1788913753__PTS_000897.jpg",
+      "source_sha256": "09a54508e7a485b1752f4b01aeffc535bb243c944646605d5e392cdbd3884ab3",
+      "source_width": 3840,
+      "source_height": 2160,
+      "before": "alligator-cracking/run2-photo-1788913753-pts-000897-before.png",
+      "before_sha256": "f636cd50683da51af4b704009394a925108374547a541ffe90ee5f2d35597153",
+      "original_sha256": "f636cd50683da51af4b704009394a925108374547a541ffe90ee5f2d35597153",
+      "after": "alligator-cracking/run2-photo-1788913753-pts-000897-after.jpg",
+      "after_sha256": "09a54508e7a485b1752f4b01aeffc535bb243c944646605d5e392cdbd3884ab3",
+      "display_width": 3840,
+      "display_height": 2160,
+      "annotations": [
+        {
+          "class_name": "alligator_crack",
+          "source_class_id": 0,
+          "confidence": 0.516914,
+          "xyxyn": [
+            0.5472985499999999,
+            0.6198508500000001,
+            0.63555745,
+            0.69530115
+          ]
+        },
+        {
+          "class_name": "long_crack",
+          "source_class_id": 1,
+          "confidence": 0.480938,
+          "xyxyn": [
+            0.4618526,
+            0.6331616000000001,
+            0.47719340000000005,
+            0.7022604
+          ]
+        }
+      ],
+      "review": {
+        "visible_box": true,
+        "reviewed": true,
+        "review_date": "2026-10-26",
+        "box_regions": [
+          [
+            0.5472985499999999,
+            0.6198508500000001,
+            0.63555745,
+            0.69530115
+          ],
+          [
+            0.4618526,
+            0.6331616000000001,
+            0.47719340000000005,
+            0.7022604
+          ]
+        ],
+        "border_check": {
+          "annotation_border_pixels": 9848,
+          "ratio": 0.99214,
+          "method": "Saved coloured annotation borders and changed white borders compared with the exact original."
+        },
+        "pairing": {
+          "method": "Exact source frame ID, matching full-resolution dimensions, visual BEFORE/AFTER review and a luminance comparison at 640 by 360 pixels.",
+          "comparison_width": 640,
+          "comparison_height": 360,
+          "mean_luma_difference": 1.11072
+        },
+        "method": "Whole-frame visual review and saved bounding-box border verification. The source PNG and saved annotated JPEG are copied byte-for-byte, without resizing or re-encoding."
       }
     }
   ]

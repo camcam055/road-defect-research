@@ -1,18 +1,18 @@
 {
   "source": "Latest supplied MG7101 research report",
-  "source_saved": "25 October 2026",
-  "source_sha256": "ccdca0144c56db14c624f83496cdae877a75c9dd1622c7d5d8a9c7b1c90c7ee0",
+  "source_saved": "26 October 2026",
+  "source_sha256": "6ae997953fbe1a3d5bcb9c0cf74ddefc123d3815895e106b488145e62f516cb9",
   "source_status": "Cover labelled Final Report; supplied filename retains draft.",
-  "verification": "Verbatim source blocks after four documented privacy replacements; equations and unchanged original chart data verified separately.",
+  "verification": "Verbatim source blocks after four existing privacy substitutions; equations compared separately and all eight original native chart sources verified. Front matter is excluded.",
   "pages": [
     {
       "page": "problem",
-      "matched_blocks": 47,
+      "matched_blocks": 42,
       "status": "PASS"
     },
     {
       "page": "methodology",
-      "matched_blocks": 113,
+      "matched_blocks": 114,
       "status": "PASS"
     },
     {
@@ -22,12 +22,12 @@
     },
     {
       "page": "results",
-      "matched_blocks": 37,
+      "matched_blocks": 62,
       "status": "PASS"
     },
     {
       "page": "conclusion",
-      "matched_blocks": 6,
+      "matched_blocks": 7,
       "status": "PASS"
     },
     {
@@ -44,17 +44,17 @@
   "figures": {
     "image11.png": {
       "source_sha256": "66c1a69156f669148c611aa3ce2e5172f1631056e3df11f661884d36f7afb47b",
-      "source_block": 879,
+      "source_block": 881,
       "public_sha256": "1019a090502ddffaa6ab4be49bf3e08ba7c83d823229696176bdf6d94e0a35bd"
     },
     "image12.png": {
       "source_sha256": "e8649f1f8573e74ee7532cc0164fa586b4c61415c37a1bea0114069b60cab386",
-      "source_block": 906,
+      "source_block": 908,
       "public_sha256": "eed3754b1fe889818c7edb1677ad3aaee438a5eb8ff923d7e7db2a9b223f51ca"
     },
-    "image13.png": {
+    "image15.png": {
       "source_sha256": "a47f9b8076ad27300cc8f9663d487f7815f7b05d8077dd96d4be273c84930ad1",
-      "source_block": 1533,
+      "source_block": 1691,
       "public_sha256": "c3352cac5268d6a584af9558ae05d22e17fd6310279d4daa495ff2f9bd592bbf"
     },
     "image2.jpeg": {
@@ -64,7 +64,7 @@
     },
     "image3.jpeg": {
       "source_sha256": "42b6f9612ac2aaf4b89de0d995419a8e2f10b6312071a01fd19d64cb94c19ef1",
-      "source_block": 282,
+      "source_block": 281,
       "public_sha256": "955a2e9c9566147feacac369d8c50adc2e46ce79da3a8cf24c2712ceb6798e37"
     },
     "image4.jpeg": {
@@ -103,56 +103,94 @@
       "public_sha256": "ba914a3cbe7d19df886a3b70e993868abb1fe3c956a933aa7f9b6330fc14f9f5"
     },
     "chart1.png": {
-      "source_block": 929,
+      "source_block": 931,
       "source_chart_sha256": "844ffdbaf233757692fb7fb1052020e852d68d1bfd82ed8422d75bf89c858836",
       "public_sha256": "c0a86945dd66dc5cb02df6d7bb9482115c59f102f073fa71cb860c466e76a8d4"
     },
     "chart2.png": {
-      "source_block": 987,
+      "source_block": 989,
       "source_chart_sha256": "11f34c3629cf891aa114e031c1860463a52b8e227bf3377f26c1853c67569c40",
       "public_sha256": "05e4c4e1f214dad4b17fc96f1b62921c5ac5202f8e49773fbf6db57f47152eda"
     },
     "chart3.png": {
-      "source_block": 1044,
+      "source_block": 1046,
       "source_chart_sha256": "49c81d7527e6d9da387ca9e8d480870712ac97216882f36c25f48d180001e690",
       "public_sha256": "99ad52cd58977d0169e5797a8993f7c28531a211aa9580d79cc6dd01253d0f21"
     },
     "chart4.png": {
-      "source_block": 1049,
+      "source_block": 1051,
       "source_chart_sha256": "03102883d56290224acc320bf358c68db1ff6ece18ea2bdf997f8dd3c49e5b90",
       "public_sha256": "b56b4cb9851ff96114b188f5c2ebf30fd0c5485383f65a0d5a844dd6a206a405"
     },
     "chart5.png": {
-      "source_block": 1128,
+      "source_block": 1130,
       "source_chart_sha256": "175129f44cff5fe6e5dba01a3691f48f3aa65a614af985c32deb32ea6c25b3aa",
       "public_sha256": "8449745b66f55755fb088719733b674cd2ef34563dae78d4759186271904cd47"
     },
-    "image14.jpeg": {
-      "source_sha256": "1cb2628fb497cb2d03d77c42d167dda5e844c15c271a7d15333c6377feaa4991",
-      "source_block": 1577,
-      "public_sha256": "066a675e4c0618b440139c12d1197f02b0f0a4d968dd8bb5ce26a5a8850c2b13"
+    "chart6.png": {
+      "source_block": 1196,
+      "source_chart_sha256": "86fc5f58c18d50935c7f7b5b29bdf6ce0521d60e133d6107b282e5dd4375e50a",
+      "public_sha256": "4c88f547131ad9f768f58277152b038d8621756ca0d0ba14f4325be18f846b9e"
     },
-    "image15.jpeg": {
-      "source_sha256": "bfe601498650039c618764205324d058c5ae3d8627dc7820d05b4c391768627b",
-      "source_block": 1577,
-      "public_sha256": "9578640f92b69e5b2056d5fb1a7caf100c2290463c503ffeff1b78429dddee48"
+    "chart7.png": {
+      "source_block": 1226,
+      "source_chart_sha256": "d42e07ef268d29e94b199cd8e4125ebd96eb50d2b2c74b1c86b8147b5d757b94",
+      "public_sha256": "c9a87a7c19c3ac6b9cdea16e9bf9d056f9a40ed8bf90851ff57742eef3ac5d02"
+    },
+    "chart8.png": {
+      "source_block": 1244,
+      "source_chart_sha256": "49e9bcead2a20ee3c7ed219120d99ed159f3171446763a125ba9397c3c135c23",
+      "public_sha256": "af5306b806b6e9018b29a84c2a9ba9576650d98ac4aeb86a3b65b6cde6a5fe02"
+    },
+    "image13.jpeg": {
+      "source_sha256": "c8180da167bb214b00d8e36136199f45ae59178ed3ad4868a4d6ebdcfa4375f9",
+      "source_block": 1274,
+      "public_sha256": "e76f0b363db280c5c5893a84c754042a16ada54a0cf0ef5fc171e0e804d96430"
+    },
+    "image14.jpeg": {
+      "source_sha256": "febdb814c9a56f01dafc94f86410b6b3d1662b9e16ae67a25e4d4fce4839607a",
+      "source_block": 1300,
+      "public_sha256": "893472cf527cc401ec05d5b022f9c58e9a002f61cca4bd84e6043c919ae52734"
     },
     "image16.jpeg": {
-      "source_sha256": "7f41b5f58017e386913300ace4e0823d8b4e9adaad250253f7acc4fc26bfc047",
-      "source_block": 1577,
-      "public_sha256": "39518a04b346ae393ae891eb227aed8f0909617fe3a1672d13a5f6350627b0be"
+      "source_sha256": "1cb2628fb497cb2d03d77c42d167dda5e844c15c271a7d15333c6377feaa4991",
+      "source_block": 1735,
+      "public_sha256": "066a675e4c0618b440139c12d1197f02b0f0a4d968dd8bb5ce26a5a8850c2b13"
     },
     "image17.jpeg": {
+      "source_sha256": "bfe601498650039c618764205324d058c5ae3d8627dc7820d05b4c391768627b",
+      "source_block": 1735,
+      "public_sha256": "9578640f92b69e5b2056d5fb1a7caf100c2290463c503ffeff1b78429dddee48"
+    },
+    "image18.jpeg": {
+      "source_sha256": "7f41b5f58017e386913300ace4e0823d8b4e9adaad250253f7acc4fc26bfc047",
+      "source_block": 1735,
+      "public_sha256": "39518a04b346ae393ae891eb227aed8f0909617fe3a1672d13a5f6350627b0be"
+    },
+    "image19.jpeg": {
       "source_sha256": "bfe0c82b9bf5acf261c7016fc1c9b8f255431b6ed7ad58bf6ddcd145106a39bf",
-      "source_block": 1577,
+      "source_block": 1735,
       "public_sha256": "2a9e3d547d842b2cbb0b39c12e16713823c2291c757cbe57bad5c061e9caf5c2"
+    },
+    "image29.png": {
+      "source_sha256": "047188790468c2c3cba06cd5d1495a6398dccfc2d5511d4e20b2e617bea9b2f5",
+      "source_block": 1865,
+      "public_sha256": "e363a8c5b2eaa6cca18b88065e1687fa7057e564858ebdc6e0ec6e6c979fb98e"
+    },
+    "image30.png": {
+      "source_sha256": "a483d6bd2db2f22e6f1bf54a8b06ea5c3f16112ec51385ed39c57c1bce8d6afb",
+      "source_block": 1866,
+      "public_sha256": "2c86686186bac3b5c999ef4b6adef03ca5fc6784bf3c960ecfea7373ba98189c"
+    },
+    "image31.png": {
+      "source_sha256": "ae0d8875bb21e02caa95c9e20a34fec40f7ea31ff72c6807d6bf9af0e2b8ba4d",
+      "source_block": 1867,
+      "public_sha256": "80f9a2eeb6c852a9fae5fca981f090ed19e473c3e5c4d6242ddede8551e3027c"
+    },
+    "image32.png": {
+      "source_sha256": "63d20c1cbb624256adb37ab59e5227897b82c67ab8eac257194d7c3d918c8457",
+      "source_block": 1870,
+      "public_sha256": "620cc44893dcda77182a188f2d279cfbe2112b75640147edef4a1536f72ce8cb"
     }
-  },
-  "limitations": [
-    "The supplied filename retains draft although the cover is labelled Final Report.",
-    "Some in-text citations have no bibliography entry in the source.",
-    "Small New Zealand validation sets do not establish real-world generalisation.",
-    "The conclusion describes visual observations that were not measured; source qualifications are retained.",
-    "Some source counts and parameter comparisons remain internally inconsistent; website wording is preserved rather than inventing corrections."
-  ]
+  }
 }

@@ -94,6 +94,12 @@ def main():
     args.audit.mkdir(parents=True,exist_ok=True)
     with ZipFile(io.BytesIO(data)) as z:
         blocks=clean_doc(z)
+        # Front matter must never be imported into the public research pages.
+        summary_start=next((i for i,b in enumerate(blocks) if norm(text_of(b)).casefold()=="executive summary"),None)
+        if summary_start is not None:
+            summary_end=next((i for i in range(summary_start+1,len(blocks)) if blocks[i].xpath("./w:pPr/w:pStyle/@w:val",namespaces=NS)==["Heading1"] and text_of(blocks[i]).strip()),len(blocks))
+            if any(start<summary_end and end>summary_start for ranges in plan["sections"].values() for start,end in ranges):
+                raise SystemExit("The content plan includes excluded Executive Summary material")
         relxml=E.fromstring(z.read("word/_rels/document.xml.rels"))
         rels={r.get("Id"):r.get("Target") for r in relxml}
         heading="";locations={}

@@ -35,12 +35,11 @@ def card(row, sources):
 <button type="button" data-view="before" aria-pressed="false" aria-controls="{ident}-images">BEFORE</button>
 <button type="button" data-view="after" aria-pressed="true" aria-controls="{ident}-images">AFTER</button></div>'''
         original = f'<img data-image="before" src="{before}" alt="{escape(row["title"] + " — matching original photograph", quote=True)}" width="{width}" height="{height}" loading="lazy" decoding="async" hidden>'
-    source = sources[row["source_id"]]
     return f'''<section class="gallery-card" data-gallery data-category="{escape(row["category"], quote=True)}" id="{ident}" aria-labelledby="{ident}-title">
 <h3 id="{ident}-title">{title}</h3>{switch}
 <figure><div class="gallery-images" id="{ident}-images">{original}<img data-image="after" src="{after}" alt="{alt}" width="{width}" height="{height}" loading="lazy" decoding="async"></div>
 <figcaption><p class="gallery-state" aria-live="polite">After · Saved labelled photograph</p>
-<p>{escape(summary)}</p><p class="gallery-provenance">{escape(source["label"])}. Saved model annotations; confidence is not an accuracy measurement.</p>
+<p>{escape(summary)}</p>
 <a class="gallery-full" href="{after}" target="_blank" rel="noopener">Open current image at full size ↗</a></figcaption></figure></section>'''
 
 def build_gallery():

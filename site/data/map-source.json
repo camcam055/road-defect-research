@@ -1,19 +1,165 @@
 {
-  "source": "Latest supplied portable road defect map",
-  "source_saved": "25 October 2026",
-  "source_sha256": "faf46f52997fa2df1233e4fc53c991e2d4512df01e07dc9a3b8473add6ddda7d",
-  "public_sha256": "4a786273114039079d7285f486fcbdd725b0327dd6c89ed0df5d556257049002",
-  "verification": "Entire map matches the source after relative asset paths, a page title and the separate website navigation adapter. Geographic features, grouped observations, density values, labels and qualifications are unchanged.",
-  "marker_count": 2513,
-  "tentative_defect_locations": 2491,
-  "located_observations": 2977,
-  "observations_without_gps": 21,
-  "all_observations_csv_rows": 2998,
-  "map_photographs": 1902,
+  "source": "Latest supplied master road-defect map",
+  "source_saved": "26 October 2026",
+  "source_sha256": "1fe6b06f10dda7328f489f68f76aa7bc96027fe5c38c0a750c54e314a7d6ea05",
+  "public_sha256": "a6b2f0395adf537571ba022ad42c72d1a13f0cd8398fe1434461ad61943828eb",
+  "verification": "Entire map matches the source after relative asset paths, a page title, one combined Road defects control and the separate website navigation adapter. Marker coordinates, grouped observations, PDI visualisations, geographic features, popups and qualifications are unchanged. Referenced photographs retain identical pixels with private metadata removed.",
+  "marker_count": 508,
+  "tentative_defect_locations": 508,
+  "located_observations": 584,
+  "observations_without_gps": 137,
+  "all_observations_csv_rows": 721,
+  "map_photographs": 524,
   "qualifications": [
     "Grouping is conservative and provisional; GPS marks the camera position.",
-    "Recovered run16 section density is shown separately from the existing latest-inspection assessment.",
     "Grey density sections are not assessable.",
-    "Mapped detections and visual observations do not establish measured accuracy."
+    "Mapped detections and visual observations do not establish measured accuracy.",
+    "All saved runs in the supplied master export are retained; only records with usable GPS can be mapped.",
+    "Earlier-run markers contain all detections in each source photograph; separate runs are not deduplicated against one another."
+  ],
+  "display_scope": "All available runs with usable GPS",
+  "runs": [
+    {
+      "run": "run",
+      "observations": 8,
+      "located_observations": 0,
+      "observations_without_gps": 8,
+      "mapped_markers": 0,
+      "mapped_observations": 0,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": false
+    },
+    {
+      "run": "run2",
+      "observations": 49,
+      "located_observations": 0,
+      "observations_without_gps": 49,
+      "mapped_markers": 0,
+      "mapped_observations": 0,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": false
+    },
+    {
+      "run": "run3",
+      "observations": 8,
+      "located_observations": 8,
+      "observations_without_gps": 0,
+      "mapped_markers": 6,
+      "mapped_observations": 8,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": true
+    },
+    {
+      "run": "run4",
+      "observations": 47,
+      "located_observations": 45,
+      "observations_without_gps": 2,
+      "mapped_markers": 35,
+      "mapped_observations": 45,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": true
+    },
+    {
+      "run": "run5",
+      "observations": 36,
+      "located_observations": 36,
+      "observations_without_gps": 0,
+      "mapped_markers": 36,
+      "mapped_observations": 36,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": true
+    },
+    {
+      "run": "run6",
+      "observations": 23,
+      "located_observations": 23,
+      "observations_without_gps": 0,
+      "mapped_markers": 13,
+      "mapped_observations": 19,
+      "observations_excluded_from_map": 4,
+      "visible_by_default": true
+    },
+    {
+      "run": "run7",
+      "observations": 40,
+      "located_observations": 40,
+      "observations_without_gps": 0,
+      "mapped_markers": 34,
+      "mapped_observations": 40,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": true
+    },
+    {
+      "run": "run8",
+      "observations": 117,
+      "located_observations": 117,
+      "observations_without_gps": 0,
+      "mapped_markers": 111,
+      "mapped_observations": 117,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": true
+    },
+    {
+      "run": "run9",
+      "observations": 96,
+      "located_observations": 96,
+      "observations_without_gps": 0,
+      "mapped_markers": 88,
+      "mapped_observations": 96,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": true
+    },
+    {
+      "run": "run10",
+      "observations": 158,
+      "located_observations": 158,
+      "observations_without_gps": 0,
+      "mapped_markers": 140,
+      "mapped_observations": 158,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": true
+    },
+    {
+      "run": "run11",
+      "observations": 61,
+      "located_observations": 61,
+      "observations_without_gps": 0,
+      "mapped_markers": 45,
+      "mapped_observations": 61,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": true
+    },
+    {
+      "run": "run13",
+      "observations": 78,
+      "located_observations": 0,
+      "observations_without_gps": 78,
+      "mapped_markers": 0,
+      "mapped_observations": 0,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": false
+    }
+  ],
+  "mapped_observations": 580,
+  "observations_excluded_from_map": 4,
+  "display_exclusions": [
+    {
+      "run": "run6",
+      "file_name": "IMG_6869",
+      "reason": "Owner requested removing this map entry on 25 October 2026."
+    },
+    {
+      "run": "run6",
+      "file_name": "IMG_6871",
+      "reason": "Owner requested removing this map entry on 25 October 2026."
+    },
+    {
+      "run": "run6",
+      "file_name": "IMG_6872",
+      "reason": "Owner requested removing this map entry on 25 October 2026."
+    }
+  ],
+  "website_layer_adjustments": [
+    "All road-defect runs share one Road defects toggle, as requested by the owner. Original clusters, markers and popup run details are retained."
   ]
 }

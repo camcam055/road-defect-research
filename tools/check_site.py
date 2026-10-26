@@ -80,15 +80,30 @@ for public in SITE.rglob("*"):
         content=public.read_text()
         if re.search(r"file:///|/Users/[A-Za-z0-9]|-----BEGIN .*PRIVATE KEY-----",content):errors.append(f"Private data path or key in {public.relative_to(SITE)}")
     if public.is_file() and public.stat().st_size>=100*1024*1024:errors.append(f"File exceeds GitHub size limit: {public.relative_to(SITE)}")
+map_html=(SITE/"assets/map/index.html").read_text()
+defect_controls=re.findall(r'"(Road defects[^"]*)"\s*:\s*feature_group_',map_html)
+if defect_controls!=["Road defects"]:
+    errors.append("Run-specific defect labels reappeared in map controls")
+map_wrapper=(SITE/"map.html").read_text()
+if any(term in map_wrapper for term in ('class="map-toolbar"', 'class="map-status"', 'class="site-header"')):errors.append("Map wrapper contains removed page text")
+if "inspection-card" in (SITE/"assets/map/index.html").read_text():errors.append("Removed inspection summary reappeared")
+if 'class="map-back"' not in map_wrapper:errors.append("Full-page map Back link missing")
+# Preserve the requested map interpretation and front-matter exclusion.
+if re.search(r"executive\s+summary", " ".join(p.read_text() for p in SITE.rglob("*.html")), re.I):
+    errors.append("Excluded Executive Summary text found")
+if map_wrapper.count('class="map-relationships"')!=1 or map_wrapper.index('class="map-relationships"')<map_wrapper.index("</iframe>"):
+    errors.append("Map interpretation must appear once directly below the map")
+for required in ("Exploring Potential Relationships","High Traffic + Many Defects:","Less Favourable Soil Conditions + Many Defects:","Low Traffic + Many Defects:","These relationships are possible explanations rather than confirmed causes."):
+    if required not in map_wrapper:errors.append("Requested map interpretation text missing")
 home=pages[(SITE/"index.html").resolve()]
 expected=["video.html","map.html","content/problem.html","content/methodology.html","content/literature-review.html","content/results.html","content/conclusion.html","content/future-work.html","content/gallery.html","content/glossary.html"]
-if home.cards!=expected:errors.append("Homepage card order/targets changed")
+if [urlsplit(card).path for card in home.cards]!=expected:errors.append("Homepage card order/targets changed")
 for p in SITE.rglob("*"):
     if p.is_symlink():errors.append(f"Symbolic link in deployment: {p.name}")
     if p.suffix.lower() in (".docx",".pptx",".pdf",".zip",".py",".md"):errors.append(f"Non-public source/review file in deployment: {p.name}")
     if p.name.startswith(".") and p.name!=".nojekyll":errors.append(f"Unexpected hidden deployment file: {p.name}")
-video=(SITE/"video.html").read_text()
-if "autoplay" in video or not all(x in video for x in ("controls","playsinline","video-placeholder")):errors.append("Video player requirements not met")
+from video_checks import check_video_site
+errors.extend(check_video_site(SITE))
 workflow=(ROOT/".github/workflows/pages.yml").read_text()
 if "workflow_dispatch:" not in workflow or "publication_approved" not in workflow or "path: site" not in workflow:errors.append("Deployment approval gate missing")
 if re.search(r"^\s+(push|pull_request):",workflow,re.M):errors.append("Automatic publication trigger found")

@@ -1,1 +1,3 @@
-Put your final H.264/AAC MP4 here as project-demo.mp4, then set videoSrc to assets/video/project-demo.mp4 in ../../js/config.js. See UPDATE_GUIDE.md in the website package for the exact steps.
+The final silent three-stage sequence is maintained in site/data/videos.json.
+H.264 MP4 assets have fast-start metadata and no audio stream, per the owner's requested interface.
+See UPDATE_GUIDE.md for replacement and validation instructions.

@@ -1,3 +1,24 @@
+# Final local website update — 26 October 2026
+
+See [the current local review](LOCAL_REVIEW_20261026.md) for this update's source comparison, browser checks and limitations. All changes remain local, with no commit, push or publication. Records below are historical snapshots and do not describe the current map counts.
+
+---
+
+# Local full-page and all-run map update - 25 October 2026
+
+This update remains local at the owner's request. No commit, push or Pages deployment is performed.
+
+- The map fills the page with one Back link. The inspection card, shared header, title toolbar and explanatory footer are removed.
+- Current and earlier-run defect layers start enabled. All six available run folders are retained in the CSV: 3,119 records, with 3,008 usable GPS records and 111 without usable GPS. Three specified run6 markers are excluded (IMG_6869, IMG_6871 and IMG_6872), representing four retained detection records. The map displays 2,510 marker groups representing 3,004 records.
+- Original source files are retained. The current-run export is preserved, and the six geographic data layers are unchanged. Public per-run counts and display exclusions are in site/data/map-source.json.
+- Three focused export/exclusion tests and the master-map integration test pass. Static validation passes: 13 HTML pages, 10 homepage cards and 8,399 local references. Map adapter and shared JavaScript syntax checks pass.
+- Chrome checks confirm an iframe covering the viewport at 1470 x 692 and 390 x 844, one Back link, no inspection card or page bars, both defect layers enabled and no phone-width horizontal overflow. Back returns to the homepage, whose map card reopens the full-page map. Viewport overrides were reset.
+- Source label re-reading encountered cloud-placeholder timeouts during an additional comparison. Current-run verification uses the retained pre-change observation export. The completed browser, static and regression checks are recorded above. Detailed local audit records remain outside this repository.
+
+Earlier verification and deployment records below describe previous revisions.
+
+---
+
 # Report and map refresh verification - 25 October 2026
 
 The owner requested updating the existing website and GitHub repository while retaining https://camcam055.github.io/road-defect-research/. The local checkout was clean at the existing published revision before this refresh. The repository identity and manual Pages workflow are preserved.

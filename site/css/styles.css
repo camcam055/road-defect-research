@@ -30,3 +30,25 @@
 
 /* Constrain both views to the frame so portrait photographs are never clipped. */
 .gallery-images{position:relative}.report-content .gallery-images img{position:absolute;inset:0;min-width:0;min-height:0;width:100%;height:100%;object-fit:contain}
+
+/* Full-page map: a single Back link overlays the map viewport. */
+.map-back{position:fixed;top:12px;left:12px;z-index:100;min-height:42px;display:inline-flex;align-items:center;padding:9px 14px;border-radius:8px;background:#fff;box-shadow:0 2px 12px #12304733;color:#176aab;font:600 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-decoration:none}
+.map-body .map-frame-wrap{width:100%;height:100%}
+
+/* Keep the map as the first viewport and place interpretation directly beneath it. */
+.map-body{height:auto;min-height:100vh;min-height:100dvh;display:block;overflow:visible}
+.map-body #main{width:100%;min-width:0}
+.map-body .map-frame-wrap{width:100%;height:100vh;height:100svh;min-height:420px}
+.map-back{position:absolute}
+.map-relationships{background:#f7fafd;border-top:1px solid var(--line);padding:clamp(32px,5vw,64px) 24px}
+.map-relationships-inner{max-width:1120px;margin:0 auto}
+.map-relationships h1{font-size:clamp(27px,4vw,36px);line-height:1.2;letter-spacing:-.035em;color:var(--navy);margin:0 0 18px}
+.map-relationships-intro{max-width:800px;font-size:17px;line-height:1.75;margin:0 0 28px}
+.map-relationship-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:0;margin:0 0 28px;list-style:none}
+.map-relationship-grid li{padding:23px;border:1px solid var(--line);border-top:3px solid #2093c7;border-radius:10px;background:white}
+.map-relationship-grid h2{font-size:17px;line-height:1.5;color:var(--navy);margin:0 0 12px}
+.map-relationship-grid p{font-size:15px;line-height:1.75;margin:0}
+.map-relationships-important{background:#edf6fc;border-left:3px solid #2093c7;border-radius:0 6px 6px 0;padding:18px 20px;font-size:15px;line-height:1.75;margin:0}
+@media(max-width:760px){.map-relationships{padding:32px 20px}.map-relationship-grid{grid-template-columns:1fr;gap:14px}.map-relationship-grid li{padding:19px}.map-relationships-intro{font-size:16px}.map-relationships-important{padding:16px}}
+
+@media(max-width:650px){html.research-popup-open .map-body .map-back{visibility:hidden;pointer-events:none}}

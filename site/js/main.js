@@ -25,12 +25,13 @@
     window.addEventListener("message", event => {
       if (event.source !== map.contentWindow || event.origin !== window.location.origin || !event.data || event.data.type !== "road-map-status") return;
       const loading = document.querySelector("#map-loading");
+      if (!loading) return;
       loading.hidden = event.data.state === "loaded" || event.data.state === "error";
       if (event.data.state === "loading") loading.textContent = "Loading the basemap…";
     });
     window.setTimeout(() => {
       const loading = document.querySelector("#map-loading");
-      if (!loading.hidden) loading.textContent = "The map is still loading. You can also use Open map.";
+      if (loading && !loading.hidden) loading.textContent = "The map is still loading. You can also use Open map.";
     }, 15000);
   }
 })();
