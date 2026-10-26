@@ -1,25 +1,18 @@
-# Corrected Data Collection video — 26 October 2026
+# Trimmed Data Collection video — 26 October 2026
 
-The owner supplied a corrected Data Collection source and explicitly requested updating the website and GitHub. Only the first stage's media, poster and recorded metadata are replaced.
+The owner supplied Updated video.mov to replace the earlier Data Collection version and explicitly requested another GitHub update. The supplied file is used in full without additional trimming.
 
-- Source basename: copy_41C08113-0C6F-4D24-974A-BD7129D6E1A4.MOV
-- Original source: 53.428 seconds, 960 × 720, HEVC video.
-- Browser copy: H.264/yuv420p MP4 at the same dimensions and timing, with fast-start metadata.
-- Published MP4: assets/video/data-collection-corrected-20261026.mp4
-- Published size: 44,623,452 bytes.
-- The existing silent playback convention is retained. The AI Training and Road Defect Detection files, metadata and stage order are unchanged.
-- The original MOV remains outside the repository and is unchanged. The preceding Data Collection web copies are preserved privately.
+- Original source: 51.035 seconds, 960 × 720, HEVC.
+- Published copy: silent H.264/yuv420p MP4 with fast-start metadata.
+- Published asset: assets/video/data-collection-trimmed-20261026.mp4
+- Published bytes: 44,292,557.
+- All 3060 video frames are retained. Output timing and dimensions match the supplied source.
+- Full video decoding completed with no errors.
+- The existing AI Training and Road Defect Detection files, stage records, layout and controls are unchanged.
+- The original MOV remains unchanged outside the repository. Previous Data Collection web copies are preserved privately.
 
-## Verification completed
+Source and output checksums are recorded in site/data/videos.json. Original source files and private review records are excluded from publication. The website retains its existing URL.
 
-The replacement passed full video decoding with no errors. Codec, duration, dimensions, output checksum and absence of an audio stream were checked. The standard website and browser checks are recorded after completion below.
+## Website checks
 
-The source and output checksums are maintained in site/data/videos.json. Private review records and the original MOV are excluded from publication.
-
-## Website and browser checks
-
-- Static site validation passed: 13 HTML pages, 10 homepage cards and 1,710 checked local references, with no errors.
-- The corrected first source loads in the native player at 960 × 720, with an approximately 53-second duration and no media error. Playback advanced successfully; the owner also confirmed the video works.
-- The three stage controls, page layout and existing navigation are retained. The two later video records and their files remain unchanged.
-- The corrected MP4 passed full decoding and the existing H.264/fast-start/checksum checks. The original replacement MOV still matches its source hash.
-- The owner explicitly authorised updating GitHub and publishing this correction at the existing website URL.
+Static validation passed for all 13 HTML pages, 10 homepage cards and 1,710 local references. The trimmed first source loads in the native browser player at 960 × 720, shows 0:51, and starts playing without a media error. The other two stage records and video files remain unchanged.

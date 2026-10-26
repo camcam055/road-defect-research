@@ -6,11 +6,11 @@ The website is ready to serve from `site/`. It is a static GitHub Pages website:
 
 The Project Video page presents the final videos in this order:
 
-1. **Data Collection** — source: `copy_41C08113-0C6F-4D24-974A-BD7129D6E1A4.MOV`
+1. **Data Collection** — source: `Updated video.mov`
 2. **AI Training** — source: `Training the AI new.mov`
 3. **Road Defect Detection** — source: `From Road to Results.mov`
 
-The published MP4s and matching JPG poster frames are listed in `site/data/videos.json`. Data Collection uses the corrected 26 October 2026 export; the other two stages retain their existing files. They are silent H.264 video with the original dimensions and timing and fast-start metadata. The silent audio streams were removed at the owner's request. The original MOV files are preserved outside the website.
+The published MP4s and matching JPG poster frames are listed in `site/data/videos.json`. Data Collection uses the trimmed 26 October 2026 export; the other two stages retain their existing files. They are silent H.264 video with the original dimensions and timing and fast-start metadata. The silent audio streams were removed at the owner's request. The original MOV files are preserved outside the website.
 
 The maintained sequence and source checksums are in **`site/data/videos.json`**. **`tools/video_page.py`** renders the page; **`site/js/video.js`** and **`site/css/video.css`** supply its interactions and styling. The older single-video `SHOWCASE_CONFIG.videoSrc` setting is unused by this page.
 
