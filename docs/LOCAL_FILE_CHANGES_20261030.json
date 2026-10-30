@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-30",
+  "status": "Reviewed update; owner approved pushing to the existing GitHub website on 30 October 2026.",
+  "files": [
+    {
+      "status": "modified",
+      "file": "MANIFEST.sha256"
+    },
+    {
+      "status": "modified",
+      "file": "README.md"
+    },
+    {
+      "status": "modified",
+      "file": "UPDATE_GUIDE.md"
+    },
+    {
+      "status": "added",
+      "file": "docs/LOCAL_FILE_CHANGES_20261030.json"
+    },
+    {
+      "status": "added",
+      "file": "docs/LOCAL_REVIEW_20261030.md"
+    },
+    {
+      "status": "modified",
+      "file": "site/assets/figures/image11.png"
+    },
+    {
+      "status": "modified",
+      "file": "site/assets/figures/image13.jpeg"
+    },
+    {
+      "status": "removed",
+      "file": "site/assets/figures/image13.png"
+    },
+    {
+      "status": "removed",
+      "file": "site/assets/figures/image15.jpeg"
+    },
+    {
+      "status": "removed",
+      "file": "site/assets/figures/image15.png"
+    },
+    {
+      "status": "modified",
+      "file": "site/content/conclusion.html"
+    },
+    {
+      "status": "modified",
+      "file": "site/content/future-work.html"
+    },
+    {
+      "status": "modified",
+      "file": "site/content/glossary.html"
+    },
+    {
+      "status": "modified",
+      "file": "site/content/literature-review.html"
+    },
+    {
+      "status": "modified",
+      "file": "site/content/methodology.html"
+    },
+    {
+      "status": "modified",
+      "file": "site/content/problem.html"
+    },
+    {
+      "status": "modified",
+      "file": "site/content/references.html"
+    },
+    {
+      "status": "modified",
+      "file": "site/content/results.html"
+    },
+    {
+      "status": "modified",
+      "file": "site/data/glossary.json"
+    },
+    {
+      "status": "modified",
+      "file": "site/data/report-source.json"
+    },
+    {
+      "status": "modified",
+      "file": "tools/check_site.py"
+    },
+    {
+      "status": "modified",
+      "file": "tools/extract_report.py"
+    },
+    {
+      "status": "modified",
+      "file": "tools/layout.py"
+    }
+  ]
+}

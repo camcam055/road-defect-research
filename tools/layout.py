@@ -23,7 +23,7 @@ def section_page(slug,title,article,headings,notice="",source_note=None,wide=Fal
         if idx: foot=f'<a href="{SECTIONS[idx-1][0]}.html">← {SECTIONS[idx-1][1].title()}</a>'
         foot+=f'<a href="{SECTIONS[idx+1][0]}.html">{SECTIONS[idx+1][1].title()} →</a>' if idx<len(SECTIONS)-1 else '<a href="../index.html">All sections →</a>'
     if not headings: toc=""
-    note=source_note if source_note is not None else 'Research report · Updated 26 October 2026. Section numbering follows the website navigation. <a href="references.html">References</a>'
+    note=source_note if source_note is not None else 'Research report · Updated 30 October 2026. Section numbering follows the website navigation. <a href="references.html">References</a>'
     source_markup=f'<p class="source-note">{note}</p>' if note else ""
     reading_class="reading-layout wide-layout" if wide else "reading-layout"
     body=header("../")+f'<main id="main" class="page-shell"><div class="page-heading"><p class="eyebrow">{num}</p><h1>{escape(title.title())}</h1>{source_markup}</div>{notice}<div class="{reading_class}">{toc}<article class="report-content">{article}</article></div><nav class="page-footer" aria-label="Section navigation">{foot}</nav><div class="bottom-meta">Campbell Searle · Ara Institute of Canterbury · 2026</div></main>'

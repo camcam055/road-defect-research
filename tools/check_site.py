@@ -102,16 +102,18 @@ if [urlsplit(card).path for card in home.cards]!=expected:errors.append("Homepag
 for slug,number in (("literature-review","02"),("methodology","03")):
     if f'<p class="eyebrow">SECTION {number}</p>' not in (SITE/"content"/(slug+".html")).read_text():
         errors.append(f"Incorrect section number: {slug}")
-for slug,bid,number in (("conclusion","b1501","5.0"),("future-work","b1435","6.0"),("results","b1346","4.5")):
+for slug,bid,number in (("conclusion","b1509","5.0"),("future-work","b1443","6.0"),("results","b1354","4.5")):
     text=(SITE/"content"/(slug+".html")).read_text()
     if f'data-source-id="{bid}">{number} ' not in text or f'href="#{bid}">{number} ' not in text:
         errors.append(f"Heading and contents numbering disagree: {slug}")
 for public in SITE.rglob("*"):
     if public.is_file() and public.suffix in (".html",".json",".js",".css",".csv"):
         text=public.read_text()
+        if re.search(r"appendi(?:x|ces)\b",text,re.I):
+            errors.append(f"Excluded appendix content or pointer in {public.relative_to(SITE)}")
         if re.search(r"project\s+management|progress to date and timeline|risks, mitigation and challenges|cost considerations",text,re.I):
             errors.append(f"Excluded administrative content in {public.relative_to(SITE)}")
-        if any(1407<=int(b)<1435 or 1454<=int(b)<1501 for b in re.findall(r"\bb(\d{4})\b",text)):
+        if any(1415<=int(b)<1443 or 1462<=int(b)<1509 or 1595<=int(b)<1976 for b in re.findall(r"\bb(\d{4})\b",text)):
             errors.append(f"Removed source block or anchor in {public.relative_to(SITE)}")
 for p in SITE.rglob("*"):
     if p.is_symlink():errors.append(f"Symbolic link in deployment: {p.name}")

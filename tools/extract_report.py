@@ -36,6 +36,14 @@ def display_numbering(s,index,plan):
     if not s.startswith(original+" "):
         raise ValueError(f"Unexpected source heading number at block {index}")
     return replacement+s[len(original):]
+def approved_text(s,index,plan):
+    value=redact(s)
+    change=plan.get("text_replacements",{}).get(str(index))
+    if change:
+        if value!=change["from"]:
+            raise ValueError(f"Unexpected source text at block {index}")
+        value=change["to"]
+    return display_numbering(value,index,plan)
 def strip_jpeg(data):
     # Preserve compressed image data and color profiles; remove EXIF, IPTC and comments.
     if data[:2]!=b"\xff\xd8":raise ValueError("Invalid JPEG")
@@ -124,16 +132,20 @@ def main():
             st=b.xpath("./w:pPr/w:pStyle/@w:val",namespaces=NS)
             if st and st[0].startswith("Heading") and text_of(b).strip():heading=text_of(b).strip()
             locations[i]=heading
+        for slug,ranges in plan["sections"].items():
+            for start,end in ranges:
+                if any(start<excluded_end and end>excluded_start for excluded_start,excluded_end in plan.get("excluded_source_ranges",[])):
+                    raise SystemExit("The content plan includes explicitly excluded source material")
         record=[];assets={};verifications=[];titles=dict(SECTIONS);titles["references"]="REFERENCES"
         for slug,ranges in plan["sections"].items():
             ids=[i for start,end in ranges for i in range(start,end)]
             article=[];headings=[];inlist=False
             expected={}
             for i in ids:
-                b=blocks[i];txt=text_of(b);approved=display_numbering(redact(txt),i,plan);bid=f"b{i:04d}"
+                b=blocks[i];txt=text_of(b);approved=approved_text(txt,i,plan);bid=f"b{i:04d}"
                 if approved.strip():
                     expected[bid]=norm(approved)
-                    record.append({"website_section":slug,"source_block":i,"source_heading":locations[i],"source_text_hash":sha(norm(txt).encode()),"website_text_hash":sha(norm(approved).encode()),"copied_unchanged":txt==approved,"reason":None if txt==approved else ("Website heading numbering only; research wording unchanged" if redact(txt)==txt else "Privacy: local file path or dataset labeler email replaced with a neutral placeholder")})
+                    record.append({"website_section":slug,"source_block":i,"source_heading":locations[i],"source_text_hash":sha(norm(txt).encode()),"website_text_hash":sha(norm(approved).encode()),"copied_unchanged":txt==approved,"reason":None if txt==approved else (plan["text_replacements"][str(i)]["reason"] if str(i) in plan.get("text_replacements",{}) else ("Website heading numbering only; research wording unchanged" if redact(txt)==txt else "Privacy: local file path or dataset labeler email replaced with a neutral placeholder"))})
                 st=b.xpath("./w:pPr/w:pStyle/@w:val",namespaces=NS)
                 st=st[0] if st else ""
                 islist=st=="ListParagraph"
@@ -164,7 +176,7 @@ def main():
                         code=i in plan.get("code_blocks",[1378,1387,1388,1389,1390,1397,1420,1421,*range(1426,1438),*range(1446,1453)])
                         tag="pre" if code else "p"
                         cls=' class="caption"' if caption else ""
-                        content=inline(b,rels)
+                        content=escape(approved) if str(i) in plan.get("text_replacements",{}) else inline(b,rels)
                         for phrase,target in plan.get("internal_links",[("Appendix A","#b1349"),("Appendix B","#b1380"),("appendix D","results.html#b1504")]):
                             if phrase in content:content=content.replace(phrase,f'<a href="{target}">{phrase}</a>')
                         article.append(f'<{tag} id="{bid}" data-source-id="{bid}"{cls}>{content}</{tag}>')
@@ -188,9 +200,8 @@ def main():
                     article.append(figure(name,locations[i]+" — original report chart"))
                     assets[name]={"source_block":i,"source_chart_sha256":sha(z.read("word/"+rels[rid])),"public_sha256":sha((SITE/"assets/figures"/name).read_bytes())}
             if inlist:article.append("</ul>")
-            notice=""
-            if slug=="references":notice='<aside class="notice">The latest supplied report contains six bibliography entries, reproduced below. Some in-text citations still have no corresponding bibliography entry in the source report.</aside>'
-            if not args.verify_only:section_page(slug,titles[slug],"".join(article),headings,notice)
+            notice=plan.get("reference_notice","") if slug=="references" else ""
+            if not args.verify_only:section_page(slug,titles[slug],"".join(article),headings,notice,source_note=plan.get("source_note"))
             rendered=html.fromstring((SITE/"content"/(slug+".html")).read_text())
             actual={e.get("data-source-id"):norm(e.text_content()) for e in rendered.xpath("//*[@data-source-id]")}
             if actual!=expected:
@@ -205,9 +216,9 @@ def main():
                     original="".join(m.xpath(".//m:t/text()",namespaces=NS))
                     if len(target)!=1 or target[0].text_content()!=original:raise SystemExit(f"MATH MISMATCH b{i:04d}")
             verifications.append({"page":slug,"matched_blocks":len(expected),"status":"PASS"})
-        audit={"source_sha256":sha(data),"comparison":"Per-block exact text after documented privacy replacements and website heading-number substitutions; layout whitespace normalized. Equations compared separately.","pages":verifications,"blocks":record,"assets":assets}
+        audit={"source_sha256":sha(data),"comparison":"Per-block exact text after documented privacy replacements, website heading-number substitutions and reviewed text replacements; layout whitespace normalized. Equations compared separately.","pages":verifications,"blocks":record,"assets":assets}
         (args.audit/"content-audit.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2))
-        lines=["# Report-to-website content mapping","","Source locations use zero-based body child indices in word/document.xml; they remain stable for the recorded source hash.","","All research wording is copied unchanged except the explicitly marked privacy substitutions and website heading-number changes. Empty layout paragraphs and the unused OOXML compatibility fallback are presentation only.","","| Website | Original heading | Source block | Unchanged | Reason |","|---|---|---:|---|---|"]
+        lines=["# Report-to-website content mapping","","Source locations use zero-based body child indices in word/document.xml; they remain stable for the recorded source hash.","","All research wording is copied unchanged except the explicitly marked privacy substitutions, website heading-number changes and reviewed text replacements. Empty layout paragraphs and the unused OOXML compatibility fallback are presentation only.","","| Website | Original heading | Source block | Unchanged | Reason |","|---|---|---:|---|---|"]
         lines += [f'| {r["website_section"]} | {r["source_heading"]} | {r["source_block"]} | {"Yes" if r["copied_unchanged"] else "No"} | {r["reason"] or ""} |' for r in record]
         lines+=["","## Intentional exclusions",""]+["- "+x for x in plan["exclusions"]]
         (args.audit/"CONTENT_MAPPING.md").write_text("\n".join(lines))
