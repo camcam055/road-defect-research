@@ -1,4 +1,4 @@
-**The owner approved this reviewed report update for the existing GitHub Pages website on 30 October 2026.**
+**The owner requested publication of the reviewed master-map update on 2 November 2026. The existing repository and Pages URL are retained. Research content remains based on the final report dated 30 October 2026.**
 
 # Road defect research showcase
 
@@ -10,7 +10,7 @@ Live website: [Road defect research](https://camcam055.github.io/road-defect-res
 
 ## Use and update
 
-Start with **UPDATE_GUIDE.md**, including the project video sequence instructions. Double-click Preview.command, or run `python3 tools/preview.py`. Only site/ is served. The map fills the first viewport with a single Back link, followed directly by Exploring Potential Relationships. All available runs share one Road defects toggle. The latest supplied master export contains 508 markers representing 580 displayed observations. The CSV retains all 721 records across 12 runs, including 137 without usable GPS and four records covered by the existing run6 display exclusions. Street basemaps need internet; map libraries, all 524 referenced photographs, observation CSV and a local road fallback are bundled.
+Start with **UPDATE_GUIDE.md**, including the project video sequence instructions. Double-click Preview.command, or run `python3 tools/preview.py`. Only site/ is served. The map fills the first viewport with a single Back link, followed directly by Exploring Potential Relationships. All available runs share one Road defects toggle. The latest supplied master export contains 1,545 markers representing 1,604 displayed observations. The CSV retains all 1,803 records across 13 runs, including 195 without usable GPS and four records covered by the existing run6 display exclusions. Its 2,229 latest road sections include all 1,237 run12 sections. Stored section counts 0–2 are green; assessment flags and null density values are preserved. Street basemaps need internet; map libraries, all 1,539 referenced photographs, observation CSV and a local road fallback are bundled. Website photo copies are limited to a 1,600-pixel longest edge with metadata removed; original result images remain unchanged.
 
 The website is ready to deploy without a framework or build step. The manual GitHub Pages workflow publishes site/ only and requires its publication approval input.
 

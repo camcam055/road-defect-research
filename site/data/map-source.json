@@ -1,18 +1,27 @@
 {
   "source": "Latest supplied master road-defect map",
-  "source_saved": "26 October 2026",
-  "source_sha256": "1fe6b06f10dda7328f489f68f76aa7bc96027fe5c38c0a750c54e314a7d6ea05",
-  "public_sha256": "a6b2f0395adf537571ba022ad42c72d1a13f0cd8398fe1434461ad61943828eb",
-  "verification": "Entire map matches the source after relative asset paths, a page title, one combined Road defects control and the separate website navigation adapter. Marker coordinates, grouped observations, PDI visualisations, geographic features, popups and qualifications are unchanged. Referenced photographs retain identical pixels with private metadata removed.",
-  "marker_count": 508,
-  "tentative_defect_locations": 508,
-  "located_observations": 584,
-  "observations_without_gps": 137,
-  "all_observations_csv_rows": 721,
-  "map_photographs": 524,
+  "source_saved": "2 November 2026",
+  "source_sha256": "de637e40fa00132439e42103a8afda3e9e11f03de38a5fc72f45938f6cb56d20",
+  "public_sha256": "ff9fc38d7522bdbbd07224ef46ccc14449d2336839ec1fb9cbb292694de6c20d",
+  "verification": "Map content matches the supplied source after relative asset paths, a page title and the separate website navigation adapter. Marker coordinates, grouped observations, section counts, colours, geographic features, popups and assessment flags are unchanged. Website photo delivery is recorded separately; original result images are untouched.",
+  "photograph_delivery": {
+    "max_edge_pixels": 1600,
+    "jpeg_quality": 85,
+    "metadata_removed": true,
+    "original_result_images_unchanged": true
+  },
+  "website_layer_adjustments": [
+    "All road-defect runs share one Road defects toggle, as requested by the owner. Original clusters, markers and popup run details are retained."
+  ],
+  "marker_count": 1545,
+  "tentative_defect_locations": 1545,
+  "located_observations": 1608,
+  "observations_without_gps": 195,
+  "all_observations_csv_rows": 1803,
+  "map_photographs": 1539,
   "qualifications": [
     "Grouping is conservative and provisional; GPS marks the camera position.",
-    "Grey density sections are not assessable.",
+    "Section colours follow stored counts (0-2 green); dashed lines retain unassessed status. Colours do not change density validity.",
     "Mapped detections and visual observations do not establish measured accuracy.",
     "All saved runs in the supplied master export are retained; only records with usable GPS can be mapped.",
     "Earlier-run markers contain all detections in each source photograph; separate runs are not deduplicated against one another."
@@ -124,8 +133,18 @@
       "observations": 61,
       "located_observations": 61,
       "observations_without_gps": 0,
-      "mapped_markers": 45,
+      "mapped_markers": 58,
       "mapped_observations": 61,
+      "observations_excluded_from_map": 0,
+      "visible_by_default": true
+    },
+    {
+      "run": "run12",
+      "observations": 1082,
+      "located_observations": 1024,
+      "observations_without_gps": 58,
+      "mapped_markers": 1024,
+      "mapped_observations": 1024,
       "observations_excluded_from_map": 0,
       "visible_by_default": true
     },
@@ -140,7 +159,7 @@
       "visible_by_default": false
     }
   ],
-  "mapped_observations": 580,
+  "mapped_observations": 1604,
   "observations_excluded_from_map": 4,
   "display_exclusions": [
     {
@@ -158,8 +177,5 @@
       "file_name": "IMG_6872",
       "reason": "Owner requested removing this map entry on 25 October 2026."
     }
-  ],
-  "website_layer_adjustments": [
-    "All road-defect runs share one Road defects toggle, as requested by the owner. Original clusters, markers and popup run details are retained."
   ]
 }

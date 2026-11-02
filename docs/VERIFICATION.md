@@ -1,3 +1,16 @@
+# Master map publication refresh — 2 November 2026
+
+The owner requested publication of the reviewed master map to the existing GitHub Pages website, retaining its URL. Research pages, figures, gallery, glossary and videos remain unchanged.
+
+- The supplied map contains 1,545 markers, one shared marker cluster and a separate section-colour layer. Its 2,229 road sections include all 1,237 run12 sections; stored counts 0–2 are green while null density values and assessment flags remain intact.
+- The observation CSV retains all 1,803 records across 13 saved runs: 1,608 have usable GPS, 195 do not, and four existing owner-excluded run6 records remain in the CSV. run12 contributes 1,082 records, including 1,024 with usable GPS.
+- All 1,539 referenced photographs are included as metadata-free website copies with a 1,600-pixel maximum edge and JPEG quality 85. Full-resolution result images remain untouched. All 524 older source photos were reused from the previous public-map backup only after their bytes exactly matched the current master image hashes; this bypassed a OneDrive read timeout without dropping any photo.
+- Whole-map comparison passes after only documented relative paths, the page title and the separate website adapter. Every marker coordinate matches the supplied map exactly. All public photo hashes/dimensions and source-manifest identities pass; no private EXIF data remains.
+- All 198 unrelated site files were hash-verified unchanged. The public package is 932,390,364 bytes, under the hosting limit. The checker now rejects site packages above 1 GB.
+- Required static validation passes: 13 HTML pages, 10 homepage cards and 4,765 local references. The map adapter passes JavaScript syntax checking.
+- The full-page website map loads locally with the existing Back link and interpretation section. Browser checks confirm the green routes, one Road defects switch and the separate section-colour switch. Narrow-screen layout and physical-phone checks were not repeated for this map-only publication.
+- Repository and public page routes are unchanged. Internal version queries refresh the updated map. Source result files, model weights, private backups and import audits remain outside Git.
+
 # Final local website update — 26 October 2026
 
 See [the current local review](LOCAL_REVIEW_20261026.md) for this update's source comparison, browser checks and limitations. All changes remain local, with no commit, push or publication. Records below are historical snapshots and do not describe the current map counts.

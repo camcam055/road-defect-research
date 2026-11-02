@@ -80,6 +80,8 @@ for public in SITE.rglob("*"):
         content=public.read_text()
         if re.search(r"file:///|/Users/[A-Za-z0-9]|-----BEGIN .*PRIVATE KEY-----",content):errors.append(f"Private data path or key in {public.relative_to(SITE)}")
     if public.is_file() and public.stat().st_size>=100*1024*1024:errors.append(f"File exceeds GitHub size limit: {public.relative_to(SITE)}")
+site_bytes=sum(path.stat().st_size for path in SITE.rglob("*") if path.is_file())
+if site_bytes>1_000_000_000:errors.append("Published site exceeds the 1 GB GitHub Pages limit")
 map_html=(SITE/"assets/map/index.html").read_text()
 defect_controls=re.findall(r'"(Road defects[^"]*)"\s*:\s*feature_group_',map_html)
 if defect_controls!=["Road defects"]:

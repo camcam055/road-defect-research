@@ -5,6 +5,7 @@ from datetime import datetime
 from pathlib import Path, PurePosixPath
 from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
+from PIL import Image
 from extract_report import clean_image
 from layout import SITE
 
@@ -35,7 +36,16 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source",type=Path,required=True)
     parser.add_argument("--audit",type=Path,required=True)
+    parser.add_argument("--photo-max-edge",type=int,default=None,
+                        help="Optional website-only photo limit; original results are unchanged.")
+    parser.add_argument("--photo-quality",type=int,default=85)
+    parser.add_argument("--photo-cache",type=Path,default=None,
+                        help="Optional prior photo folder; reuse only exact manifest-hash matches.")
     args=parser.parse_args()
+    if args.photo_max_edge is not None and args.photo_max_edge < 320:
+        parser.error("--photo-max-edge must be at least 320")
+    if not 1 <= args.photo_quality <= 95:
+        parser.error("--photo-quality must be between 1 and 95")
     if args.audit.resolve().is_relative_to(SITE.parent.resolve()):
         raise SystemExit("Source audit must remain outside the repository")
     source=args.source.read_text()
@@ -61,6 +71,7 @@ def main():
         if relative.is_absolute() or ".." in relative.parts or not path.is_relative_to(args.source.parent.resolve()) or not path.is_file():
             raise SystemExit("Missing or unsafe master-map asset: "+ref)
     manifest=json.loads((asset_root/"image_manifest.json").read_text())
+    manifest_hashes={row["file"]:row["sha256"] for row in manifest}
     withheld={"run12/frame_0038.jpg","run12/frame_0060.jpg","run12/frame_0067.jpg"}
     for row in manifest:
         if row["source"] in withheld and (row["file"] in photos or prefix+row["file"] in photos):
@@ -73,12 +84,47 @@ def main():
     args.audit.mkdir(parents=True,exist_ok=True)
     records=[]
     for n,ref in enumerate(photos,1):
-        raw=(args.source.parent/ref).read_bytes()
-        cleaned=clean_image(raw,Path(ref).suffix)
         relative=public_reference(ref,prefix)
+        expected=manifest_hashes.get(ref) or manifest_hashes.get(relative)
+        raw=None
+        cached_source=False
+        if args.photo_cache and expected:
+            cache=(args.photo_cache/relative).resolve()
+            if cache.is_relative_to(args.photo_cache.resolve()) and cache.is_file():
+                candidate=cache.read_bytes()
+                if digest(candidate)==expected:
+                    raw=candidate
+                    cached_source=True
+        if raw is None:
+            for attempt in range(3):
+                try:
+                    raw=(args.source.parent/ref).read_bytes()
+                    break
+                except TimeoutError:
+                    print(f"Retrying timed-out map photograph ({attempt+1}/3): {ref}",flush=True)
+                    if attempt==2:
+                        raise
+        if expected and digest(raw)!=expected:
+            raise SystemExit("Map photograph changed since export: "+ref)
+        cleaned=clean_image(raw,Path(ref).suffix)
+        original=Image.open(io.BytesIO(cleaned))
+        source_size=original.size
+        if args.photo_max_edge is not None:
+            original.thumbnail((args.photo_max_edge,args.photo_max_edge),Image.Resampling.LANCZOS)
+            buffer=io.BytesIO()
+            if Path(ref).suffix.lower() in (".jpg",".jpeg"):
+                original.convert("RGB").save(buffer,format="JPEG",quality=args.photo_quality,
+                                             optimize=True,progressive=True)
+            else:
+                original.save(buffer,format="PNG",optimize=True)
+            cleaned=buffer.getvalue()
+        public_size=Image.open(io.BytesIO(cleaned)).size
         dest=output/relative;dest.parent.mkdir(parents=True,exist_ok=True)
         dest.write_bytes(cleaned)
-        records.append({"file":relative,"source_sha256":digest(raw),"public_sha256":digest(cleaned)})
+        records.append({"file":relative,"source_sha256":digest(raw),"public_sha256":digest(cleaned),
+                        "source_bytes":len(raw),"public_bytes":len(cleaned),
+                        "source_dimensions":source_size,"public_dimensions":public_size,
+                        "verified_source_cache":cached_source})
         if n%100==0:print(f"Verified {n}/{len(photos)} map photographs",flush=True)
     for path in (asset_root/"vendor").rglob("*"):
         if path.is_file():
@@ -87,9 +133,9 @@ def main():
     public_observations=observations.replace(prefix,"")
     (output/"observations.csv").write_text(public_observations)
     canonical=combine_defect_controls(source.replace(prefix,"").replace('content="'+asset_base+'"','content="."'))
-    head='<title>Road defect research map</title><link rel="stylesheet" href="map-adapter.css?v=20261026-final">'
+    head='<title>Road defect research map</title><link rel="stylesheet" href="map-adapter.css?v=20261102-map">'
     control_name=re.search(r'(?:var|let|const) (layer_control_[a-zA-Z0-9_]+) = L.control.layers',source).group(1)
-    tail='<script>window.RESEARCH_MAP_CONTEXT={control:'+control_name+',layers:'+control_name+'_layers};</script><script src="map-adapter.js?v=20261026-labels" defer></script>'
+    tail='<script>window.RESEARCH_MAP_CONTEXT={control:'+control_name+',layers:'+control_name+'_layers};</script><script src="map-adapter.js?v=20261102-map" defer></script>'
 
     public=canonical.replace("</head>",head+"</head>",1).replace("</html>",tail+"</html>",1)
     if public.replace(head,"",1).replace(tail,"",1)!=canonical:
@@ -100,13 +146,15 @@ def main():
         "source":"Latest supplied master road-defect map",
         "source_saved":datetime.fromtimestamp(args.source.stat().st_mtime,ZoneInfo("Pacific/Auckland")).strftime("%d %B %Y").lstrip("0"),
         "source_sha256":digest(source.encode()),"public_sha256":digest(public.encode()),
-        "verification":"Entire map matches the source after relative asset paths, a page title, one combined Road defects control and the separate website navigation adapter. Marker coordinates, grouped observations, PDI visualisations, geographic features, popups and qualifications are unchanged. Referenced photographs retain identical pixels with private metadata removed.",
+        "verification":"Map content matches the supplied source after relative asset paths, a page title and the separate website navigation adapter. Marker coordinates, grouped observations, section counts, colours, geographic features, popups and assessment flags are unchanged. Website photo delivery is recorded separately; original result images are untouched.",
+        "photograph_delivery":{"max_edge_pixels":args.photo_max_edge,"jpeg_quality":args.photo_quality if args.photo_max_edge else None,
+                               "metadata_removed":True,"original_result_images_unchanged":True},
         "website_layer_adjustments":["All road-defect runs share one Road defects toggle, as requested by the owner. Original clusters, markers and popup run details are retained."] ,
         "marker_count":source.count("L.marker("),
         "tentative_defect_locations":coverage["mapped_markers"] if coverage else source.count("L.marker("),
         "located_observations":located,"observations_without_gps":len(rows)-located,
         "all_observations_csv_rows":len(rows),"map_photographs":len(photos),
-        "qualifications":["Grouping is conservative and provisional; GPS marks the camera position.","Grey density sections are not assessable.","Mapped detections and visual observations do not establish measured accuracy.","All saved runs in the supplied master export are retained; only records with usable GPS can be mapped.","Earlier-run markers contain all detections in each source photograph; separate runs are not deduplicated against one another."]
+        "qualifications":["Grouping is conservative and provisional; GPS marks the camera position.","Section colours follow stored counts (0-2 green); dashed lines retain unassessed status. Colours do not change density validity.","Mapped detections and visual observations do not establish measured accuracy.","All saved runs in the supplied master export are retained; only records with usable GPS can be mapped.","Earlier-run markers contain all detections in each source photograph; separate runs are not deduplicated against one another."]
     }
     if coverage:
         for key in ("display_scope","runs","mapped_observations","observations_excluded_from_map","display_exclusions"):
