@@ -1,6 +1,10 @@
 (() => {
   "use strict";
   if (window.parent === window) {
+    // The containing map page already tracks embedded visits.
+    const analytics = document.createElement("script");
+    analytics.src = "../../js/config.js";
+    document.head.appendChild(analytics);
     const back = document.createElement("a");
     back.className = "research-home";
     back.href = "../../index.html";
