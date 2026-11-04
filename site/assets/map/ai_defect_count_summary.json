@@ -1,0 +1,19 @@
+{
+  "metric": "AI-detected defects per 100 m",
+  "metric_version": "ai-detected-defect-counts-100m-v1",
+  "section_length_m": 100.0,
+  "colour_max": 10.0,
+  "coverage_requirement": "none",
+  "count_basis": "Saved AI detection records; repeated frames and visits count separately. No GPS coverage threshold.",
+  "zero_count_basis": "Only sections containing actual saved GPS samples or located detections; no interpolation or whole-network zero fill.",
+  "saved_detections": 1803,
+  "located_detections": 1604,
+  "excluded_by_owner": 4,
+  "detections_without_gps": 195,
+  "assigned_detections": 1591,
+  "unmatched_detections": 13,
+  "road_sections": 1422,
+  "zero_count_sections": 822,
+  "input_basis": "Complete observation export from the supplied saved master map, with original coordinates",
+  "source_observations_sha256": "8c601afce3125717eddcd7f9712af4139b31a876d4fdf90518ea51aeb46a84e9"
+}

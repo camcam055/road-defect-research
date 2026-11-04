@@ -133,9 +133,9 @@ def main():
     public_observations=observations.replace(prefix,"")
     (output/"observations.csv").write_text(public_observations)
     canonical=combine_defect_controls(source.replace(prefix,"").replace('content="'+asset_base+'"','content="."'))
-    head='<title>Road defect research map</title><link rel="stylesheet" href="map-adapter.css?v=20261102-map">'
+    head='<title>Road defect research map</title><link rel="stylesheet" href="map-adapter.css?v=20261104-count100">'
     control_name=re.search(r'(?:var|let|const) (layer_control_[a-zA-Z0-9_]+) = L.control.layers',source).group(1)
-    tail='<script>window.RESEARCH_MAP_CONTEXT={control:'+control_name+',layers:'+control_name+'_layers};</script><script src="map-adapter.js?v=20261102-map" defer></script>'
+    tail='<script>window.RESEARCH_MAP_CONTEXT={control:'+control_name+',layers:'+control_name+'_layers};</script><script src="map-adapter.js?v=20261104-count100" defer></script>'
 
     public=canonical.replace("</head>",head+"</head>",1).replace("</html>",tail+"</html>",1)
     if public.replace(head,"",1).replace(tail,"",1)!=canonical:
@@ -156,6 +156,11 @@ def main():
         "all_observations_csv_rows":len(rows),"map_photographs":len(photos),
         "qualifications":["Grouping is conservative and provisional; GPS marks the camera position.","Section colours follow stored counts (0-2 green); dashed lines retain unassessed status. Colours do not change density validity.","Mapped detections and visual observations do not establish measured accuracy.","All saved runs in the supplied master export are retained; only records with usable GPS can be mapped.","Earlier-run markers contain all detections in each source photograph; separate runs are not deduplicated against one another."]
     }
+    count_summary_path=asset_root/"ai_defect_count_summary.json"
+    if count_summary_path.is_file():
+        summary["ai_detection_count_visualisation"]=json.loads(count_summary_path.read_text())
+        summary["qualifications"][1]="AI-detected defects per 100 m: saved detection records, no GPS coverage requirement, continuous green-to-red from 0 to 10 and 10+ maximum red. Only recorded sections are coloured."
+        summary["qualifications"].insert(2,"Repeated frames and visits count as detection records; this is not a validated pavement condition rating.")
     if coverage:
         for key in ("display_scope","runs","mapped_observations","observations_excluded_from_map","display_exclusions"):
             summary[key]=coverage[key]

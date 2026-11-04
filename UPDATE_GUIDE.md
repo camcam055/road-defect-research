@@ -1,6 +1,6 @@
 # Website update guide
 
-**Latest map revision: 2 November 2026. The owner requested publishing the reviewed master map to the existing GitHub website while keeping its URL. This map-only refresh retains the 30 October research content, all detection/GPS records, one Road defects marker layer and a separate section-colour layer. Future publication still requires the owner's instruction.**
+**Latest map revision: 4 November 2026. The owner reviewed and approved pushing and publishing the 100 m AI detection-count map to the existing GitHub website while keeping its URL. The scale is 0–10, with 10+ maximum red and no GPS coverage requirement. This map-only refresh retains the 30 October research content, all saved detection/GPS records, marker coordinates and photographs. Future publication still requires the owner's instruction.**
 
 **Current reviewed revision: 30 October 2026. After local review, the owner approved pushing the report refresh and removal of Appendices A–D to the existing GitHub website. The repository and Pages URL remain unchanged. Future publication still requires the owner's instruction.**
 
@@ -129,6 +129,8 @@ JSON edits alone do not change the rendered page: the first command regenerates 
 ## Update map data
 
 The map fills the first viewport and has one Back link. Exploring Potential Relationships follows directly underneath. The map's controls, legends and provider attribution remain available. All defect runs share a single Road defects switch, and run identities remain in the popups.
+
+The section overlay is labelled **AI-detected defects per 100 m**. It counts saved AI detection records, including repeated frames and visits, with no GPS survey coverage gate. The continuous green-to-red scale saturates at **10+**; counts above 10 remain uncapped in tooltips and exports. Only sections containing recorded GPS samples or located detections are coloured. It is a count visualisation, not a validated pavement condition rating. The maintained count files are `site/assets/map/ai_defect_counts_100m.csv`, `ai_defect_counts_100m.geojson` and `ai_defect_count_summary.json`.
 
 All saved run folders are retained in the export. All runs with usable GPS are visible by default through the unified Road defects switch. Per-run counts and owner exclusions are in `site/data/map-source.json`. The CSV uses `map_display_status` to distinguish mapped records, unavailable GPS and owner-requested exclusions. Run6 IMG_6869, IMG_6871 and IMG_6872 are excluded from the map; their original detection records are retained.
 
