@@ -21,9 +21,9 @@ The current map HTML is about 30.6 MB and contains the original geographic data.
 
 ## Public verification safeguards
 
-The Pages source remains GitHub Actions. Publication stays manual, restricted to main and the explicit publication_approved input. The artifact root is site/, which includes index.html and .nojekyll.
+The Pages source remains GitHub Actions. Publication stays manual, restricted to main and the explicit publication_approved input. The artifact root is site/, with index.html at its root. The source retains .nojekyll; the official Pages artifact uploader excludes dotfiles.
 
-Each publication records a generated deployment.json manifest with its commit, public file sizes and SHA-256 hashes. The deploy job then uses anonymous HTTPS requests to the canonical public URL. It waits for the expected revision, verifies the homepage and every published file, compares all public HTML/CSS/JS/JSON/CSV/text hashes, checks image availability and sizes, and requires MP4 byte-range responses for playback and seeking. A public failure makes the workflow fail even when the Pages deployment API reported success. The uploaded artifact is retained for seven days to support inspection.
+Each publication records a generated deployment.json manifest with its commit, public file sizes and SHA-256 hashes. The deploy job then uses anonymous HTTPS requests to the canonical public URL. It waits for the expected revision, verifies the homepage and every published file, compares all public HTML/CSS/JS/JSON/CSV/text hashes, checks image availability and sizes, and requires MP4 byte-range responses for playback and seeking. A public failure makes the workflow fail even when the Pages deployment API reported success. The uploaded artifact is retained for seven days to support inspection. Its name includes the workflow run and attempt, so a retry cannot select a duplicate upload.
 
 The separate **Check public website** workflow runs daily and can be run manually. It checks the manifest of the currently published revision, so a pending source edit does not become a false outage. Its failed runs provide a visible availability signal in GitHub Actions. It does not publish pending source edits.
 
@@ -33,7 +33,7 @@ Before changing the verifier, run:
 python3 -m unittest discover -s tools -p test_verify_public_site.py
 ```
 
-The tests cover an unavailable homepage, an HTTP 200 error page, a stale revision, stale page content, missing or truncated images, a login redirect and unavailable video seeking.
+The tests cover the official uploader's dotfile exclusion, an unavailable homepage, an HTTP 200 error page, a stale revision, stale page content, missing or truncated images, a login redirect and unavailable video seeking.
 
 On 10 November 2026 the canonical URL returned GitHub's site-not-found 404 while historical deployments were successful and Pages settings showed no deployed site. A fresh publication of the unchanged website restored HTTP 200. The historical logs did not identify what removed the active publication. Preserve the publication settings and verify the public URL after any Pages or repository-visibility change.
 
