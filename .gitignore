@@ -18,3 +18,6 @@ review/
 *.pt
 *.pth
 *.onnx
+
+# Generated for the deployment artifact; never a maintained source file.
+/site/deployment.json
