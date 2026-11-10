@@ -18,7 +18,8 @@ def main():
         parser.error("the artifact must have index.html at its root")
     files = []
     for path in sorted(args.site.rglob("*")):
-        if not path.is_file() or path == args.site / "deployment.json":
+        if (not path.is_file() or path == args.site / "deployment.json" or
+                any(part.startswith(".") for part in path.relative_to(args.site).parts)):
             continue
         if path.is_symlink():
             parser.error("symbolic links cannot be published")

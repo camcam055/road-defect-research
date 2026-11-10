@@ -66,7 +66,7 @@ def manifest_from_public_site(base, expected_revision):
                 item["bytes"] < 0 or not re.fullmatch(r"[0-9a-f]{64}", item.get("sha256", ""))):
             raise ValueError("deployment.json contains an invalid or duplicate file")
         paths.add(path)
-    if not {"index.html", ".nojekyll", "video.html", "map.html"}.issubset(paths):
+    if not {"index.html", "video.html", "map.html"}.issubset(paths):
         raise ValueError("required public entry points are missing")
     home = next(item for item in files if item["path"] == "index.html")
     headers, homepage = request(base, "", bust=True)

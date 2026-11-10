@@ -5,10 +5,13 @@ import hashlib
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import io
 import json
+from pathlib import Path
+from tempfile import TemporaryDirectory
 import threading
 import unittest
 from unittest.mock import patch
 
+from prepare_pages_manifest import main as prepare_manifest
 from verify_public_site import verify
 
 REVISION = "a" * 40
@@ -150,6 +153,21 @@ class PublicSiteTests(unittest.TestCase):
     def test_login_redirect_is_a_failure(self):
         self.mode = "login"
         self.assertEqual(self.check()["status"], "FAIL")
+
+
+class ArtifactManifestTests(unittest.TestCase):
+    def test_excludes_dotfiles_omitted_by_the_official_pages_uploader(self):
+        with TemporaryDirectory() as directory:
+            site = Path(directory)
+            (site / "index.html").write_text("<html>Research homepage</html>")
+            (site / ".nojekyll").write_text("")
+            (site / ".private").mkdir()
+            (site / ".private" / "file.txt").write_text("not uploaded")
+            with patch("sys.argv", ["prepare_pages_manifest.py", "--site", directory,
+                                    "--revision", REVISION]), redirect_stdout(io.StringIO()):
+                prepare_manifest()
+            manifest = json.loads((site / "deployment.json").read_text())
+            self.assertEqual([item["path"] for item in manifest["files"]], ["index.html"])
 
 
 if __name__ == "__main__":
