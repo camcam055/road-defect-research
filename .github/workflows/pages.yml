@@ -16,6 +16,7 @@ jobs:
   deploy:
     if: ${{ inputs.publication_approved && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
       contents: read
       pages: write
@@ -25,12 +26,26 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
+      - name: Test public verification safeguards
+        run: python3 -m unittest discover -s tools -p test_verify_public_site.py
+      - name: Record the exact public artifact
+        env:
+          REVISION: ${{ github.sha }}
+        run: python3 tools/prepare_pages_manifest.py --revision "$REVISION"
       - name: Validate deployable files
         run: python3 tools/check_site.py
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v4
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload the site root
+        uses: actions/upload-pages-artifact@v4
         with:
           path: site
+          retention-days: 7
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify the actual public website
+        env:
+          EXPECTED_REVISION: ${{ github.sha }}
+          PAGES_URL: https://camcam055.github.io/road-defect-research/
+        run: python3 tools/verify_public_site.py --url "$PAGES_URL" --expected-revision "$EXPECTED_REVISION"

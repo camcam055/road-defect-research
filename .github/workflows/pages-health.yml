@@ -1,0 +1,20 @@
+name: Check public website
+on:
+  schedule:
+    - cron: '37 18 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-health
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - name: Test public verification safeguards
+        run: python3 -m unittest discover -s tools -p test_verify_public_site.py
+      - name: Check the published website without authentication
+        run: python3 tools/verify_public_site.py --url https://camcam055.github.io/road-defect-research/ --attempts 3
